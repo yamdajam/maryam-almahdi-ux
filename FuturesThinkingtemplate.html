@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Futures Thinking (AIP) — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Italianno&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf6ef;
+    --cream-warm: #f3ede1;
+    --cream-dark: #ebe4d3;
+    --ink: #1a1714;
+    --ink-soft: #4a423a;
+    --ink-light: #8a7f70;
+    --ink-faint: #c4bcae;
+    --pink: #f4b5c8;
+    --pink-soft: #f9d6df;
+    --pink-deep: #e58fa6;
+    --pink-bright: #ec7a98;
+    --sage: #8fa68e;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --script: 'Italianno', cursive;
+    --sans: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(250, 246, 239, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo b {
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-left: .3rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.75rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: .8rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--pink-bright); }
+
+  /* === BACK LINK === */
+  .back-bar {
+    padding: 6rem 3rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: .95rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    transition: color .3s, gap .3s;
+  }
+
+  .back-link:hover { color: var(--pink-deep); gap: .85rem; }
+
+  /* === HERO === */
+  .cs-hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem;
+  }
+
+  .cs-eyebrow {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .cs-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--pink-deep);
+    display: inline-block;
+  }
+
+  .cs-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.02em;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+  }
+
+  .cs-title .script {
+    font-family: var(--script);
+    font-size: 1.35em;
+    color: var(--pink-deep);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .cs-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 720px;
+    margin-bottom: 3rem;
+  }
+
+  /* Meta strip */
+  .cs-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .cs-meta-cell .label {
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: .5rem;
+  }
+
+  .cs-meta-cell .value {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .cs-meta-cell .value em {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: .9em;
+  }
+
+  /* === COVER / IMAGE GALLERY === */
+  .cs-cover {
+    max-width: 1280px;
+    margin: 0 auto 5rem;
+    padding: 0 3rem;
+  }
+
+  .cs-cover-inner {
+    aspect-ratio: 16/9;
+    background:
+      radial-gradient(circle at 25% 30%, var(--pink-soft) 0%, transparent 45%),
+      radial-gradient(circle at 75% 70%, var(--pink) 0%, transparent 40%),
+      linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-dark) 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(26,23,20,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cover-placeholder {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: 1rem;
+    letter-spacing: .05em;
+  }
+
+  /* === CONTENT === */
+  .cs-content {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .cs-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .cs-section:last-child { border-bottom: none; }
+
+  .cs-section-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: .95rem;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .cs-section-mark::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--pink-deep);
+    display: inline-block;
+  }
+
+  .cs-h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin-bottom: 2rem;
+    max-width: 720px;
+  }
+
+  .cs-h2 .script {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink-deep);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .cs-h3 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    margin-bottom: .75rem;
+    color: var(--ink);
+  }
+
+  .cs-prose {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    max-width: 680px;
+  }
+
+  .cs-prose p { margin-bottom: 1.25rem; }
+  .cs-prose strong { color: var(--ink); font-weight: 500; }
+  .cs-prose em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+
+  .placeholder-note {
+    background: var(--cream-warm);
+    border: 1px dashed var(--pink-deep);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: .85rem;
+  }
+
+  .placeholder-note::before {
+    content: '✎ ';
+    color: var(--pink-deep);
+    font-style: normal;
+  }
+
+  /* === IMAGE PAIR === */
+  .image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .image-slot {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-dark) 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: .85rem;
+    position: relative;
+  }
+
+  .image-slot .img-label {
+    position: absolute;
+    bottom: .75rem;
+    left: 1rem;
+    font-size: .75rem;
+    color: var(--ink-light);
+  }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    margin: 2.5rem 0;
+    padding: 2rem 2.5rem;
+    background: var(--cream-warm);
+    border-left: 3px solid var(--pink-deep);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* === TWO-COLUMN: HELPFUL vs UNHELPFUL === */
+  .ai-balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .ai-col {
+    padding: 1.75rem 1.5rem;
+    border-radius: 4px;
+  }
+
+  .ai-col.helpful {
+    background: var(--cream-warm);
+    border-left: 2px solid var(--sage);
+  }
+
+  .ai-col.unhelpful {
+    background: var(--cream-warm);
+    border-left: 2px solid var(--pink-deep);
+  }
+
+  .ai-col-label {
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+
+  .ai-col.helpful .ai-col-label { color: var(--sage); }
+  .ai-col.unhelpful .ai-col-label { color: var(--pink-deep); }
+
+  .ai-col h4 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: .75rem;
+  }
+
+  .ai-col p {
+    font-size: .88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .ai-col ul {
+    list-style: none;
+    margin-top: .75rem;
+  }
+
+  .ai-col ul li {
+    padding: .35rem 0 .35rem 1rem;
+    font-size: .85rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .ai-col ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--ink-light);
+  }
+
+  /* === REFLECTION === */
+  .reflection {
+    background: var(--ink);
+    color: var(--cream);
+    margin: 4rem -3rem 0;
+    padding: 5rem 3rem;
+  }
+
+  .reflection-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .reflection .cs-section-mark { color: var(--pink); }
+  .reflection .cs-section-mark::before { background: var(--pink); }
+  .reflection .cs-h2 { color: var(--cream); }
+  .reflection .cs-h2 .script { color: var(--pink); }
+  .reflection .cs-prose { color: rgba(250,246,239,.75); }
+  .reflection .cs-prose strong { color: var(--cream); }
+  .reflection .cs-prose em { color: var(--pink); }
+
+  .reflection .placeholder-note {
+    background: rgba(250,246,239,.05);
+    border-color: var(--pink);
+    color: rgba(250,246,239,.55);
+  }
+
+  /* === AI DECLARATION === */
+  .ai-declaration {
+    max-width: 880px;
+    margin: 4rem auto 0;
+    padding: 2rem 3rem;
+  }
+
+  .ai-declaration-inner {
+    background: var(--cream-warm);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 1.75rem 2rem;
+  }
+
+  .ai-declaration h4 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: .75rem;
+  }
+
+  .ai-declaration p {
+    font-size: .85rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* === NEXT PROJECT === */
+  .next-project {
+    max-width: 1100px;
+    margin: 6rem auto 0;
+    padding: 0 3rem 6rem;
+    text-align: center;
+  }
+
+  .next-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+  }
+
+  .next-link {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    transition: gap .3s, color .3s;
+  }
+
+  .next-link:hover { gap: 1.5rem; color: var(--pink-deep); }
+
+  .next-link .arrow {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink-deep);
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4rem 3rem 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(250,246,239,.15);
+    align-items: end;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-cta {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  .footer-cta .script {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .footer-list { list-style: none; }
+  .footer-list li { margin-bottom: .75rem; }
+
+  .footer-list a {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color .3s, color .3s;
+  }
+
+  .footer-list a:hover { border-color: var(--pink); color: var(--pink); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,.5);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* === ANIMATIONS === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links a { font-size: .7rem; }
+    .back-bar { padding: 5rem 1.5rem 1rem; }
+    .cs-hero { padding: 1rem 1.5rem 3rem; }
+    .cs-meta { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .cs-cover { padding: 0 1.5rem; margin-bottom: 3rem; }
+    .cs-content { padding: 0 1.5rem; }
+    .cs-section { padding: 3rem 0; }
+    .image-pair { grid-template-columns: 1fr; }
+    .ai-balance { grid-template-columns: 1fr; }
+    .reflection { margin: 3rem -1.5rem 0; padding: 3rem 1.5rem; }
+    .ai-declaration { padding: 2rem 1.5rem; }
+    .next-project { padding: 0 1.5rem 4rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    footer { padding: 3rem 1.5rem 2rem; }
+  }
+
+  @media (max-width: 500px) {
+    .cs-meta { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><i>Studio</i><b>YourName</b></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#graphic">Graphics</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="index.html#work" class="back-link">← Back to work</a>
+</div>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <p class="cs-eyebrow">Case study, [YEAR]</p>
+
+  <h1 class="cs-title">
+    Futures Thinking <span class="script">—</span> [short tagline].
+  </h1>
+
+  <p class="cs-sub">
+    [One sentence framing the project — what it explored, who it was for, what came out of it.]
+  </p>
+
+  <div class="cs-meta">
+    <div class="cs-meta-cell">
+      <p class="label">Role</p>
+      <p class="value">[Your role] <em>Team of [#]</em></p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Timeline</p>
+      <p class="value">[Semester, Year]</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Tools</p>
+      <p class="value">[Tool, Tool] <em>[Method]</em></p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Context</p>
+      <p class="value">University of Melbourne <em>[Subject code] · A2</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- COVER -->
+<div class="cs-cover">
+  <div class="cs-cover-inner">
+    <!-- Replace with: <img src="cover.jpg" alt="..." style="width:100%;height:100%;object-fit:cover;"> -->
+    <p class="cover-placeholder">— cover image goes here —</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="cs-content">
+
+  <!-- 01: PROJECT CONTEXT -->
+  <section class="cs-section reveal">
+    <p class="cs-section-mark">01 — The project</p>
+    <h2 class="cs-h2">What we were exploring, and <span class="script">why</span>.</h2>
+    <div class="cs-prose">
+      <p class="placeholder-note">Short framing — 2–3 sentences. What was the brief? Who was the team? What did the final output become? Don't go too deep; this is just context for the reflection that follows.</p>
+
+      <p>[Brief description of the Futures Thinking project — what speculative or future-oriented question it asked, who was on the team, what you ended up producing.]</p>
+    </div>
+  </section>
+
+  <!-- 02: MY CONTRIBUTION (brief requirement #1) -->
+  <section class="cs-section reveal">
+    <p class="cs-section-mark">02 — My contribution</p>
+    <h2 class="cs-h2">What <span class="script">I</span> brought to the team.</h2>
+    <div class="cs-prose">
+      <p class="placeholder-note">Brief requirement #1: describe your individual contribution to the group project, with at least a couple of images that represent the work you have done.</p>
+
+      <p>[Describe the specific things <em>you</em> did. Not what the team did — what you personally led or contributed. Examples: led the research synthesis, designed and tested the prototype, wrote the speculative scenario, ran the workshop, created the visuals. Be specific about decisions you made.]</p>
+
+      <p>[Optional second paragraph if your contribution shifted over time, or if you took on something unexpected partway through.]</p>
+    </div>
+
+    <div class="image-pair">
+      <div class="image-slot">
+        <span>your work — image 1</span>
+        <span class="img-label">[caption]</span>
+      </div>
+      <div class="image-slot">
+        <span>your work — image 2</span>
+        <span class="img-label">[caption]</span>
+      </div>
+    </div>
+
+    <div class="cs-prose">
+      <p>[Optional caption or context for the images above — what they show and why they represent your contribution.]</p>
+    </div>
+  </section>
+
+  <!-- 03: AI IN DESIGN (brief requirement #2) -->
+  <section class="cs-section reveal">
+    <p class="cs-section-mark">03 — AI in the process</p>
+    <h2 class="cs-h2">On the use (and <span class="script">limits</span>) of AI in design work.</h2>
+    <div class="cs-prose">
+      <p class="placeholder-note">Brief requirement #2: discuss and reflect on the use (or non-use) of AI in iterative prototyping and UX work, with concrete examples from your project. Show that you understand when AI helped vs. when it would've been the wrong tool.</p>
+
+      <p>[Opening paragraph — what role did AI play in your process? Did you use it heavily, lightly, or deliberately not at all? Be honest about it.]</p>
+    </div>
+
+    <div class="ai-balance">
+      <div class="ai-col helpful">
+        <p class="ai-col-label">Where it helped</p>
+        <h4>Useful applications</h4>
+        <p>[Example of where AI was genuinely useful — e.g. brainstorming variations, summarising research transcripts, generating placeholder copy, exploring visual directions early.]</p>
+        <ul>
+          <li>[Example task]</li>
+          <li>[Example task]</li>
+          <li>[Example task]</li>
+        </ul>
+      </div>
+
+      <div class="ai-col unhelpful">
+        <p class="ai-col-label">Where it didn't</p>
+        <h4>Wrong tool, wrong moment</h4>
+        <p>[Example of where AI was unhelpful or would have been inappropriate — e.g. synthesising real interview insight, making value judgements, replacing real user feedback, finalising visual decisions.]</p>
+        <ul>
+          <li>[Example task]</li>
+          <li>[Example task]</li>
+          <li>[Example task]</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-prose">
+      <p>[Closing paragraph that pulls it together — what's your <em>actual stance</em> on AI in design? When should designers reach for it, and when should they put it down? Don't be wishy-washy; have a take.]</p>
+    </div>
+  </section>
+
+  <!-- 04: CHOOSE ONE REFLECTION (brief requirement #3) -->
+  <section class="cs-section reveal">
+    <p class="cs-section-mark">04 — A reflection</p>
+    <h2 class="cs-h2">[Pick one — what I <span class="script">learned</span>.]</h2>
+    <div class="cs-prose">
+      <p class="placeholder-note">Brief requirement #3: choose ONE of these three reflection prompts and write to it. Delete the other two before publishing.</p>
+
+      <p class="placeholder-note"><strong>Option A — Skills and learning:</strong> what have you learned this semester and how might you continue to develop as a UX designer?</p>
+
+      <p class="placeholder-note"><strong>Option B — Iterative prototyping:</strong> something you learned about the design space through building prototypes and eliciting feedback — something surprising — and how your design changed as a result.</p>
+
+      <p class="placeholder-note"><strong>Option C — Non-screen design challenge:</strong> a specific design challenge related to designing for non-screen technologies, and how you addressed (or might address) it.</p>
+
+      <p>[Reflection paragraph 1 — set up the angle. What's the lesson, surprise, or challenge you want to talk about? Anchor it in something specific from the project — a moment, a quote, a decision.]</p>
+
+      <p>[Reflection paragraph 2 — go deeper. What did this teach you about how you work, how design works, or how users behave? Concrete examples beat generalities.]</p>
+
+      <p>[Reflection paragraph 3 — look forward. How does this lesson shape what you'd do next, or how you'd practice as a designer going forward?]</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"[Optional pull quote — a sentence from your reflection that captures the most important idea. Bold the version of you that's writing this case study.]"</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- META-REFLECTION (dark) -->
+<div class="cs-content">
+  <section class="cs-section reveal" style="border-bottom: none; padding-bottom: 0;">
+    <div class="reflection">
+      <div class="reflection-inner">
+        <p class="cs-section-mark">05 — Looking ahead</p>
+        <h2 class="cs-h2">My future as a <span class="script">UX designer</span>.</h2>
+        <div class="cs-prose">
+          <p class="placeholder-note">Tie the project back to your bigger trajectory as a designer. What kind of UX work do you want to do? What did this project clarify about that?</p>
+
+          <p>[Paragraph on what you see for your future as a UX/design professional — the kind of problems you want to work on, the values you want your practice to hold.]</p>
+
+          <p>[Paragraph on how this project specifically shaped or sharpened that direction.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- AI USE DECLARATION -->
+<div class="ai-declaration">
+  <div class="ai-declaration-inner">
+    <h4>— On AI tool use in this case study</h4>
+    <p>[Required declaration. Briefly state whether and how you used AI tools (e.g. ChatGPT, Claude, Copilot, Gemini) in writing or designing this portfolio page. Be specific: e.g. <em>"I used Claude to help structure section headings and tighten copy. All reflections, analysis, and final wording are my own."</em> If you didn't use any AI, say so.]</p>
+  </div>
+</div>
+
+<!-- NEXT PROJECT -->
+<section class="next-project reveal">
+  <p class="next-label">Next case study</p>
+  <a href="case-study-ai-cv.html" class="next-link">
+    Walk of Life AI <span class="arrow">↗</span>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <h2 class="footer-cta">
+      Let's <span class="script">work</span><br>
+      together —
+    </h2>
+    <ul class="footer-list">
+      <li><a href="mailto:hello@yourname.com">hello@yourname.com</a></li>
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="https://instagram.com/yamsoven" target="_blank" rel="noopener">Yam's Oven on Instagram ↗</a></li>
+      <li><a href="cv.pdf" download>Download CV ↓</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 — Your Name</span>
+    <span>Melbourne, AU</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

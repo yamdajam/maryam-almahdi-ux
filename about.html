@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Maryam Al-Mahdi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Italianno&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf6ef;
+    --cream-warm: #f3ede1;
+    --cream-dark: #ebe4d3;
+    --ink: #1a1714;
+    --ink-soft: #4a423a;
+    --ink-light: #8a7f70;
+    --ink-faint: #c4bcae;
+    --pink: #f4b5c8;
+    --pink-soft: #f9d6df;
+    --pink-deep: #e58fa6;
+    --pink-bright: #ec7a98;
+    --sage: #8fa68e;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --script: 'Italianno', cursive;
+    --sans: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(250, 246, 239, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -.01em;
+  }
+
+  .nav-logo b {
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-left: .3rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.75rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: .8rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .3s;
+  }
+
+  .nav-links a.current {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+  }
+
+  .nav-links a:hover { color: var(--pink-bright); }
+
+  /* === HERO === */
+  .hero-shell { padding: 7rem 3rem 4rem; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 75vh;
+    position: relative;
+  }
+
+  .hero-left { position: relative; padding-right: 1rem; }
+
+  .hero-eyebrow {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--pink-deep);
+    display: inline-block;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .script {
+    font-family: var(--script);
+    font-size: 1.35em;
+    font-weight: 400;
+    color: var(--pink-deep);
+    line-height: .85;
+    display: inline-block;
+    transform: translateY(0.08em);
+  }
+
+  .hero-body {
+    font-size: .95rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    max-width: 480px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-body p + p { margin-top: 1rem; }
+
+  /* PHOTO SIDE */
+  .hero-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-photo-blob {
+    position: absolute;
+    width: 95%;
+    aspect-ratio: 1;
+    background: var(--pink-soft);
+    border-radius: 48% 52% 60% 40% / 52% 48% 52% 48%;
+    animation: blobMorph 12s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    width: 85%;
+    max-width: 440px;
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, #d8c8b8 0%, #a08570 100%);
+    border-radius: 50% 50% 8px 8px / 35% 35% 8px 8px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 30px 60px -20px rgba(26,23,20,0.2);
+  }
+
+  .hero-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .yams-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  }
+
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-style: italic;
+    color: rgba(255,255,255,.6);
+    font-size: 1rem;
+    letter-spacing: .05em;
+  }
+
+  .hero-star {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    color: var(--pink-bright);
+    opacity: 0;
+    animation: starIn 1.2s ease forwards .6s, spin 24s linear infinite;
+    transform-origin: center;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: -1rem;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    padding: .9rem 1.25rem;
+    border-radius: 100px;
+    font-family: var(--serif);
+    font-size: .85rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    z-index: 2;
+    box-shadow: 0 8px 20px -8px rgba(26,23,20,0.12);
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--sage);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  /* === FACTS STRIP === */
+  .facts {
+    max-width: 1100px;
+    margin: 1rem auto 0;
+    padding: 0 3rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    border-top: 1px solid var(--cream-dark);
+    padding-top: 2.5rem;
+  }
+
+  .fact-label {
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: .5rem;
+  }
+
+  .fact-value {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .fact-value em {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: .9em;
+  }
+
+  /* === STORY SECTION === */
+  .story {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 4rem 3rem 6rem;
+    position: relative;
+  }
+
+  .story-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--pink-deep);
+    letter-spacing: .05em;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .story-mark::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--pink-deep);
+    display: inline-block;
+  }
+
+  .story h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin-bottom: 2.5rem;
+  }
+
+  .story h2 .script {
+    font-family: var(--script);
+    font-size: 1.35em;
+    color: var(--pink-deep);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .story-body {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    max-width: 680px;
+  }
+
+  .story-body p {
+    margin-bottom: 1.25rem;
+  }
+
+  .story-body p:first-of-type::first-letter {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 400;
+    float: left;
+    line-height: .85;
+    padding-right: .65rem;
+    padding-top: .35rem;
+    color: var(--ink);
+  }
+
+  /* === YAM'S OVEN SECTION === */
+  .yams {
+    background: var(--cream-warm);
+    padding: 6rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .yams-blob {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--pink-soft);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .5;
+    top: -10%;
+    right: -8%;
+    pointer-events: none;
+  }
+
+  .yams-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .yams-text .story-mark { color: var(--pink-bright); }
+  .yams-text .story-mark::before { background: var(--pink-bright); }
+
+  .yams-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.01em;
+    margin-bottom: 1.25rem;
+  }
+
+  .yams-title .script {
+    font-family: var(--script);
+    font-size: 1.5em;
+    color: var(--pink-deep);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .yams-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+  }
+
+  .yams-desc {
+    font-size: .92rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    max-width: 460px;
+  }
+
+  .yams-desc + .yams-desc { margin-top: 0; }
+
+  .yams-cta {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 1rem 1.75rem;
+    border-radius: 100px;
+    transition: background .3s, transform .3s;
+  }
+
+  .yams-cta:hover { background: var(--pink-deep); transform: translateY(-2px); }
+
+  .yams-cta svg { width: 16px; height: 16px; }
+
+  /* Photo collage */
+  .yams-collage {
+    position: relative;
+    aspect-ratio: 1;
+    width: 100%;
+  }
+
+  .yams-photo {
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(26,23,20,0.2);
+    transition: transform .5s ease;
+  }
+
+  .yams-photo:hover { transform: scale(1.02) rotate(0deg) !important; z-index: 5; }
+
+  .yams-photo.p1 {
+    top: 0; left: 8%;
+    width: 55%; aspect-ratio: 4/5;
+    transform: rotate(-3deg);
+    background: linear-gradient(160deg, #e8b890 0%, #c4885a 100%);
+    z-index: 2;
+  }
+
+  .yams-photo.p2 {
+    top: 8%; right: 0;
+    width: 48%; aspect-ratio: 1;
+    transform: rotate(4deg);
+    background: linear-gradient(140deg, #f4b5c8 0%, #d4886a 100%);
+    z-index: 3;
+  }
+
+  .yams-photo.p3 {
+    bottom: 0; left: 0;
+    width: 50%; aspect-ratio: 1;
+    transform: rotate(2deg);
+    background: linear-gradient(160deg, #d4886a 0%, #8a4a32 100%);
+    z-index: 1;
+  }
+
+  .yams-photo.p4 {
+    bottom: 5%; right: 8%;
+    width: 42%; aspect-ratio: 3/4;
+    transform: rotate(-5deg);
+    background: linear-gradient(140deg, #ecd4b8 0%, #b8845c 100%);
+    z-index: 4;
+  }
+
+  .yams-photo-label {
+    position: absolute;
+    bottom: .5rem;
+    left: .65rem;
+    font-family: var(--serif);
+    font-size: .7rem;
+    font-style: italic;
+    color: rgba(255,255,255,.8);
+  }
+
+  /* === INSTAGRAM FEED === */
+  .ig-section {
+    padding: 6rem 3rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .ig-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .ig-header-left h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: .75rem;
+  }
+
+  .ig-header-left h2 .script {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink-deep);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .ig-handle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+
+  .ig-handle a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cream-dark);
+    padding-bottom: 2px;
+    transition: color .3s, border-color .3s;
+  }
+
+  .ig-handle a:hover { color: var(--pink-deep); border-color: var(--pink-deep); }
+
+  .ig-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    background: var(--pink-soft);
+    border: 1px solid var(--pink);
+    padding: .75rem 1.5rem;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background .3s, border-color .3s;
+  }
+
+  .ig-follow:hover { background: var(--pink); border-color: var(--pink-deep); }
+
+  .ig-follow svg { width: 14px; height: 14px; }
+
+  /* IG grid */
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+  }
+
+  .ig-post {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .ig-post::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26,23,20,0.4);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 1;
+  }
+
+  .ig-post:hover::after { opacity: 1; }
+
+  .ig-post-content {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--cream);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 2;
+  }
+
+  .ig-post:hover .ig-post-content { opacity: 1; }
+
+  .ig-post-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: .7rem;
+    letter-spacing: .05em;
+  }
+
+  .ig-post-stats span {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+  }
+
+  /* Placeholder gradients for each post */
+  .ig-post:nth-child(1)  { background: linear-gradient(135deg, #e8b890 0%, #c4885a 100%); }
+  .ig-post:nth-child(2)  { background: linear-gradient(165deg, #f4b5c8 0%, #d4886a 100%); }
+  .ig-post:nth-child(3)  { background: linear-gradient(135deg, #d4886a 0%, #8a4a32 100%); }
+  .ig-post:nth-child(4)  { background: linear-gradient(145deg, #ecd4b8 0%, #b8845c 100%); }
+  .ig-post:nth-child(5)  { background: linear-gradient(160deg, #f9d6df 0%, #e8b890 100%); }
+  .ig-post:nth-child(6)  { background: linear-gradient(135deg, #c4885a 0%, #6a3820 100%); }
+  .ig-post:nth-child(7)  { background: linear-gradient(155deg, #e8c4a8 0%, #a8704c 100%); }
+  .ig-post:nth-child(8)  { background: linear-gradient(135deg, #f4b5c8 0%, #b8704c 100%); }
+  .ig-post:nth-child(9)  { background: linear-gradient(145deg, #d8a880 0%, #804830 100%); }
+  .ig-post:nth-child(10) { background: linear-gradient(135deg, #ecd4b8 0%, #c4885a 100%); }
+  .ig-post:nth-child(11) { background: linear-gradient(165deg, #e8b890 0%, #8a4a32 100%); }
+  .ig-post:nth-child(12) { background: linear-gradient(140deg, #f9d6df 0%, #d4886a 100%); }
+
+  .ig-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    opacity: .55;
+    z-index: 0;
+  }
+
+  /* === QUOTE / VALUES === */
+  .values {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 6rem 3rem;
+    text-align: center;
+  }
+
+  .values-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .values-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--pink);
+    margin-bottom: 1.5rem;
+  }
+
+  .values h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  .values h2 .script {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    text-align: left;
+    margin-top: 3rem;
+  }
+
+  .value-card {
+    border-left: 1px solid rgba(250,246,239,.15);
+    padding-left: 1.5rem;
+  }
+
+  .value-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--pink);
+    font-size: 1rem;
+    margin-bottom: .75rem;
+    display: block;
+  }
+
+  .value-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: .75rem;
+  }
+
+  .value-desc {
+    font-size: .85rem;
+    color: rgba(250,246,239,.65);
+    line-height: 1.7;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4rem 3rem 2rem;
+    border-top: 1px solid rgba(250,246,239,.1);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(250,246,239,.15);
+    align-items: end;
+  }
+
+  .footer-cta {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+  }
+
+  .footer-cta .script {
+    font-family: var(--script);
+    font-size: 1.4em;
+    color: var(--pink);
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .footer-list { list-style: none; }
+  .footer-list li { margin-bottom: .75rem; }
+
+  .footer-list a {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color .3s, color .3s;
+  }
+
+  .footer-list a:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,.5);
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes starIn {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .4; }
+  }
+  @keyframes blobMorph {
+    0%, 100% { border-radius: 48% 52% 60% 40% / 52% 48% 52% 48%; }
+    50%      { border-radius: 56% 44% 42% 58% / 44% 56% 48% 52%; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links a { font-size: .7rem; }
+    .hero-shell { padding: 6rem 1.5rem 3rem; }
+    .hero { grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
+    .hero-left { order: 2; padding-right: 0; }
+    .hero-right { order: 1; }
+    .hero-photo-frame { width: 75%; max-width: 320px; }
+    .hero-star { top: 1rem; right: 1rem; width: 40px; height: 40px; }
+    .hero-badge { font-size: .75rem; left: 0; bottom: 1rem; }
+    .hero-title { font-size: clamp(2.5rem, 9vw, 3.5rem); }
+    .facts { grid-template-columns: 1fr 1fr; padding: 2rem 1.5rem 3rem; gap: 1.5rem; }
+    .story { padding: 3rem 1.5rem 4rem; }
+    .yams { padding: 4rem 1.5rem; }
+    .yams-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .yams-collage { max-width: 420px; margin: 0 auto; }
+    .ig-section { padding: 3rem 1.5rem; }
+    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+    .values { padding: 4rem 1.5rem; }
+    .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    footer { padding: 3rem 1.5rem 2rem; }
+  }
+
+  @media (max-width: 500px) {
+    .ig-grid { grid-template-columns: 1fr 1fr; }
+    .facts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="about">
+
+<nav>
+  <a class="nav-logo" href="index.html"><i>Portfolio</i><b>Maryam Al-Mahdi</b></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" class="current">About</a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#graphic">Graphics</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<!-- HERO -->
+<section class="hero-shell">
+  <div class="hero">
+
+    <div class="hero-left">
+      <p class="hero-eyebrow">Meet the designer,</p>
+
+      <h1 class="hero-title">
+        Designer, baker,<br>
+        <span class="script">always curious</span>.
+      </h1>
+
+      <div class="hero-body">
+        <p>I'm a UX designer and researcher completing a Bachelor of Design (UX/UI) at the University of Melbourne. My work spans user research, Figma prototyping, and front-end development — with a particular interest in how AI can make digital experiences feel more human.</p>
+        <p>Outside of studio work, you'll find me running <em style="color:var(--pink-deep); font-style:italic; font-family:var(--serif); font-size:1.05em;">Yam's Oven</em> — a home-baking project where every batch is its own small act of craft.</p>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photo-blob" aria-hidden="true"></div>
+
+      <svg class="hero-star" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 0 L13.5 9.5 L22 11 L13.5 12.5 L12 22 L10.5 12.5 L2 11 L10.5 9.5 Z"/>
+      </svg>
+
+      <div class="hero-photo-frame">
+        <img src="headshot-2.jpg" alt="Maryam Al-Mahdi">
+      </div>
+
+      <div class="hero-badge">
+        Open to opportunities
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK FACTS -->
+<div class="facts reveal">
+  <div>
+    <p class="fact-label">Based in</p>
+    <p class="fact-value">Melbourne, AU</p>
+  </div>
+  <div>
+    <p class="fact-label">Studying</p>
+    <p class="fact-value">Bachelor of Design - UX <em>at The University of Melbourne</em></p>
+  </div>
+  <div>
+    <p class="fact-label">Working with</p>
+    <p class="fact-value">Figma, Adobe CC, Canva, Claude</p>
+  </div>
+  <div>
+    <p class="fact-label">Currently</p>
+    <p class="fact-value">Studying and Open to opportunities</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story reveal">
+  <p class="story-mark">My story —</p>
+  <h2>I make things with <span class="script">care</span>, whether that's an interface or a cake.</h2>
+
+  <div class="story-body">
+    <p>My path into design started with curiosity — about how websites work, why some apps feel effortless and others don't, and what makes a piece of writing or imagery genuinely move someone. That curiosity led me to user experience design, where I get to combine research, problem-solving, and visual craft.</p>
+
+    <p>I'm drawn to projects that have a little weight to them — work that helps people, or quietly improves something they didn't even realise was broken. My recent project, <em>Walk of Life AI</em>, was a chance to do exactly that: designing an AI-powered tool to help students build CVs and portfolios they actually feel proud of.</p>
+
+    <p>Outside of school and studio work, I bake — a lot. What started as a lockdown hobby slowly grew into something more: a small home-baking business called Yam's Oven. It's taught me as much about design as any class has — patience, iteration, attention to small details, and the importance of making something beautiful and useful at the same time.</p>
+  </div>
+</section>
+
+<!-- YAM'S OVEN -->
+<section class="yams reveal">
+  <div class="yams-blob" aria-hidden="true"></div>
+
+  <div class="yams-inner">
+    <div class="yams-text">
+      <p class="story-mark">Passion project —</p>
+
+      <h2 class="yams-title">Yam's <span class="script">Oven</span></h2>
+
+      <p class="yams-tagline">"Bespoke cakes and cupcakes, made with care."</p>
+
+      <p class="yams-desc">Yam's Oven is my home-based cake studio specialising in bespoke cakes and cupcakes — where aesthetics and decor are just as important as the taste.</p>
+
+      <p class="yams-desc">What started as weekend experiments grew into something I now share with friends, neighbours, and beyond. Every order is designed and decorated by hand — because a cake should be as beautiful as it is delicious.</p>
+
+      <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="yams-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        Follow @yamsoven
+      </a>
+    </div>
+    
+    <div class="yams-collage">
+      <div class="yams-photo p1"><img src="yams-oven/assortedcupcakes.jpg" alt="assortedcupcakes"><span class="yams-photo-label">assorted cupcakes</span></div>
+      <div class="yams-photo p2"><img src="yams-oven/vintagecake.jpeg" alt="cake"><span class="yams-photo-label">vintage-style cake</span></div>
+      <div class="yams-photo p3"><img src="yams-oven/redcupcakes.jpg" alt="cupcakes"><span class="yams-photo-label">event cupcakes</span></div>
+      <div class="yams-photo p4"><img src="yams-oven/pbcake.jpg" alt="cake"><span class="yams-photo-label">birthday cake</span></div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- INSTAGRAM FEED
+<section class="ig-section reveal">
+  <div class="ig-header">
+    <div class="ig-header-left">
+      <h2>From the <span class="script">feed</span></h2>
+      <p class="ig-handle">Latest from <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener">@yamsoven</a></p>
+    </div>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-follow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      View on Instagram →
+    </a>
+  </div>
+
+  <div class="ig-grid">
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🍞</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 142</span><span>💬 12</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🥐</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 89</span><span>💬 7</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🌾</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 203</span><span>💬 18</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🧈</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 167</span><span>💬 9</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🍰</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 245</span><span>💬 22</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🥖</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 312</span><span>💬 28</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yams.oven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🍯</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 178</span><span>💬 11</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🌸</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 134</span><span>💬 8</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🥯</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 198</span><span>💬 14</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🧁</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 256</span><span>💬 19</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🍪</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 221</span><span>💬 17</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://instagram.com/yamsoven" target="_blank" rel="noopener" class="ig-post">
+      <span class="ig-emoji">🥨</span>
+      <div class="ig-post-content">
+        <div class="ig-post-stats">
+          <span>♡ 165</span><span>💬 10</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+           -->
+           
+<!-- VALUES -->
+<section class="values reveal">
+  <div class="values-inner">
+    <p class="values-mark">— What I value —</p>
+    <h2>Slow craft. <span class="script">Real research.</span> Honest work.</h2>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="value-num">01</span>
+        <h3 class="value-title">Curiosity first</h3>
+        <p class="value-desc">Every project starts with a question. The best design happens when I take time to understand the people I'm designing for, instead of assuming I already do.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">02</span>
+        <h3 class="value-title">Make it kind</h3>
+        <p class="value-desc">Whether it's an interface or a loaf of bread, I want the thing I make to feel like it was made with care — the kind people can sense without being told.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">03</span>
+        <h3 class="value-title">Iterate gently</h3>
+        <p class="value-desc">No first draft is the final one. I'd rather make something three times and get it right than push out something passable on the first try.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <h2 class="footer-cta">
+      Let's <span class="script">work</span><br>
+      together —
+    </h2>
+    <ul class="footer-list">
+      <li><a href="mailto:hello@yourname.com">hello@yourname.com</a></li>
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="https://instagram.com/yamsoven" target="_blank" rel="noopener">Yam's Oven on Instagram ↗</a></li>
+      <li><a href="cv.pdf" download>Download CV ↓</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 — Your Name</span>
+    <span>Melbourne, AU</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="partials/include.js"></script>
+</body>
+</html>
