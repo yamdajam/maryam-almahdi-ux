@@ -22,6 +22,7 @@
     --pink-soft: #f9d6df;
     --pink-deep: #e58fa6;
     --pink-bright: #ec7a98;
+    --pink-text: #a8436a; /* pink for text on light surfaces (AA on cream) */
     --sage: #8fa68e;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --script: 'Italianno', cursive;
@@ -93,7 +94,7 @@
     text-decoration-thickness: 1px;
   }
 
-  .nav-links a:hover { color: var(--pink-bright); }
+  .nav-links a:hover { color: var(--pink-text); }
 
   /* === HERO === */
   .hero-shell { padding: 7rem 3rem 4rem; }
@@ -113,7 +114,7 @@
     font-family: var(--serif);
     font-size: 1.05rem;
     font-style: italic;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     margin-bottom: 1rem;
     display: inline-flex;
     align-items: center;
@@ -140,7 +141,7 @@
     font-family: var(--script);
     font-size: 1.35em;
     font-weight: 400;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     line-height: .85;
     display: inline-block;
     transform: translateY(0.08em);
@@ -248,7 +249,6 @@
     width: 7px; height: 7px;
     background: var(--sage);
     border-radius: 50%;
-    animation: pulse 2s ease infinite;
   }
 
   /* === FACTS STRIP === */
@@ -264,7 +264,7 @@
   }
 
   .fact-label {
-    font-size: .65rem;
+    font-size: .75rem;
     letter-spacing: .15em;
     text-transform: uppercase;
     color: var(--ink-light);
@@ -297,7 +297,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-size: 1rem;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     letter-spacing: .05em;
     margin-bottom: 1rem;
     display: inline-flex;
@@ -324,7 +324,7 @@
   .story h2 .script {
     font-family: var(--script);
     font-size: 1.35em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     display: inline-block;
     transform: translateY(0.1em);
   }
@@ -359,19 +359,6 @@
     overflow: hidden;
   }
 
-  .yams-blob {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: var(--pink-soft);
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: .5;
-    top: -10%;
-    right: -8%;
-    pointer-events: none;
-  }
-
   .yams-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -383,7 +370,7 @@
     z-index: 1;
   }
 
-  .yams-text .story-mark { color: var(--pink-bright); }
+  .yams-text .story-mark { color: var(--pink-text); }
   .yams-text .story-mark::before { background: var(--pink-bright); }
 
   .yams-title {
@@ -398,7 +385,7 @@
   .yams-title .script {
     font-family: var(--script);
     font-size: 1.5em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     display: inline-block;
     transform: translateY(0.1em);
   }
@@ -439,7 +426,7 @@
     transition: background .3s, transform .3s;
   }
 
-  .yams-cta:hover { background: var(--pink-deep); transform: translateY(-2px); }
+  .yams-cta:hover { background: var(--pink-deep); color: var(--ink); transform: translateY(-2px); }
 
   .yams-cta svg { width: 16px; height: 16px; }
 
@@ -497,7 +484,7 @@
     bottom: .5rem;
     left: .65rem;
     font-family: var(--serif);
-    font-size: .7rem;
+    font-size: .75rem;
     font-style: italic;
     color: rgba(255,255,255,.8);
   }
@@ -529,7 +516,7 @@
   .ig-header-left h2 .script {
     font-family: var(--script);
     font-size: 1.4em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     display: inline-block;
     transform: translateY(0.1em);
   }
@@ -549,7 +536,7 @@
     transition: color .3s, border-color .3s;
   }
 
-  .ig-handle a:hover { color: var(--pink-deep); border-color: var(--pink-deep); }
+  .ig-handle a:hover { color: var(--pink-text); border-color: var(--pink-text); }
 
   .ig-follow {
     display: inline-flex;
@@ -619,7 +606,7 @@
   .ig-post-stats {
     display: flex;
     gap: 1rem;
-    font-size: .7rem;
+    font-size: .75rem;
     letter-spacing: .05em;
   }
 
@@ -781,7 +768,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: .7rem;
+    font-size: .75rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: rgba(250,246,239,.5);
@@ -793,10 +780,6 @@
     to   { opacity: 1; transform: scale(1); }
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: .4; }
-  }
   @keyframes blobMorph {
     0%, 100% { border-radius: 48% 52% 60% 40% / 52% 48% 52% 48%; }
     50%      { border-radius: 56% 44% 42% 58% / 44% 56% 48% 52%; }
@@ -812,8 +795,8 @@
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.25rem; }
-    .nav-links a { font-size: .7rem; }
+    .nav-links { gap: .75rem; }
+    .nav-links a { font-size: .75rem; }
     .hero-shell { padding: 6rem 1.5rem 3rem; }
     .hero { grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
     .hero-left { order: 2; padding-right: 0; }
@@ -869,7 +852,7 @@
 
       <div class="hero-body">
         <p>I'm a UX designer and researcher completing a Bachelor of Design (UX/UI) at the University of Melbourne. My work spans user research, Figma prototyping, and front-end development — with a particular interest in how AI can make digital experiences feel more human.</p>
-        <p>Outside of studio work, you'll find me running <em style="color:var(--pink-deep); font-style:italic; font-family:var(--serif); font-size:1.05em;">Yam's Oven</em> — a home-baking project where every batch is its own small act of craft.</p>
+        <p>Outside of studio work, you'll find me running <em style="color:var(--pink-text); font-style:italic; font-family:var(--serif); font-size:1.05em;">Yam's Oven</em> — a home-baking project where every batch is its own small act of craft.</p>
       </div>
     </div>
 
@@ -928,8 +911,6 @@
 
 <!-- YAM'S OVEN -->
 <section class="yams reveal">
-  <div class="yams-blob" aria-hidden="true"></div>
-
   <div class="yams-inner">
     <div class="yams-text">
       <p class="story-mark">Passion project —</p>
