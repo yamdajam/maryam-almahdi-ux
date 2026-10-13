@@ -22,6 +22,7 @@
     --pink-soft: #f9d6df;
     --pink-deep: #e58fa6;
     --pink-bright: #ec7a98;
+    --pink-text: #a8436a; /* pink for text on light surfaces (AA on cream) */
     --serif: 'Cormorant Garamond', Georgia, serif;
     --script: 'Italianno', cursive;
     --sans: 'Jost', sans-serif;
@@ -92,7 +93,7 @@
     text-decoration-thickness: 1px;
   }
 
-  .nav-links a:hover { color: var(--pink-bright); }
+  .nav-links a:hover { color: var(--pink-text); }
 
   /* === HERO === */
   .hero-shell { padding: 7rem 3rem 4rem; }
@@ -112,7 +113,7 @@
     font-family: var(--serif);
     font-size: 1.05rem;
     font-style: italic;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     margin-bottom: 1rem;
     display: inline-flex;
     align-items: center;
@@ -139,7 +140,7 @@
     font-family: var(--script);
     font-size: 1.35em;
     font-weight: 400;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     line-height: .85;
     display: inline-block;
     transform: translateY(0.08em);
@@ -195,7 +196,7 @@
     gap: .6rem;
   }
 
-  .btn-primary:hover { background: var(--pink-deep); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--pink-deep); color: var(--ink); transform: translateY(-2px); }
 
   .btn-secondary {
     font-family: var(--serif);
@@ -208,7 +209,7 @@
     transition: color .3s, border-color .3s;
   }
 
-  .btn-secondary:hover { color: var(--pink-deep); border-color: var(--pink-deep); }
+  .btn-secondary:hover { color: var(--pink-text); border-color: var(--pink-text); }
 
   /* PHOTO SIDE */
   .hero-right {
@@ -295,7 +296,6 @@
     width: 7px; height: 7px;
     background: #8fa68e;
     border-radius: 50%;
-    animation: pulse 2s ease infinite;
   }
 
   @keyframes blobMorph {
@@ -321,7 +321,7 @@
   .section-h h2 .script {
     font-family: var(--script);
     font-size: 1.4em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     display: inline-block;
     transform: translateY(0.1em);
   }
@@ -449,7 +449,7 @@
     backdrop-filter: blur(6px);
     padding: .35rem .75rem;
     border-radius: 100px;
-    font-size: .65rem;
+    font-size: .75rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--ink-soft);
@@ -463,7 +463,6 @@
     width: 5px; height: 5px;
     background: var(--pink-deep);
     border-radius: 50%;
-    animation: pulse 2s ease infinite;
   }
 
   /* Case content */
@@ -479,11 +478,11 @@
     font-family: var(--serif);
     font-style: italic;
     font-size: .9rem;
-    color: var(--pink-deep);
+    color: var(--pink-text);
   }
 
   .case-tag {
-    font-size: .65rem;
+    font-size: .75rem;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--ink-light);
@@ -527,8 +526,8 @@
 
   .case-card:hover .case-link {
     gap: .9rem;
-    color: var(--pink-deep);
-    border-color: var(--pink-deep);
+    color: var(--pink-text);
+    border-color: var(--pink-text);
   }
 
   /* === BRIDGING SECTION === */
@@ -553,7 +552,7 @@
   .bridging-title .script {
     font-family: var(--script);
     font-size: 1.5em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     font-weight: 400;
     display: inline-block;
     transform: translateY(0.1em);
@@ -601,7 +600,7 @@
   }
 
   .bridging-sub .pink {
-    color: var(--pink-deep);
+    color: var(--pink-text);
     font-style: italic;
   }
 
@@ -632,7 +631,7 @@
   .skills-heading h2 .script {
     font-family: var(--script);
     font-size: 1.4em;
-    color: var(--pink-deep);
+    color: var(--pink-text);
     display: inline-block;
     transform: translateY(0.1em);
   }
@@ -707,19 +706,6 @@
     75%      { transform: translate(calc(var(--scroll-x, 0px) + var(--repel-x, 0px) - 10px), calc(var(--scroll-y, 0px) + var(--repel-y, 0px) - 4px)); }
   }
 
-  /* Background blobs */
-  .skills-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: .35;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .skills-blob.b1 { width: 320px; height: 320px; background: var(--pink); top: 10%; left: -5%; }
-  .skills-blob.b2 { width: 260px; height: 260px; background: var(--pink-soft); bottom: 5%; right: 5%; }
-
   /* === GRAPHIC DESIGN === */
   .gd-section { padding: 6rem 3rem 4rem; }
 
@@ -772,7 +758,7 @@
   }
 
   .gd-card-type {
-    font-size: .7rem;
+    font-size: .75rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--ink-light);
@@ -834,7 +820,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: .7rem;
+    font-size: .75rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: rgba(250,246,239,.5);
@@ -846,10 +832,6 @@
     to   { opacity: 1; transform: scale(1); }
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: .4; }
-  }
 
   .reveal {
     opacity: 0;
@@ -862,7 +844,7 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.25rem; }
-    .nav-links a { font-size: .7rem; }
+    .nav-links a { font-size: .75rem; }
     .hero-shell { padding: 6rem 1.5rem 3rem; }
     .hero { grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
     .hero-left { order: 2; padding-right: 0; text-align: left; }
@@ -907,7 +889,6 @@
       </p>
 
       <p class="hero-body">UX designer and researcher completing a Bachelor of Design (UX/UI) at the University of Melbourne. I work across research, prototyping, and visual design, with a particular eye for aesthetics and craft.</p>
-      </p>
 
       <div class="hero-ctas">
         <a href="#work" class="btn-primary">View Work ↓</a>
@@ -923,7 +904,7 @@
       </svg>
 
       <div class="hero-photo-frame">
-        <img src="headshot-2.jpg" alt="Maryam Al-Mahdi"> -->
+        <img src="headshot-2.jpg" alt="Maryam Al-Mahdi">
       </div>
 
       <div class="hero-badge">
@@ -1107,9 +1088,6 @@
 -->
 
 <section class="skills-section reveal">
-  <div class="skills-blob b1" aria-hidden="true"></div>
-  <div class="skills-blob b2" aria-hidden="true"></div>
-
   <div class="skills-heading">
     <h2>Tools & <span class="script">skills</span></h2>
     <p>— What I work with —</p>
