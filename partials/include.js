@@ -2,7 +2,8 @@
 //   <div data-include="nav"></div>
 //   <div data-include="footer"></div>
 //
-// Then highlights the current nav link based on the page's data-page attribute on <body>.
+// Then highlights the current nav link based on the page's data-page attribute on <body>,
+// and fires "partials:loaded" so main.js can sync the theme toggle label.
 
 (async function () {
   const mounts = document.querySelectorAll('[data-include]');
@@ -23,7 +24,12 @@
   // After nav is in the DOM, mark the current page's link
   const currentPage = document.body.getAttribute('data-page');
   if (currentPage) {
-    const activeLink = document.querySelector(`.nav-links a[data-nav="${currentPage}"]`);
-    if (activeLink) activeLink.classList.add('current');
+    const activeLink = document.querySelector(`.site-top a[data-nav="${currentPage}"]`);
+    if (activeLink) {
+      activeLink.classList.add('current');
+      activeLink.setAttribute('aria-current', 'page');
+    }
   }
+
+  document.dispatchEvent(new Event('partials:loaded'));
 })();
