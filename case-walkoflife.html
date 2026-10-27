@@ -3,704 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Walk of Life AI — Case Study</title>
+<title>Walk of Life AI — Case Study · Maryam Al-Mahdi</title>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Italianno&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --cream: #faf6ef;
-    --cream-warm: #f3ede1;
-    --cream-dark: #ebe4d3;
-    --ink: #1a1714;
-    --ink-soft: #4a423a;
-    --ink-light: #8a7f70;
-    --ink-faint: #c4bcae;
-    --pink: #f4b5c8;
-    --pink-soft: #f9d6df;
-    --pink-deep: #e58fa6;
-    --pink-bright: #ec7a98;
-    --sage: #8fa68e;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --script: 'Italianno', cursive;
-    --sans: 'Jost', sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* === NAV === */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background: rgba(250, 246, 239, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--cream-dark);
-  }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-logo b {
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    font-size: .9rem;
-    margin-left: .3rem;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.75rem;
-    list-style: none;
-    align-items: center;
-  }
-  .nav-links a {
-    font-size: .8rem;
-    color: var(--ink-soft);
-    text-decoration: none;
-    transition: color .3s;
-  }
-  .nav-links a:hover { color: var(--pink-bright); }
-
-  /* === BACK LINK === */
-  .back-bar {
-    padding: 6rem 3rem 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .back-link {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: .95rem;
-    color: var(--ink-soft);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    transition: color .3s, gap .3s;
-  }
-
-  .back-link:hover { color: var(--pink-deep); gap: .85rem; }
-
-  /* === HERO === */
-  .cs-hero {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 3rem 4rem;
-  }
-
-  .cs-eyebrow {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--pink-deep);
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: .75rem;
-  }
-
-  .cs-eyebrow::before {
-    content: '';
-    width: 32px; height: 1px;
-    background: var(--pink-deep);
-    display: inline-block;
-  }
-
-  .cs-title {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -.02em;
-    margin-bottom: 1.5rem;
-    max-width: 900px;
-  }
-
-  .cs-title .script {
-    font-family: var(--script);
-    font-size: 1.35em;
-    color: var(--pink-deep);
-    display: inline-block;
-    transform: translateY(0.1em);
-  }
-
-  .cs-sub {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-    color: var(--ink-soft);
-    line-height: 1.5;
-    max-width: 720px;
-    margin-bottom: 3rem;
-  }
-
-  /* Meta strip */
-  .cs-meta {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--cream-dark);
-    border-bottom: 1px solid var(--cream-dark);
-  }
-
-  .cs-meta-cell .label {
-    font-size: .65rem;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-bottom: .5rem;
-  }
-
-  .cs-meta-cell .value {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    line-height: 1.4;
-    color: var(--ink);
-  }
-
-  .cs-meta-cell .value em {
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: .9em;
-  }
-
-  /* === COVER IMAGE / FIGMA EMBED === */
-  .cs-cover {
-    max-width: 1280px;
-    margin: 0 auto 5rem;
-    padding: 0 3rem;
-  }
-
-  .cs-cover-inner {
-    aspect-ratio: 16/9;
-    background:
-      radial-gradient(circle at 25% 30%, var(--pink-soft) 0%, transparent 45%),
-      radial-gradient(circle at 75% 70%, var(--pink) 0%, transparent 40%),
-      linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-dark) 100%);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 30px 80px -20px rgba(26,23,20,0.18);
-  }
-
-  .figma-embed {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
-
-  .cs-cover-caption {
-    margin-top: 1rem;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: .9rem;
-    color: var(--ink-light);
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    flex-wrap: wrap;
-  }
-
-  .cs-cover-caption span {
-    color: var(--pink-deep);
-    font-style: normal;
-  }
-
-  .cs-cover-caption a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--cream-dark);
-    padding-bottom: 2px;
-    margin-left: auto;
-    transition: color .3s, border-color .3s;
-  }
-
-  .cs-cover-caption a:hover { color: var(--pink-deep); border-color: var(--pink-deep); }
-
-  /* === CONTENT === */
-  .cs-content {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 0 3rem;
-  }
-
-  .cs-section {
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--cream-dark);
-  }
-
-  .cs-section:last-child { border-bottom: none; }
-
-  .cs-section-mark {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: .95rem;
-    color: var(--pink-deep);
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: .75rem;
-  }
-
-  .cs-section-mark::before {
-    content: '';
-    width: 32px; height: 1px;
-    background: var(--pink-deep);
-    display: inline-block;
-  }
-
-  .cs-h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -.01em;
-    margin-bottom: 2rem;
-    max-width: 720px;
-  }
-
-  .cs-h2 .script {
-    font-family: var(--script);
-    font-size: 1.4em;
-    color: var(--pink-deep);
-    display: inline-block;
-    transform: translateY(0.1em);
-  }
-
-  .cs-h3 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 2.5rem;
-    margin-bottom: .75rem;
-    color: var(--ink);
-  }
-
-  .cs-prose {
-    font-size: 1rem;
-    color: var(--ink-soft);
-    line-height: 1.95;
-    max-width: 680px;
-  }
-
-  .cs-prose p { margin-bottom: 1.25rem; }
-
-  .cs-prose strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  .cs-prose em {
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--ink);
-  }
-
-  /* === PULL QUOTE === */
-  .pull-quote {
-    margin: 3rem 0;
-    padding: 2rem 2.5rem;
-    background: var(--cream-warm);
-    border-left: 3px solid var(--pink-deep);
-    border-radius: 0 4px 4px 0;
-  }
-
-  .pull-quote p {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: var(--ink);
-    margin-bottom: .75rem;
-  }
-
-  .pull-quote cite {
-    font-style: normal;
-    font-size: .75rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-  }
-
-  /* === THEME GRID === */
-  .theme-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 2rem 0 1rem;
-  }
-
-  .theme-card {
-    background: var(--cream-warm);
-    border-radius: 4px;
-    padding: 1.5rem 1.25rem;
-    border-left: 2px solid var(--pink-soft);
-  }
-
-  .theme-card-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: .85rem;
-    color: var(--pink-deep);
-    margin-bottom: .5rem;
-    display: block;
-  }
-
-  .theme-card-title {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: .5rem;
-    color: var(--ink);
-  }
-
-  .theme-card-desc {
-    font-size: .8rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* === PROCESS STEPS === */
-  .process {
-    margin: 2rem 0;
-  }
-
-  .process-step {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--cream-dark);
-  }
-
-  .process-step:last-child { border-bottom: 1px solid var(--cream-dark); }
-
-  .process-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.5rem;
-    color: var(--pink-deep);
-    line-height: 1;
-  }
-
-  .process-step h4 {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: .4rem;
-  }
-
-  .process-step p {
-    font-size: .9rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-  }
-
-  /* === FEATURE LIST === */
-  .feature-list {
-    margin: 2rem 0;
-  }
-
-  .feature {
-    background: var(--cream);
-    border: 1px solid var(--cream-dark);
-    border-radius: 4px;
-    padding: 1.5rem 1.75rem;
-    margin-bottom: 1rem;
-    transition: border-color .3s, background .3s;
-  }
-
-  .feature:hover {
-    border-color: var(--pink-soft);
-    background: var(--cream-warm);
-  }
-
-  .feature-label {
-    font-size: .65rem;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    color: var(--pink-deep);
-    margin-bottom: .5rem;
-  }
-
-  .feature h4 {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: .5rem;
-  }
-
-  .feature p {
-    font-size: .9rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-  }
-
-  /* === METRICS === */
-  .metrics-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 2.5rem 0;
-  }
-
-  .metric {
-    background: var(--cream-warm);
-    padding: 2rem 1.5rem;
-    border-radius: 4px;
-    text-align: center;
-  }
-
-  .metric-num {
-    font-family: var(--serif);
-    font-size: 3rem;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: .5rem;
-    display: block;
-  }
-
-  .metric-num .small { font-size: .55em; color: var(--ink-soft); }
-
-  .metric-label {
-    font-size: .7rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-  }
-
-  /* === FINDINGS === */
-  .findings {
-    margin: 2rem 0;
-    list-style: none;
-  }
-
-  .findings li {
-    padding: 1rem 0 1rem 2rem;
-    border-bottom: 1px solid var(--cream-dark);
-    font-size: .95rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    position: relative;
-  }
-
-  .findings li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    top: 1rem;
-    color: var(--pink-deep);
-    font-family: var(--serif);
-    font-style: italic;
-  }
-
-  .findings li:last-child { border-bottom: none; }
-
-  /* === REFLECTION === */
-  .reflection {
-    background: var(--ink);
-    color: var(--cream);
-    margin: 4rem -3rem 0;
-    padding: 5rem 3rem;
-    position: relative;
-  }
-
-  .reflection-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .reflection .cs-section-mark { color: var(--pink); }
-  .reflection .cs-section-mark::before { background: var(--pink); }
-
-  .reflection .cs-h2 { color: var(--cream); }
-  .reflection .cs-h2 .script { color: var(--pink); }
-
-  .reflection .cs-prose {
-    color: rgba(250,246,239,.75);
-  }
-
-  .reflection .cs-prose strong { color: var(--cream); }
-  .reflection .cs-prose em { color: var(--pink); }
-
-  /* === NEXT PROJECT === */
-  .next-project {
-    max-width: 1100px;
-    margin: 6rem auto 0;
-    padding: 0 3rem 6rem;
-    text-align: center;
-  }
-
-  .next-label {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--pink-deep);
-    margin-bottom: 1rem;
-  }
-
-  .next-link {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--ink);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    transition: gap .3s, color .3s;
-  }
-
-  .next-link:hover { gap: 1.5rem; color: var(--pink-deep); }
-
-  .next-link .arrow {
-    font-family: var(--script);
-    font-size: 1.4em;
-    color: var(--pink-deep);
-  }
-
-  /* === FOOTER === */
-  footer {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 4rem 3rem 2rem;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(250,246,239,.15);
-    align-items: end;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer-cta {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    font-weight: 400;
-    line-height: 1.05;
-  }
-
-  .footer-cta .script {
-    font-family: var(--script);
-    font-size: 1.4em;
-    color: var(--pink);
-    display: inline-block;
-    transform: translateY(0.1em);
-  }
-
-  .footer-list { list-style: none; }
-  .footer-list li { margin-bottom: .75rem; }
-
-  .footer-list a {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    color: var(--cream);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-    transition: border-color .3s, color .3s;
-  }
-
-  .footer-list a:hover { border-color: var(--pink); color: var(--pink); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: .7rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(250,246,239,.5);
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  /* === ANIMATIONS === */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* === RESPONSIVE === */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.25rem; }
-    .nav-links a { font-size: .7rem; }
-    .back-bar { padding: 5rem 1.5rem 1rem; }
-    .cs-hero { padding: 1rem 1.5rem 3rem; }
-    .cs-meta { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .cs-cover { padding: 0 1.5rem; margin-bottom: 3rem; }
-    .cs-content { padding: 0 1.5rem; }
-    .cs-section { padding: 3rem 0; }
-    .theme-grid { grid-template-columns: 1fr 1fr; }
-    .metrics-row { grid-template-columns: 1fr 1fr 1fr; }
-    .reflection { margin: 3rem -1.5rem 0; padding: 3rem 1.5rem; }
-    .next-project { padding: 0 1.5rem 4rem; }
-    .footer-top { grid-template-columns: 1fr; }
-    footer { padding: 3rem 1.5rem 2rem; }
-  }
-
-  @media (max-width: 500px) {
-    .theme-grid { grid-template-columns: 1fr; }
-    .metrics-row { grid-template-columns: 1fr; }
-    .cs-meta { grid-template-columns: 1fr; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page" data-page="work">
 
-<nav>
-  <a class="nav-logo" href="index.html"><i>Studio</i><b>YourName</b></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="index.html#graphic">Graphics</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+<div data-include="nav"></div>
 
 <!-- BACK -->
 <div class="back-bar">
-  <a href="index.html#work" class="back-link">← Back to work</a>
+  <a href="index.html#work" class="back-link meta">← Back to work</a>
 </div>
 
 <!-- HERO -->
 <section class="cs-hero">
-  <p class="cs-eyebrow">Case study, 2024</p>
+  <p class="cs-eyebrow meta">Case study, 2024</p>
 
   <h1 class="cs-title">
     Walk of Life AI <span class="script">—</span> an AI tool for career documents.
@@ -743,7 +71,7 @@
       title="Walk of Life AI — Figma prototype">
     </iframe>
   </div>
-  <p class="cs-cover-caption">
+  <p class="cs-cover-caption meta">
     <span>↑</span> Live prototype — click through it. <a href="https://embed.figma.com/proto/f2kEXcvfhruFwDtF04sU5c/INFO-10003-Assignment-3?node-id=218-183&p=f&viewport=472%2C164%2C0.03&scaling=scale-down&content-scaling=fixed&starting-point-node-id=218%3A183&show-proto-sidebar=1&page-id=23%3A2&embed-host=share" target="_blank" rel="noopener">Open in Figma ↗</a>
   </p>
 </div>
@@ -753,7 +81,7 @@
 
   <!-- OVERVIEW -->
   <section class="cs-section reveal">
-    <p class="cs-section-mark">01 — The problem</p>
+    <p class="cs-section-mark meta">01 — The problem</p>
     <h2 class="cs-h2">Existing tools make every CV look the <span class="script">same</span>.</h2>
     <div class="cs-prose">
       <p>Students rely on Canva and Word for CVs and portfolios, but templates are recycled across thousands of applicants. The goal: build an AI tool that helps students move faster <em>without</em> producing generic, AI-flavoured output.</p>
@@ -762,7 +90,7 @@
 
   <!-- RESEARCH -->
   <section class="cs-section reveal">
-    <p class="cs-section-mark">02 — Research</p>
+    <p class="cs-section-mark meta">02 — Research</p>
     <h2 class="cs-h2">Five students, one big <span class="script">tension</span>.</h2>
     <div class="cs-prose">
       <p>We ran semi-structured interviews with five undergraduates across design, architecture, data science, sociology, and commerce, then ran a thematic analysis on the transcripts.</p>
@@ -811,7 +139,7 @@
 
   <!-- DESIGN PROCESS -->
   <section class="cs-section reveal">
-    <p class="cs-section-mark">03 — Process</p>
+    <p class="cs-section-mark meta">03 — Process</p>
     <h2 class="cs-h2">Paper, then <span class="script">pixels</span>.</h2>
 
     <div class="process">
@@ -841,7 +169,7 @@
 
   <!-- KEY FEATURES -->
   <section class="cs-section reveal">
-    <p class="cs-section-mark">04 — Features</p>
+    <p class="cs-section-mark meta">04 — Features</p>
     <h2 class="cs-h2">What we <span class="script">built</span>.</h2>
 
     <div class="feature-list">
@@ -873,7 +201,7 @@
 
   <!-- TESTING -->
   <section class="cs-section reveal">
-    <p class="cs-section-mark">05 — Testing</p>
+    <p class="cs-section-mark meta">05 — Testing</p>
     <h2 class="cs-h2">Five users, one think-aloud <span class="script">session</span>.</h2>
     <div class="cs-prose">
       <p>Live testing via Zoom with five participants. 22 tasks each, followed by a short post-trial interview.</p>
@@ -918,7 +246,7 @@
   <section class="cs-section reveal" style="border-bottom: none; padding-bottom: 0;">
     <div class="reflection">
       <div class="reflection-inner">
-        <p class="cs-section-mark">06 — Reflection</p>
+        <p class="cs-section-mark meta">06 — Reflection</p>
         <h2 class="cs-h2">What I took <span class="script">away</span>.</h2>
         <div class="cs-prose">
           <p>The biggest tension was <em>simplicity vs. depth</em>. Efficiency users loved the minimal interface; design-led users wanted more control. In a production version this calls for tiered modes rather than one fixed UI.</p>
@@ -934,37 +262,15 @@
 
 <!-- NEXT PROJECT -->
 <section class="next-project reveal">
-  <p class="next-label">Next case study</p>
+  <p class="next-label meta">Next case study</p>
   <a href="case-study-bakery.html" class="next-link">
     Website Redesign for a Bakery <span class="arrow">↗</span>
   </a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <h2 class="footer-cta">
-      Let's <span class="script">work</span><br>
-      together —
-    </h2>
-    <ul class="footer-list">
-      <li><a href="mailto:hello@yourname.com">hello@yourname.com</a></li>
-      <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="https://instagram.com/yamsoven" target="_blank" rel="noopener">Yam's Oven on Instagram ↗</a></li>
-      <li><a href="cv.pdf" download>Download CV ↓</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2024 — Your Name</span>
-    <span>Melbourne, AU</span>
-  </div>
-</footer>
+<div data-include="footer"></div>
 
-<script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+<script src="main.js"></script>
+<script src="partials/include.js"></script>
 </body>
 </html>
