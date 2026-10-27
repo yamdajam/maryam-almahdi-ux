@@ -157,12 +157,12 @@ body::after {
 /* ───────── 3. Top bar (partials/nav.html) + theme toggle ───────── */
 .site-top {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   gap: 32px;
-  align-items: start;
+  align-items: center;
 }
 .page .site-top { padding: 28px 32px; }
-.site-name { color: var(--ink); text-decoration: none; }
+.site-name { color: var(--ink); text-decoration: none; justify-self: start; }
 .nav { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; }
 .nav a { color: var(--ink); text-decoration: none; position: relative; }
 .nav a::after {
@@ -172,8 +172,7 @@ body::after {
 }
 .nav a:hover::after, .nav a:focus-visible::after, .nav a.current::after { transform: scaleX(1); }
 
-.top-right { display: flex; gap: 22px; align-items: flex-start; }
-.right-meta { text-align: right; }
+.top-right { display: flex; gap: 22px; align-items: center; justify-self: end; }
 .theme-toggle {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 12px 6px 8px;
@@ -780,9 +779,8 @@ a.glass:hover::before { transform: translateX(12%); }
   .hero { padding: 20px 16px; }
   .page .site-top { padding: 20px 16px; }
   .site-top { grid-template-columns: 1fr auto; gap: 14px 16px; }
-  .site-top nav { grid-column: 1 / -1; grid-row: 2; }
+  .site-top nav { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
   .nav { gap: 14px; }
-  .right-meta { display: none; }
   .name .line.second { padding-left: 8vw; }
   .tagline, .hero-ctas { margin-left: 0; margin-right: 0; }
   #ascii { font-size: 4.2px; right: -6vw; opacity: .8; }
