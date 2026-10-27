@@ -157,12 +157,11 @@ body::after {
 /* ───────── 3. Top bar (partials/nav.html) + theme toggle ───────── */
 .site-top {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 32px;
   align-items: start;
 }
 .page .site-top { padding: 28px 32px; }
-.site-name { color: var(--ink); text-decoration: none; }
 .nav { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; }
 .nav a { color: var(--ink); text-decoration: none; position: relative; }
 .nav a::after {
@@ -779,8 +778,7 @@ a.glass:hover::before { transform: translateX(12%); }
   body { font-size: 18px; }
   .hero { padding: 20px 16px; }
   .page .site-top { padding: 20px 16px; }
-  .site-top { grid-template-columns: 1fr auto; gap: 14px 16px; }
-  .site-top nav { grid-column: 1 / -1; grid-row: 2; }
+  .site-top { gap: 14px 16px; }
   .nav { gap: 14px; }
   .right-meta { display: none; }
   .name .line.second { padding-left: 8vw; }
