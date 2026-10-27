@@ -443,23 +443,6 @@ a.glass:hover::before { transform: translateX(12%); }
 .view .arrow { transition: transform .4s ease; }
 .glass:hover .view .arrow { transform: translateX(6px); }
 
-/* Case studies without a page yet: ASCII critter on the thumb, no link */
-.soon-art {
-  position: absolute; left: 50%; top: 54%; z-index: 1;
-  transform: translate(-50%, -50%);
-  margin: 0; padding: 12px 16px;
-  font-family: var(--mono); font-size: 14px; line-height: 1.15;
-  white-space: pre; color: #262b26;
-  background: rgba(255, 255, 255, .72);
-  border-radius: 12px;
-  transition: transform .6s cubic-bezier(.2,.7,.2,1);
-}
-.soon-art .p { color: #d9503f; }
-.soon-art .c { color: #a8871c; }
-.soon-art .g { color: #4f6d4b; }
-.glass.soon:hover .soon-art { transform: translate(-50%, -50%) rotate(-2deg) scale(1.04); }
-.glass.soon .view { color: var(--ink-soft); }
-
 /* Lower half of the homepage: intro, skills, graphic design */
 .more { position: relative; overflow-x: clip; isolation: isolate; padding: 0 32px 120px; }
 .more > section { max-width: 1240px; padding-top: 100px; }
