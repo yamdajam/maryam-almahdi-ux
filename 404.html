@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Maryam Al-Mahdi</title>
+<script>
+  // GitHub Pages serves this page for missing URLs at any depth, so point
+  // relative paths at the site root (/maryam-almahdi-ux/ on github.io).
+  (function () {
+    var seg = location.pathname.split("/")[1];
+    var root = location.hostname.endsWith("github.io") && seg ? "/" + seg + "/" : "/";
+    document.write('<base href="' + root + '">');
+  })();
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/icons/favicon.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page">
+
+<div data-include="nav"></div>
+
+<section class="cs-hero">
+  <p class="cs-eyebrow meta">Error 404</p>
+  <h1 class="cs-title">This page <span class="script">wandered off</span>.</h1>
+  <p class="cs-sub">The link might be old, or the page may have moved. The work is still here, though.</p>
+  <p><a href="index.html" class="pill solid">Back to home →</a></p>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="js/main.js"></script>
+<script src="js/include.js"></script>
+</body>
+</html>
