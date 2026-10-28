@@ -2,19 +2,30 @@
 //   <div data-include="nav"></div>
 //   <div data-include="footer"></div>
 //
+// Paths are resolved from the site root (the folder above js/), so pages in
+// subfolders like case-studies/ get the same nav and footer with working links.
+//
 // Then highlights the current nav link based on the page's data-page attribute on <body>,
 // and fires "partials:loaded" so main.js can sync the theme toggle label.
 
 (async function () {
+  const root = new URL('../', document.currentScript.src);
   const mounts = document.querySelectorAll('[data-include]');
 
   await Promise.all(
     Array.from(mounts).map(async (el) => {
       const name = el.getAttribute('data-include');
       try {
-        const res = await fetch(`partials/${name}.html`);
+        const res = await fetch(new URL(`partials/${name}.html`, root));
         if (!res.ok) throw new Error(`Failed to load ${name}.html`);
-        el.outerHTML = await res.text();
+        const tpl = document.createElement('template');
+        tpl.innerHTML = await res.text();
+        // Partial links are written relative to the site root; rebase them
+        tpl.content.querySelectorAll('a[href]').forEach((a) => {
+          const href = a.getAttribute('href');
+          if (!/^(#|[a-z]+:|\/)/i.test(href)) a.href = new URL(href, root).href;
+        });
+        el.replaceWith(tpl.content);
       } catch (err) {
         console.error(err);
       }
