@@ -1,0 +1,290 @@
+---
+name: Maryam Al-Mahdi — UX Portfolio
+description: A sunlit studio notebook. Warm paper, film grain, drifting pastel light, frosted glass, and big italic serif type labelled in small mono caps.
+colors:
+  paper: "#f3f0e8"
+  ink: "#262b26"
+  ink-soft: "#5b625a"
+  accent: "#a3402c"
+  accent-inverse: "#f3a98c"
+  sage: "#9db59a"
+  dusty-blue: "#a9c3d6"
+  butter: "#efe2a2"
+  peach: "#f3a98c"
+  coral: "#f96858"
+  leaf: "#6f8f6b"
+  line: "rgba(38, 43, 38, .18)"
+  surface: "rgba(255, 255, 255, .42)"
+  glass-bg: "rgba(255, 255, 255, .26)"
+  glass-border: "rgba(255, 255, 255, .6)"
+  chip-bg: "rgba(255, 255, 255, .45)"
+  paper-dark: "#121613"
+  ink-dark: "#ece7da"
+  ink-soft-dark: "#a9b0a6"
+  glass-bg-dark: "rgba(28, 33, 29, .38)"
+typography:
+  display:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "clamp(64px, 15vw, 230px)"
+    fontWeight: 400
+    lineHeight: 0.82
+    letterSpacing: "-0.02em"
+  headline:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "clamp(44px, 7vw, 96px)"
+    fontWeight: 400
+    lineHeight: 0.95
+    letterSpacing: "-0.02em"
+  section:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "clamp(34px, 4.4vw, 54px)"
+    fontWeight: 400
+    lineHeight: 1.02
+    letterSpacing: "-0.01em"
+  title:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "clamp(32px, 3.2vw, 44px)"
+    fontWeight: 400
+    lineHeight: 0.95
+  body:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "19px"
+    fontWeight: 400
+    lineHeight: 1.5
+  prose:
+    fontFamily: "Instrument Serif, Times New Roman, serif"
+    fontSize: "21px"
+    fontWeight: 400
+    lineHeight: 1.6
+  label:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "0.12em"
+rounded:
+  notch: "4px"
+  thumb: "12px"
+  surface: "16px"
+  card-sm: "18px"
+  card: "22px"
+  panel: "24px"
+  pill: "999px"
+spacing:
+  xs: "6px"
+  sm: "10px"
+  md: "14px"
+  lg: "22px"
+  xl: "28px"
+  gutter: "32px"
+  gutter-mobile: "16px"
+  2xl: "48px"
+  3xl: "64px"
+  section: "120px"
+components:
+  button-primary:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "10px 18px"
+  button-primary-hover:
+    backgroundColor: "{colors.ink-soft}"
+    textColor: "{colors.paper}"
+  button-glass:
+    backgroundColor: "{colors.glass-bg}"
+    textColor: "{colors.ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "10px 18px"
+  chip:
+    backgroundColor: "{colors.chip-bg}"
+    textColor: "{colors.ink}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "5px 10px"
+  card-glass:
+    backgroundColor: "{colors.glass-bg}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "16px 16px 24px"
+  card-thumb:
+    rounded: "{rounded.thumb}"
+  surface-block:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.surface}"
+    padding: "22px 26px"
+  panel-inverse:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.panel}"
+    padding: "64px 48px"
+---
+
+# Design System: Maryam Al-Mahdi — UX Portfolio
+
+## Overview
+
+**Creative North Star: "The Sunlit Studio Notebook"**
+
+A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.
+
+The system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies and About page** are the notebook's written pages: the same paper, ink, type and accent, but no glows, quiet translucent surfaces with hairline borders, generous reading measure, and an inverted ink panel for reflections and values. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.
+
+Craft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.
+
+**Key Characteristics:**
+- Warm paper and green-black ink, with a global film grain layer.
+- One serif at one weight (400); hierarchy from size, italics and mono labels.
+- Pastel light fields (homepage only) under frosted glass.
+- Pills everywhere for actions and tags; generous rounded cards.
+- A single deep terracotta accent for emphasis and small markers.
+- Slow, soft motion on a shared easing curve; everything respects reduced motion.
+
+## Colors
+
+A warm, low-contrast pastel garden set on paper, held together by one green-black ink and one terracotta accent.
+
+### Primary
+- **Deep Terracotta** (accent): the only "loud" colour in text. Italic `.script` emphasis words, pull-quote rule, step numbers, mono feature labels, arrows in findings lists and the next-project link, active slideshow dot. Deepened from coral so it passes AA as text on Warm Paper. In dark mode it swaps to Warm Peach.
+- **Warm Peach** (accent-inverse): the accent's stand-in wherever the background is ink (inverse panels) and the dark-mode accent.
+
+### Secondary
+The pastel garden. These are light sources and fills, never text colours.
+- **Soft Sage** (sage): glow fields, thumbnail gradients, "AI helped" column top rule.
+- **Dusty Blue** (dusty-blue): glow fields, default thumbnail gradient start.
+- **Pale Butter** (butter): glow fields, highlighter behind `<strong>` in prose, cream-toned skill bubbles.
+- **Warm Peach** (peach): glow fields, peach-toned skill bubbles.
+- **Bright Coral** (coral): the most saturated pastel; a low-opacity glow in the work section and the petal colour in ASCII sprigs. Never used for text on paper.
+
+### Tertiary
+- **Muted Leaf Green** (leaf): the "open to opportunities" status dot and leaf colour in ASCII ornaments.
+
+### Neutral
+- **Warm Paper** (paper): page background in light mode, text on inverse panels.
+- **Green-Black Ink** (ink): body text, headings, solid pill background, inverse panel background, focus outline.
+- **Muted Grey-Green** (ink-soft): secondary text, metadata labels, sub-headings, card descriptions.
+- **Hairline** (line): section dividers, meta-table rules, quiet surface borders.
+- **Quiet Surface** (surface): translucent fill for calm content blocks on reading pages.
+- **Frosted Glass** (glass-bg, glass-border, chip-bg): translucent fills and bright edges for glass cards, pills and chips.
+- **Night Paper / Cream Ink / Soft Sage-Grey** (paper-dark, ink-dark, ink-soft-dark): the dark-mode paper, ink and secondary text. Glass darkens to a smoky green (glass-bg-dark) with a faint white edge.
+
+### Named Rules
+**The One Accent Rule.** Deep Terracotta is the only colour used for text emphasis. Pastels light the page; they never carry words.
+
+**The Pastels-Are-Light Rule.** Sage, blue, butter, peach and coral appear as blurred light, gradients, highlighter and swatches. Never as flat solid UI fills behind body text.
+
+**The Two-Theme Rule.** Every colour decision is made through the custom properties on `:root`, with a dark value defined for both the system-preference block and `[data-theme="dark"]`. No hard-coded colour may break dark mode (the white label backgrounds on thumbnails are the deliberate exception: they sit on fixed light artwork).
+
+## Typography
+
+**Display Font:** Instrument Serif (with Times New Roman, serif)
+**Body Font:** Instrument Serif (same family)
+**Label/Mono Font:** JetBrains Mono (with ui-monospace, monospace)
+
+**Character:** A condensed, slightly literary serif used at every size from a 230px name to 18px list items, paired with a small, technical mono in spaced capitals. The serif feels hand-set and warm; the mono feels like careful notes in the margin.
+
+### Hierarchy
+- **Display** (400, clamp(64px, 15vw, 230px), 0.82): the name in the homepage hero only. Second line indented and italic.
+- **Headline** (400, clamp(44px, 7vw, 96px), 0.95, -0.02em): case-study titles, About title, homepage section heads (slightly smaller at clamp(40px, 6vw, 76px)), footer call to action.
+- **Section** (400, clamp(34px, 4.4vw, 54px), 1.02): headings inside case studies and the About story, capped near 20ch.
+- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles; featured cards grow to clamp(40px, 4.6vw, 64px). Smaller titles (24–30px) for theme cards, features, values, process steps.
+- **Body** (400, 19px, 1.5; 18px under 760px): default text; card descriptions at 38ch.
+- **Prose** (400, 21px, 1.6, max 62ch): long-form reading in case studies and the About story.
+- **Label** (400, 11px, 0.12em, uppercase, mono): every piece of metadata: eyebrows, tags, meta tables, card rows, citations, nav and pill text.
+
+### Named Rules
+**The Single Weight Rule.** Everything is weight 400. Hierarchy comes from size, italics, colour (ink vs ink-soft vs accent) and the switch to mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.
+
+**The Italic Voice Rule.** Italic is the emphasis voice: the second half of a heading, the tagline, "Read case study", sub-titles, pull quotes. Use it for the human, spoken part of a line.
+
+**The Margin Note Rule.** Facts (dates, codes, team size, role, tags) go in the mono label style, never in the serif.
+
+## Layout
+
+- **Gutters:** 32px page gutters on desktop, 16px under 760px.
+- **Containers:** homepage content up to 1240px (left-aligned, not centred); case-study header 1100px; case-study reading column 820px with prose at 62ch; covers and About sections up to 1240px, centred.
+- **Hero:** full viewport height (`100svh`) grid of top bar, name, and bottom row; the tagline and CTAs sit right-aligned under the name at 34ch, breaking the left edge for an editorial feel.
+- **Work grid:** two equal columns with 28px gaps; the featured card (and a lone last card) spans both columns with image and text side by side. One column under 760px.
+- **Meta tables:** four-column grids (case-study facts, About facts) bounded by hairlines top and bottom, collapsing to two columns under 900px and one under 500px.
+- **Rhythm:** sections breathe at 100–120px on the homepage, 64px between case-study sections, each separated by a hairline. Small gaps step through 6, 10, 14, 22, 28px.
+- **Breakpoints:** 900px (grids halve, About hero stacks, bubbles become a wrapped list), 760px (single column, mobile gutters, nav drops to its own row), 500px (meta tables single column).
+
+## Elevation & Depth
+
+Depth is **glass over light**. On the homepage, the deepest layer is drifting blurred colour fields; above them, frosted glass with `backdrop-filter: blur(22px) saturate(1.5)` picks up that light, a bright inset top edge suggests a pane, and a soft, far-dropped ambient shadow grounds it. A fixed film-grain layer sits above everything (multiply in light, overlay in dark). Reading pages drop the glows and use translucent surfaces with hairline borders, so they read as flat paper. Shadows are always soft and low-contrast, and only appear under glass and photos.
+
+### Shadow Vocabulary
+- **Glass at rest** (`inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(255,255,255,.06), 0 20px 50px -24px var(--glass-shadow)`): case and graphic-design cards.
+- **Glass lifted** (`inset 0 1px 0 var(--glass-hi), 0 30px 60px -26px var(--glass-shadow)`): card hover/focus with a 6px rise.
+- **Bubble** (`inset 0 1px 0 var(--glass-hi), 0 12px 30px -18px var(--glass-shadow)`): skill bubbles.
+- **Photo** (`0 20px 40px -18px var(--glass-shadow)`): Yam's Oven collage photos, framed with a 6px paper border.
+
+### Named Rules
+**The Glass-Needs-Light Rule.** Glass only appears where there is coloured light behind it to frost. With no glows (reading pages), use the Quiet Surface instead.
+
+**The Readable Fallback Rule.** Where `backdrop-filter` is unsupported, glass, pills and the theme toggle fall back to 92% paper so text stays legible.
+
+## Shapes
+
+Soft and rounded throughout, with no hard corners on interactive elements.
+- **Pills** (999px) for every action, tag, chip, bubble and the theme toggle.
+- **Cards** are generously rounded (22px; 18px for small graphic-design tiles), with thumbnails inset at 12px.
+- **Calm surfaces** on reading pages at 16px; the inverse panel at 24px (18px on mobile).
+- **The Arch:** portraits use an arched-window frame, a fully round top with gently rounded bottom corners (160px 160px 14px 14px on the homepage; 210px 210px 16px 16px on About). This is the signature silhouette.
+- **The Notch:** pull quotes have a 3px terracotta left rule with a near-square 4px left corner and 16px on the right.
+- Circles for dots: status dot, slideshow dots, swatches, theme-toggle half-moon.
+
+## Components
+
+### Buttons (Pills)
+Soft and tactile: round, translucent, and they rise a little when touched.
+- **Shape:** full pill (999px), 10px 18px padding, mono label text, optional 14px icon or arrow glyph (↓ ↗ →).
+- **Primary (solid):** Green-Black Ink fill, Warm Paper text. Hover lightens to Muted Grey-Green.
+- **Glass:** Frosted Glass fill with a bright 1px glass edge and 14px backdrop blur. Hover brightens the glass and lifts 2px over .4s.
+- **Focus:** 2px ink outline, 3px offset (global `:focus-visible`).
+
+### Chips
+- **Style:** small pills (5px 10px) in mono label text, chip-bg fill, bright chip-border edge, ink text. Used for project tags in card footers.
+- **Thumbnail tags:** mono labels on a 70% white pill pinned to the top of a thumbnail, always dark ink (they sit on fixed light artwork).
+
+### Cards / Containers
+- **Glass case card:** 22px radius, 16px 16px 24px padding, column layout with 22px gap: thumbnail, mono row (number + year), title, description, chips, then a hairline footer with colour swatches and an italic "Read case study →". A diagonal sheen overlays the card and slides 12% on hover while the card rises 6px. Featured cards go horizontal.
+- **Thumbnails:** soft-focus by default (screenshots blurred 3px, abstract "bloom" art blurred 18px), sharpening to full focus on hover/focus over .9s. Touch devices show them sharp.
+- **Coming-soon card:** same glass card, unlinked, with a hand-made ASCII critter in a 72% white box on the thumbnail that tilts on hover, and a muted "Coming soon ✿".
+- **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, hairline border, 16px radius, no shadow.
+- **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections and About values; accent swaps to Warm Peach inside.
+
+### Navigation
+- **Top bar:** three-column grid: name at left, centred nav (Work, About, Contact), theme toggle at right. Plain ink text links in the body serif.
+- **Hover/active:** a 1px underline grows from the left over .35s; the current page keeps it.
+- **Theme toggle:** a glass pill holding a half-filled circle that rotates 180° between themes.
+- **Mobile (<760px):** name and toggle on the first row, nav centred on a second row.
+
+### Metadata Tables
+Four-column facts strips (Project, Role, Timeline, Team / Based in, Studying…) bounded by hairlines: a mono label over a 20–22px serif value with an optional italic ink-soft second line.
+
+### Skill Bubbles (signature)
+Italic serif words in glass pills, scattered absolutely across a 360px field, each floating on its own 7–10s loop, drifting with scroll and moving away from the cursor. Peach and cream tones mix in. Below 900px they become a static wrapped list.
+
+### ASCII Ornaments (signature)
+Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the hero name, small sprigs beside section heads (coral petals, ochre centres, leaf stems), and critters on coming-soon thumbnails. Always `aria-hidden` and decorative.
+
+## Do's and Don'ts
+
+### Do:
+- **Do** keep every heading and body text at weight 400; create emphasis with italics, size, the terracotta accent or the butter highlighter.
+- **Do** put all facts, dates, tags and codes in the 11px mono label style with 0.12em tracking.
+- **Do** define every colour as a `:root` custom property with values for both light and dark themes.
+- **Do** use pills (999px) for actions and tags, and glass only over coloured light.
+- **Do** use the shared soft easing (`cubic-bezier(.2,.7,.2,1)`) for lifts, sheens and focus effects, and disable animation and transitions under `prefers-reduced-motion`.
+- **Do** keep reading pages calm: 820px column, 21px prose at 62ch, Quiet Surface blocks, hairline section dividers.
+- **Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices.
+
+### Don't:
+- **Don't** use bold (600+) weights anywhere, including `<strong>`.
+- **Don't** put glow fields, drifting light or heavy glass on case-study or About reading pages.
+- **Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.
+- **Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.
+- **Don't** introduce a second display or body typeface; the system is one serif plus one mono.

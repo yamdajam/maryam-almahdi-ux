@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T10:05:43.489238+00:00",
+  "title": "Design System: Maryam Al-Mahdi — UX Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(95.5% 0.011 89.7)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#27251f",
+          "#44423b",
+          "#64615a",
+          "#85827b",
+          "#a8a59d",
+          "#ccc9c1",
+          "#f1eee6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Green-Black Ink",
+        "canonical": "oklch(28.2% 0.011 145.3)",
+        "tonalRamp": [
+          "#080c08",
+          "#222722",
+          "#3e443e",
+          "#5d635d",
+          "#7e847e",
+          "#a1a7a1",
+          "#c5cbc5",
+          "#eaf1ea"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Muted Grey-Green",
+        "canonical": "oklch(48.7% 0.015 141.8)",
+        "tonalRamp": [
+          "#080d07",
+          "#212720",
+          "#3e443d",
+          "#5d645c",
+          "#7d857c",
+          "#a0a89f",
+          "#c4ccc3",
+          "#e9f1e8"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Deep Terracotta",
+        "canonical": "oklch(50.3% 0.136 33.2)",
+        "tonalRamp": [
+          "#1d0100",
+          "#4a0800",
+          "#7a1803",
+          "#a03d29",
+          "#c6604a",
+          "#ed836c",
+          "#ffb4a3",
+          "#fee9e4"
+        ]
+      },
+      "accent-inverse": {
+        "role": "primary",
+        "displayName": "Warm Peach (on ink)",
+        "canonical": "oklch(79.9% 0.097 42.2)",
+        "tonalRamp": [
+          "#1a0400",
+          "#431400",
+          "#6b2d12",
+          "#8e4d32",
+          "#b36e53",
+          "#d99174",
+          "#ffb598",
+          "#feeae2"
+        ]
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Soft Sage",
+        "canonical": "oklch(74.7% 0.046 142.1)",
+        "tonalRamp": [
+          "#011001",
+          "#172b15",
+          "#344831",
+          "#526850",
+          "#738a70",
+          "#95ad92",
+          "#b9d1b6",
+          "#def7da"
+        ]
+      },
+      "dusty-blue": {
+        "role": "secondary",
+        "displayName": "Dusty Blue",
+        "canonical": "oklch(80.4% 0.039 239.7)",
+        "tonalRamp": [
+          "#000d18",
+          "#122836",
+          "#2e4555",
+          "#4d6575",
+          "#6d8698",
+          "#90a9bb",
+          "#b3cde0",
+          "#e0f1fe"
+        ]
+      },
+      "butter": {
+        "role": "secondary",
+        "displayName": "Pale Butter",
+        "canonical": "oklch(90.8% 0.083 98.0)",
+        "tonalRamp": [
+          "#0f0b00",
+          "#2c2500",
+          "#4d4202",
+          "#6e6123",
+          "#8f8346",
+          "#b3a668",
+          "#d7ca8b",
+          "#fdf0af"
+        ]
+      },
+      "peach": {
+        "role": "secondary",
+        "displayName": "Warm Peach",
+        "canonical": "oklch(79.9% 0.097 42.2)",
+        "tonalRamp": [
+          "#1a0400",
+          "#431400",
+          "#6b2d12",
+          "#8e4d32",
+          "#b36e53",
+          "#d99174",
+          "#ffb598",
+          "#feeae2"
+        ]
+      },
+      "coral": {
+        "role": "secondary",
+        "displayName": "Bright Coral",
+        "canonical": "oklch(69.6% 0.181 28.8)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0101",
+          "#810002",
+          "#b12019",
+          "#d94b3d",
+          "#ff7463",
+          "#ffb3a7",
+          "#ffe9e5"
+        ]
+      },
+      "leaf": {
+        "role": "tertiary",
+        "displayName": "Muted Leaf Green",
+        "canonical": "oklch(61.6% 0.064 141.9)",
+        "tonalRamp": [
+          "#001000",
+          "#102d0d",
+          "#2d4b2a",
+          "#4c6b48",
+          "#6d8c69",
+          "#8fb08a",
+          "#b2d4ae",
+          "#d7fad2"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "oklch(19.5% 0.009 153.1)",
+        "tonalRamp": [
+          "#090c09",
+          "#222623",
+          "#3f4340",
+          "#5e635f",
+          "#7f8480",
+          "#a1a7a2",
+          "#c5cbc6",
+          "#eaf0ec"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Cream Ink",
+        "canonical": "oklch(92.8% 0.018 89.4)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#29251b",
+          "#464237",
+          "#656156",
+          "#878276",
+          "#a9a598",
+          "#cec9bc",
+          "#f3eee1"
+        ]
+      },
+      "ink-soft-dark": {
+        "role": "neutral",
+        "displayName": "Soft Sage-Grey",
+        "canonical": "oklch(74.9% 0.016 136.1)",
+        "tonalRamp": [
+          "#080d06",
+          "#22271f",
+          "#3e443c",
+          "#5d635a",
+          "#7e857b",
+          "#a1a79e",
+          "#c4ccc1",
+          "#eaf1e7"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#080c08",
+          "#222722",
+          "#3e443e",
+          "#5d635d",
+          "#7e847e",
+          "#a1a7a1",
+          "#c5cbc5",
+          "#eaf1ea"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Quiet Surface",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "glass-bg": {
+        "role": "neutral",
+        "displayName": "Frosted Glass",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "glass-border": {
+        "role": "neutral",
+        "displayName": "Glass Edge",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "chip-bg": {
+        "role": "neutral",
+        "displayName": "Chip Glass",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "glass-bg-dark": {
+        "role": "neutral",
+        "displayName": "Smoky Glass",
+        "canonical": "translucent; see frontmatter",
+        "tonalRamp": [
+          "#080c09",
+          "#212722",
+          "#3e443f",
+          "#5d635e",
+          "#7e847f",
+          "#a0a7a2",
+          "#c4cbc6",
+          "#eaf1eb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the homepage hero only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Case-study and About titles, homepage section heads, footer call to action."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Headings inside case studies and the About story."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Case card titles; smaller variants for theme cards, features, values."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text and card descriptions."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Long-form reading at 62ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "All metadata, tags, eyebrows, nav and pill text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-rest",
+        "value": "inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(255,255,255,.06), 0 20px 50px -24px var(--glass-shadow)",
+        "purpose": "Glass cards at rest."
+      },
+      {
+        "name": "glass-lifted",
+        "value": "inset 0 1px 0 var(--glass-hi), 0 30px 60px -26px var(--glass-shadow)",
+        "purpose": "Glass card hover/focus, with a 6px rise."
+      },
+      {
+        "name": "bubble",
+        "value": "inset 0 1px 0 var(--glass-hi), 0 12px 30px -18px var(--glass-shadow)",
+        "purpose": "Skill bubbles."
+      },
+      {
+        "name": "photo",
+        "value": "0 20px 40px -18px var(--glass-shadow)",
+        "purpose": "Collage photos with a 6px paper border."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Card lifts, sheens, focus sharpening, toggle rotation (.6–.9s)."
+      },
+      {
+        "name": "ease-standard",
+        "value": "ease .3s–.4s",
+        "purpose": "Pill hovers, underlines, arrows, link gaps."
+      },
+      {
+        "name": "drift",
+        "value": "22s–34s ease-in-out infinite alternate",
+        "purpose": "Homepage glow fields drifting 4vmax and scaling 1.08."
+      },
+      {
+        "name": "float",
+        "value": "7s–10s ease-in-out infinite",
+        "purpose": "Skill bubbles; combined with scroll drift and cursor repel."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity + translateY(28px), 1s ease",
+        "purpose": "Sections fading up on scroll."
+      },
+      {
+        "name": "theme-fade",
+        "value": "background-color, color .5s ease",
+        "purpose": "Body transition between themes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "small",
+        "value": "500px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Pill",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action (View work, More about me).",
+      "html": "<a class=\"ds-pill ds-pill-solid\" href=\"#\">View work ↓</a>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .4s ease,transform .4s ease,border-color .4s ease}.ds-pill-solid{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}.ds-pill-solid:hover{background:var(--ink-soft);border-color:var(--ink-soft);transform:translateY(-2px)}.ds-pill:focus-visible{outline:2px solid var(--ink);outline-offset:3px}"
+    },
+    {
+      "name": "Glass Pill",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "Secondary action over light (View CV, Follow @yams.oven).",
+      "html": "<a class=\"ds-pill-glass\" href=\"#\">View CV ↗</a>",
+      "css": ".ds-pill-glass{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--glass-bg);border:1px solid var(--glass-border);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:background .4s ease,transform .4s ease}.ds-pill-glass:hover{background:var(--glass-bg-hover);transform:translateY(-2px)}.ds-pill-glass:focus-visible{outline:2px solid var(--ink);outline-offset:3px}"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "Light/dark switch in the top bar; the half-moon rotates between themes.",
+      "html": "<button class=\"ds-toggle\" type=\"button\"><span class=\"ds-toggle-dot\"></span>Dark</button>",
+      "css": ".ds-toggle{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border-radius:999px;border:1px solid var(--glass-border);background:var(--glass-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .4s ease}.ds-toggle:hover{background:var(--glass-bg-hover)}.ds-toggle:hover .ds-toggle-dot{transform:rotate(180deg)}.ds-toggle:focus-visible{outline:2px solid var(--ink);outline-offset:3px}.ds-toggle-dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,var(--ink) 50%,transparent 50%);border:1px solid var(--ink);transition:transform .6s cubic-bezier(.2,.7,.2,1)}"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Centred serif links with an underline that grows from the left.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-current\">Work</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;gap:22px;font-family:var(--serif);font-size:19px}.ds-nav a{color:var(--ink);text-decoration:none;position:relative}.ds-nav a::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}.ds-nav a:hover::after,.ds-nav a:focus-visible::after,.ds-nav a.ds-current::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}"
+    },
+    {
+      "name": "Tag Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Project tags in a case card.",
+      "html": "<div class=\"ds-chips\"><span>UX Research</span><span>AI</span><span>Prototyping</span></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}.ds-chips span{padding:5px 10px;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-border);color:var(--ink)}"
+    },
+    {
+      "name": "Glass Case Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Homepage case study card: soft-focus thumbnail, title, chips, swatch footer; lifts with a sliding sheen.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-thumb\"><div class=\"ds-bloom\"></div></div><div class=\"ds-row\"><span>No. 02</span><span>2024</span></div><h3 class=\"ds-card-title\">Walk of Life <em>AI</em></h3><p class=\"ds-card-desc\">An AI-powered tool to help students create stand-out CVs and portfolios.</p><div class=\"ds-foot\"><span class=\"ds-swatches\"><b style=\"background:#a9c3d6\"></b><b style=\"background:#9db59a\"></b><b style=\"background:#efe2a2\"></b></span><span class=\"ds-view\">Read case study <span class=\"ds-arrow\">→</span></span></div></a>",
+      "css": ".ds-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:16px 16px 24px;max-width:420px;border-radius:22px;text-decoration:none;color:var(--ink);background:var(--glass-bg);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-hi),inset 0 -1px 0 rgba(255,255,255,.06),0 20px 50px -24px var(--glass-shadow);overflow:hidden;font-family:var(--serif);transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s ease,background .6s ease}.ds-card::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,var(--glass-sheen) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(255,255,255,.18) 100%);pointer-events:none;transition:transform .9s cubic-bezier(.2,.7,.2,1)}.ds-card:hover,.ds-card:focus-visible{transform:translateY(-6px);background:var(--glass-bg-hover);box-shadow:inset 0 1px 0 var(--glass-hi),0 30px 60px -26px var(--glass-shadow)}.ds-card:hover::before{transform:translateX(12%)}.ds-card:focus-visible{outline:2px solid var(--ink);outline-offset:6px}.ds-thumb{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,var(--dusty-blue),var(--sage) 55%,var(--butter))}.ds-bloom{position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,#fff9e6 0 7%,transparent 8%),radial-gradient(circle at 50% 50%,rgba(255,255,255,.45),transparent 60%);filter:blur(18px);transform:scale(1.12);transition:filter .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.ds-card:hover .ds-bloom,.ds-card:focus-visible .ds-bloom{filter:blur(0);transform:scale(1)}.ds-row{display:flex;justify-content:space-between;padding:0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}.ds-card-title{font-weight:400;font-size:40px;line-height:.95;padding:0 10px;margin:0}.ds-card-desc{font-size:19px;line-height:1.35;padding:0 10px;margin:0}.ds-foot{display:flex;justify-content:space-between;align-items:center;margin:0 10px;padding-top:10px;border-top:1px solid var(--foot-line)}.ds-swatches{display:flex;gap:5px}.ds-swatches b{width:13px;height:13px;border-radius:50%;border:1px solid rgba(255,255,255,.8)}.ds-view{font-size:20px;font-style:italic}.ds-arrow{display:inline-block;transition:transform .4s ease}.ds-card:hover .ds-arrow{transform:translateX(6px)}"
+    },
+    {
+      "name": "Pull Quote",
+      "kind": "custom",
+      "refersTo": "surface-block",
+      "description": "Participant quote on reading pages: quiet surface with a terracotta notch rule.",
+      "html": "<blockquote class=\"ds-quote\"><p>“I thought ‘visibility’ meant font size.”</p><cite>Participant 4</cite></blockquote>",
+      "css": ".ds-quote{margin:0;padding:28px 32px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px 16px 16px 4px;font-family:var(--serif);color:var(--ink)}.ds-quote p{font-style:italic;font-size:26px;line-height:1.35;margin:0 0 12px}.ds-quote cite{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}"
+    },
+    {
+      "name": "Meta Table",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Case-study facts strip: mono labels over serif values between hairlines.",
+      "html": "<div class=\"ds-meta\"><div><p class=\"ds-l\">Role</p><p class=\"ds-v\">UI Specialist<em>Team of 4</em></p></div><div><p class=\"ds-l\">Timeline</p><p class=\"ds-v\">10 weeks<em>Aug–Oct 2025</em></p></div><div><p class=\"ds-l\">Methods</p><p class=\"ds-v\">Heuristics, lab tests</p></div></div>",
+      "css": ".ds-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--serif);color:var(--ink)}.ds-l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px}.ds-v{font-size:20px;line-height:1.3;margin:0}.ds-v em{display:block;color:var(--ink-soft);font-size:.9em}"
+    },
+    {
+      "name": "Inverse Panel",
+      "kind": "card",
+      "refersTo": "panel-inverse",
+      "description": "Ink panel for reflections and values; the accent turns peach inside.",
+      "html": "<section class=\"ds-panel\"><p class=\"ds-panel-meta\">Reflection</p><h2 class=\"ds-panel-h\">What I would <em>do differently</em></h2></section>",
+      "css": ".ds-panel{background:var(--ink);color:var(--paper);border-radius:24px;padding:64px 48px;font-family:var(--serif)}.ds-panel-meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 70%,transparent);margin:0 0 14px}.ds-panel-h{font-weight:400;font-size:44px;line-height:1.02;margin:0}.ds-panel-h em{color:var(--accent-inverse)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sunlit Studio Notebook",
+    "overview": "A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.\n\nThe system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies and About page** are the notebook's written pages: the same paper, ink, type and accent, but no glows, quiet translucent surfaces with hairline borders, generous reading measure, and an inverted ink panel for reflections and values. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.\n\nCraft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.",
+    "keyCharacteristics": [
+      "Warm paper and green-black ink, with a global film grain layer.",
+      "One serif at one weight (400); hierarchy from size, italics and mono labels.",
+      "Pastel light fields (homepage only) under frosted glass.",
+      "Pills everywhere for actions and tags; generous rounded cards.",
+      "A single deep terracotta accent for emphasis and small markers.",
+      "Slow, soft motion on a shared easing curve; everything respects reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Deep Terracotta is the only colour used for text emphasis. Pastels light the page; they never carry words.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pastels-Are-Light Rule",
+        "body": "Sage, blue, butter, peach and coral appear as blurred light, gradients, highlighter and swatches. Never as flat solid UI fills behind body text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Theme Rule",
+        "body": "Every colour decision is made through the custom properties on `:root`, with a dark value defined for both the system-preference block and `[data-theme=\"dark\"]`. No hard-coded colour may break dark mode (the white label backgrounds on thumbnails are the deliberate exception: they sit on fixed light artwork).",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Weight Rule",
+        "body": "Everything is weight 400. Hierarchy comes from size, italics, colour (ink vs ink-soft vs accent) and the switch to mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic Voice Rule",
+        "body": "Italic is the emphasis voice: the second half of a heading, the tagline, \"Read case study\", sub-titles, pull quotes. Use it for the human, spoken part of a line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Margin Note Rule",
+        "body": "Facts (dates, codes, team size, role, tags) go in the mono label style, never in the serif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glass-Needs-Light Rule",
+        "body": "Glass only appears where there is coloured light behind it to frost. With no glows (reading pages), use the Quiet Surface instead.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Readable Fallback Rule",
+        "body": "Where `backdrop-filter` is unsupported, glass, pills and the theme toggle fall back to 92% paper so text stays legible.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every heading and body text at weight 400; create emphasis with italics, size, the terracotta accent or the butter highlighter.",
+      "**Do** put all facts, dates, tags and codes in the 11px mono label style with 0.12em tracking.",
+      "**Do** define every colour as a `:root` custom property with values for both light and dark themes.",
+      "**Do** use pills (999px) for actions and tags, and glass only over coloured light.",
+      "**Do** use the shared soft easing (`cubic-bezier(.2,.7,.2,1)`) for lifts, sheens and focus effects, and disable animation and transitions under `prefers-reduced-motion`.",
+      "**Do** keep reading pages calm: 820px column, 21px prose at 62ch, Quiet Surface blocks, hairline section dividers.",
+      "**Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices."
+    ],
+    "donts": [
+      "**Don't** use bold (600+) weights anywhere, including `<strong>`.",
+      "**Don't** put glow fields, drifting light or heavy glass on case-study or About reading pages.",
+      "**Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.",
+      "**Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.",
+      "**Don't** introduce a second display or body typeface; the system is one serif plus one mono."
+    ]
+  }
+}
