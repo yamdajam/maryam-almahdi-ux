@@ -1,5 +1,5 @@
 ---
-name: Maryam Al-Mahdi — UX Portfolio
+name: Maryam Al-Mahdi · UX Portfolio
 description: A sunlit studio notebook. Warm paper, film grain, drifting pastel light, frosted glass, and big italic serif type labelled in small mono caps.
 colors:
   paper: "#f3f0e8"
@@ -122,7 +122,7 @@ components:
     padding: "64px 48px"
 ---
 
-# Design System: Maryam Al-Mahdi — UX Portfolio
+# Design System: Maryam Al-Mahdi · UX Portfolio
 
 ## Overview
 
@@ -147,12 +147,12 @@ Craft lives in small, rewarded details: a sheen that slides across a card on hov
 A warm, low-contrast pastel garden set on paper, held together by one green-black ink and one terracotta accent.
 
 ### Primary
-- **Deep Terracotta** (accent): the only "loud" colour in text. Italic `.script` emphasis words, pull-quote rule, step numbers, mono feature labels, arrows in findings lists and the next-project link, active slideshow dot. Deepened from coral so it passes AA as text on Warm Paper. In dark mode it swaps to Warm Peach.
+- **Deep Terracotta** (accent): the only "loud" colour in text. Italic `.script` emphasis words, process step numbers, arrows in findings lists and the next-project link, active slideshow dot. Deepened from coral so it passes AA as text on Warm Paper. In dark mode it swaps to Warm Peach.
 - **Warm Peach** (accent-inverse): the accent's stand-in wherever the background is ink (inverse panels) and the dark-mode accent.
 
 ### Secondary
 The pastel garden. These are light sources and fills, never text colours.
-- **Soft Sage** (sage): glow fields, thumbnail gradients, "AI helped" column top rule.
+- **Soft Sage** (sage): glow fields, thumbnail gradients.
 - **Dusty Blue** (dusty-blue): glow fields, default thumbnail gradient start.
 - **Pale Butter** (butter): glow fields, highlighter behind `<strong>` in prose, cream-toned skill bubbles.
 - **Warm Peach** (peach): glow fields, peach-toned skill bubbles.
@@ -192,9 +192,11 @@ The pastel garden. These are light sources and fills, never text colours.
 - **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles; featured cards grow to clamp(40px, 4.6vw, 64px). Smaller titles (24–30px) for theme cards, features, values, process steps.
 - **Body** (400, 19px, 1.5; 18px under 760px): default text; card descriptions at 38ch.
 - **Prose** (400, 21px, 1.6, max 62ch): long-form reading in case studies and the About story.
-- **Label** (400, 11px, 0.12em, uppercase, mono): every piece of metadata: eyebrows, tags, meta tables, card rows, citations, nav and pill text.
+- **Label** (400, 11px, 0.12em, uppercase, mono): metadata: tags, meta-table labels, card rows, citations, nav and pill text. Never as a heading or a label above one.
 
 ### Named Rules
+**The Heading Speaks Alone Rule.** No eyebrow, kicker, section number or tiny mono label above (or beside) a heading. If a fact matters, it goes in the meta table or the heading itself; if a block needs a title, it gets a real serif heading.
+
 **The Single Weight Rule.** Everything is weight 400. Hierarchy comes from size, italics, colour (ink vs ink-soft vs accent) and the switch to mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.
 
 **The Italic Voice Rule.** Italic is the emphasis voice: the second half of a heading, the tagline, "Read case study", sub-titles, pull quotes. Use it for the human, spoken part of a line.
@@ -224,6 +226,8 @@ Depth is **glass over light**. On the homepage, the deepest layer is drifting bl
 ### Named Rules
 **The Glass-Needs-Light Rule.** Glass only appears where there is coloured light behind it to frost. With no glows (reading pages), use the Quiet Surface instead.
 
+**The Even Edge Rule.** Cards and surfaces have the same border on every side. No coloured strip along one edge (left rules, top bars) to signal a category.
+
 **The Readable Fallback Rule.** Where `backdrop-filter` is unsupported, glass, pills and the theme toggle fall back to 92% paper so text stays legible.
 
 ## Shapes
@@ -233,7 +237,6 @@ Soft and rounded throughout, with no hard corners on interactive elements.
 - **Cards** are generously rounded (22px; 18px for small graphic-design tiles), with thumbnails inset at 12px.
 - **Calm surfaces** on reading pages at 16px; the inverse panel at 24px (18px on mobile).
 - **The Arch:** portraits use an arched-window frame, a fully round top with gently rounded bottom corners (160px 160px 14px 14px on the homepage; 210px 210px 16px 16px on About). This is the signature silhouette.
-- **The Notch:** pull quotes have a 3px terracotta left rule with a near-square 4px left corner and 16px on the right.
 - Circles for dots: status dot, slideshow dots, swatches, theme-toggle half-moon.
 
 ## Components
@@ -253,7 +256,7 @@ Soft and tactile: round, translucent, and they rise a little when touched.
 - **Glass case card:** 22px radius, 16px 16px 24px padding, column layout with 22px gap: thumbnail, mono row (number + year), title, description, chips, then a hairline footer with colour swatches and an italic "Read case study →". A diagonal sheen overlays the card and slides 12% on hover while the card rises 6px. Featured cards go horizontal.
 - **Thumbnails:** soft-focus by default (screenshots blurred 3px, abstract "bloom" art blurred 18px), sharpening to full focus on hover/focus over .9s. Touch devices show them sharp.
 - **Coming-soon card:** same glass card, unlinked, with a hand-made ASCII critter in a 72% white box on the thumbnail that tilts on hover, and a muted "Coming soon ✿".
-- **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, hairline border, 16px radius, no shadow.
+- **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, an even hairline border on all sides, 16px radius, no shadow. Each block opens with its own serif heading (e.g. italic 26px "Where it helped"), never a mono label.
 - **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections and About values; accent swaps to Warm Peach inside.
 
 ### Navigation
@@ -281,6 +284,7 @@ Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the he
 - **Do** use the shared soft easing (`cubic-bezier(.2,.7,.2,1)`) for lifts, sheens and focus effects, and disable animation and transitions under `prefers-reduced-motion`.
 - **Do** keep reading pages calm: 820px column, 21px prose at 62ch, Quiet Surface blocks, hairline section dividers.
 - **Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices.
+- **Do** punctuate with commas, colons, semicolons, parentheses or full stops; use "·" as the separator in page titles.
 
 ### Don't:
 - **Don't** use bold (600+) weights anywhere, including `<strong>`.
@@ -288,3 +292,6 @@ Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the he
 - **Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.
 - **Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.
 - **Don't** introduce a second display or body typeface; the system is one serif plus one mono.
+- **Don't** put tiny subheadings (eyebrows, kickers, numbered section marks like "01 The problem", counters like "(01 / 06)") above or beside headings.
+- **Don't** use em dashes anywhere: copy, titles, citations or labels.
+- **Don't** give cards or callouts a single coloured strip (a thick left border or top bar); keep borders even.

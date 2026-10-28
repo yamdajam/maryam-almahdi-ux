@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-28T10:05:43.489238+00:00",
-  "title": "Design System: Maryam Al-Mahdi — UX Portfolio",
+  "title": "Design System: Maryam Al-Mahdi · UX Portfolio",
   "extensions": {
     "colorMeta": {
       "paper": {
@@ -457,9 +457,9 @@
       "name": "Pull Quote",
       "kind": "custom",
       "refersTo": "surface-block",
-      "description": "Participant quote on reading pages: quiet surface with a terracotta notch rule.",
+      "description": "Participant quote on reading pages: quiet surface with an even hairline border.",
       "html": "<blockquote class=\"ds-quote\"><p>“I thought ‘visibility’ meant font size.”</p><cite>Participant 4</cite></blockquote>",
-      "css": ".ds-quote{margin:0;padding:28px 32px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px 16px 16px 4px;font-family:var(--serif);color:var(--ink)}.ds-quote p{font-style:italic;font-size:26px;line-height:1.35;margin:0 0 12px}.ds-quote cite{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}"
+      "css": ".ds-quote{margin:0;padding:28px 32px;background:var(--surface);border:1px solid var(--line);border-radius:16px;font-family:var(--serif);color:var(--ink)}.ds-quote p{font-style:italic;font-size:26px;line-height:1.35;margin:0 0 12px}.ds-quote cite{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}"
     },
     {
       "name": "Meta Table",
@@ -474,8 +474,8 @@
       "kind": "card",
       "refersTo": "panel-inverse",
       "description": "Ink panel for reflections and values; the accent turns peach inside.",
-      "html": "<section class=\"ds-panel\"><p class=\"ds-panel-meta\">Reflection</p><h2 class=\"ds-panel-h\">What I would <em>do differently</em></h2></section>",
-      "css": ".ds-panel{background:var(--ink);color:var(--paper);border-radius:24px;padding:64px 48px;font-family:var(--serif)}.ds-panel-meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 70%,transparent);margin:0 0 14px}.ds-panel-h{font-weight:400;font-size:44px;line-height:1.02;margin:0}.ds-panel-h em{color:var(--accent-inverse)}"
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-h\">What I would <em>do differently</em></h2></section>",
+      "css": ".ds-panel{background:var(--ink);color:var(--paper);border-radius:24px;padding:64px 48px;font-family:var(--serif)}.ds-panel-h{font-weight:400;font-size:44px;line-height:1.02;margin:0}.ds-panel-h em{color:var(--accent-inverse)}"
     }
   ],
   "narrative": {
@@ -506,6 +506,11 @@
         "section": "colors"
       },
       {
+        "name": "The Heading Speaks Alone Rule",
+        "body": "No eyebrow, kicker, section number or tiny mono label above (or beside) a heading. If a fact matters, it goes in the meta table or the heading itself; if a block needs a title, it gets a real serif heading.",
+        "section": "typography"
+      },
+      {
         "name": "The Single Weight Rule",
         "body": "Everything is weight 400. Hierarchy comes from size, italics, colour (ink vs ink-soft vs accent) and the switch to mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.",
         "section": "typography"
@@ -526,6 +531,11 @@
         "section": "elevation"
       },
       {
+        "name": "The Even Edge Rule",
+        "body": "Cards and surfaces have the same border on every side. No coloured strip along one edge (left rules, top bars) to signal a category.",
+        "section": "elevation"
+      },
+      {
         "name": "The Readable Fallback Rule",
         "body": "Where `backdrop-filter` is unsupported, glass, pills and the theme toggle fall back to 92% paper so text stays legible.",
         "section": "elevation"
@@ -538,14 +548,18 @@
       "**Do** use pills (999px) for actions and tags, and glass only over coloured light.",
       "**Do** use the shared soft easing (`cubic-bezier(.2,.7,.2,1)`) for lifts, sheens and focus effects, and disable animation and transitions under `prefers-reduced-motion`.",
       "**Do** keep reading pages calm: 820px column, 21px prose at 62ch, Quiet Surface blocks, hairline section dividers.",
-      "**Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices."
+      "**Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices.",
+      "**Do** punctuate with commas, colons, semicolons, parentheses or full stops; use \"·\" as the separator in page titles."
     ],
     "donts": [
       "**Don't** use bold (600+) weights anywhere, including `<strong>`.",
       "**Don't** put glow fields, drifting light or heavy glass on case-study or About reading pages.",
       "**Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.",
       "**Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.",
-      "**Don't** introduce a second display or body typeface; the system is one serif plus one mono."
+      "**Don't** introduce a second display or body typeface; the system is one serif plus one mono.",
+      "**Don't** put tiny subheadings (eyebrows, kickers, numbered section marks like \"01 The problem\", counters like \"(01 / 06)\") above or beside headings.",
+      "**Don't** use em dashes anywhere: copy, titles, citations or labels.",
+      "**Don't** give cards or callouts a single coloured strip (a thick left border or top bar); keep borders even."
     ]
   }
 }
