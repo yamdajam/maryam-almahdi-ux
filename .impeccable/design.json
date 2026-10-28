@@ -480,7 +480,7 @@
   ],
   "narrative": {
     "northStar": "The Sunlit Studio Notebook",
-    "overview": "A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.\n\nThe system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies and About page** are the notebook's written pages: the same paper, ink, type and accent, but no glows, quiet translucent surfaces with hairline borders, generous reading measure, and an inverted ink panel for reflections and values. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.\n\nCraft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.",
+    "overview": "A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.\n\nThe system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before \"Next up\", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** stays fully calm, with no glows. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.\n\nCraft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.",
     "keyCharacteristics": [
       "Warm paper and green-black ink, with a global film grain layer.",
       "One serif at one weight (400); hierarchy from size, italics and mono labels.",
@@ -527,7 +527,7 @@
       },
       {
         "name": "The Glass-Needs-Light Rule",
-        "body": "Glass only appears where there is coloured light behind it to frost. With no glows (reading pages), use the Quiet Surface instead.",
+        "body": "Glass only appears where there is coloured light behind it to frost (the homepage, and the case-study header). Where there is no light behind it, use the Quiet Surface instead.",
         "section": "elevation"
       },
       {
@@ -553,7 +553,7 @@
     ],
     "donts": [
       "**Don't** use bold (600+) weights anywhere, including `<strong>`.",
-      "**Don't** put glow fields, drifting light or heavy glass on case-study or About reading pages.",
+      "**Don't** put glow fields or drifting light on the About page, or strong light directly under case-study prose: on case studies keep the middle glows in the margins.",
       "**Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.",
       "**Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.",
       "**Don't** introduce a second display or body typeface; the system is one serif plus one mono.",

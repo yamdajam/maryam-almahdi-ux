@@ -130,14 +130,14 @@ components:
 
 A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.
 
-The system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies and About page** are the notebook's written pages: the same paper, ink, type and accent, but no glows, quiet translucent surfaces with hairline borders, generous reading measure, and an inverted ink panel for reflections and values. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.
+The system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before "Next up", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** stays fully calm, with no glows. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.
 
 Craft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.
 
 **Key Characteristics:**
 - Warm paper and green-black ink, with a global film grain layer.
 - One serif at one weight (400); hierarchy from size, italics and mono labels.
-- Pastel light fields (homepage only) under frosted glass.
+- Pastel light fields (homepage and case studies) under frosted glass.
 - Pills everywhere for actions and tags; generous rounded cards.
 - A single deep terracotta accent for emphasis and small markers.
 - Slow, soft motion on a shared easing curve; everything respects reduced motion.
@@ -215,7 +215,7 @@ The pastel garden. These are light sources and fills, never text colours.
 
 ## Elevation & Depth
 
-Depth is **glass over light**. On the homepage, the deepest layer is drifting blurred colour fields; above them, frosted glass with `backdrop-filter: blur(22px) saturate(1.5)` picks up that light, a bright inset top edge suggests a pane, and a soft, far-dropped ambient shadow grounds it. A fixed film-grain layer sits above everything (multiply in light, overlay in dark). Reading pages drop the glows and use translucent surfaces with hairline borders, so they read as flat paper. Shadows are always soft and low-contrast, and only appear under glass and photos.
+Depth is **glass over light**. On the homepage, the deepest layer is drifting blurred colour fields; above them, frosted glass with `backdrop-filter: blur(22px) saturate(1.5)` picks up that light, a bright inset top edge suggests a pane, and a soft, far-dropped ambient shadow grounds it. A fixed film-grain layer sits above everything (multiply in light, overlay in dark). Case studies keep the light at the header, the margins and the end of the page, with the facts strip as a frosted glass pane; their content blocks stay translucent surfaces with hairline borders so the reading column reads as paper. The About page has no glows at all. Shadows are always soft and low-contrast, and only appear under glass and photos.
 
 ### Shadow Vocabulary
 - **Glass at rest** (`inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(255,255,255,.06), 0 20px 50px -24px var(--glass-shadow)`): case and graphic-design cards.
@@ -224,7 +224,7 @@ Depth is **glass over light**. On the homepage, the deepest layer is drifting bl
 - **Photo** (`0 20px 40px -18px var(--glass-shadow)`): Yam's Oven collage photos, framed with a 6px paper border.
 
 ### Named Rules
-**The Glass-Needs-Light Rule.** Glass only appears where there is coloured light behind it to frost. With no glows (reading pages), use the Quiet Surface instead.
+**The Glass-Needs-Light Rule.** Glass only appears where there is coloured light behind it to frost (the homepage, and the case-study header). Where there is no light behind it, use the Quiet Surface instead.
 
 **The Even Edge Rule.** Cards and surfaces have the same border on every side. No coloured strip along one edge (left rules, top bars) to signal a category.
 
@@ -274,6 +274,8 @@ Italic serif words in glass pills, scattered absolutely across a 360px field, ea
 ### ASCII Ornaments (signature)
 Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the hero name, small sprigs beside section heads (coral petals, ochre centres, leaf stems), and critters on coming-soon thumbnails. Always `aria-hidden` and decorative.
 
+Case studies carry two: the generated lily beside the title (its stem fades out above the facts strip) and a hand-drawn flower meadow in the sprig colours above "Next up".
+
 ## Do's and Don'ts
 
 ### Do:
@@ -288,7 +290,7 @@ Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the he
 
 ### Don't:
 - **Don't** use bold (600+) weights anywhere, including `<strong>`.
-- **Don't** put glow fields, drifting light or heavy glass on case-study or About reading pages.
+- **Don't** put glow fields or drifting light on the About page, or strong light directly under case-study prose: on case studies keep the middle glows in the margins.
 - **Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.
 - **Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.
 - **Don't** introduce a second display or body typeface; the system is one serif plus one mono.
