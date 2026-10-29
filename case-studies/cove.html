@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cove · Case Study · Maryam Al-Mahdi</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../images/icons/favicon.png">
+<link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="page cs lit" data-page="work">
+
+<!--
+  HOW TO SWAP A PLACEHOLDER FOR A REAL IMAGE
+  Every dashed box on this page is a <div class="ph"> placeholder. Put your file in images/cove/,
+  then replace that <div class="ph">...</div> with the <img> shown in the comment just above it.
+  Paths start with ../ because this page lives in case-studies/.
+  Wide flow images sit inside <div class="flow-scroll">: keep that wrapper and replace only the placeholder inside it.
+-->
+
+<!-- Colour field: drifting light behind the header, the page edges and the end of the page -->
+<div class="page-glows" aria-hidden="true">
+  <div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+  <div class="glow m1"></div><div class="glow m2"></div><div class="glow m3"></div><div class="glow m4"></div>
+  <div class="glow z1"></div><div class="glow z2"></div><div class="glow z3"></div>
+</div>
+
+<div data-include="nav"></div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="../index.html#work" class="back-link meta">← Back to work</a>
+</div>
+
+<!-- HERO: TITLE, FINAL POSTER, PROJECT VIDEO, PROJECT SNAPSHOT -->
+<section class="cs-hero">
+  <pre class="ascii-lily" aria-hidden="true"></pre>
+  <h1 class="cs-title">
+    Cove: <span class="script">UX Case Study</span>
+  </h1>
+
+  <!-- FINAL POSTER -->
+  <div class="cs-showcase">
+    <h2 class="cs-h2 sm">Final <span class="script">poster</span></h2>
+    <div class="poster-slot">
+      <!--
+        REPLACE the <div class="ph">...</div> below with (click to enlarge is built in):
+        <button class="zoomable" type="button" data-lightbox><img src="../images/cove/poster.png" alt="Final poster for Cove, showing the problem, the design process, the app screens and the testing results."></button>
+      -->
+      <div class="ph" role="img" aria-label="Placeholder for the final poster">
+        <span class="ph-label">Space reserved for the final poster</span>
+        <span class="ph-file">images/cove/poster.png</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT VIDEO -->
+  <div class="cs-showcase">
+    <h2 class="cs-h2 sm">Project <span class="script">video</span></h2>
+    <!--
+      REPLACE the <div class="ph">...</div> below with ONE of these (the 16:9 wrapper keeps it responsive):
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Cove project video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-frame"><video controls preload="metadata" poster="../images/cove/video-cover.png"><source src="../images/cove/video.mp4" type="video/mp4"></video></div>
+      The thumbnail file for the video is images/cove/video-cover.png.
+    -->
+    <div class="ph" role="img" aria-label="Placeholder for the project video">
+      <span class="ph-label">Space reserved for the project video</span>
+      <span class="ph-file">images/cove/video-cover.png</span>
+    </div>
+  </div>
+
+  <!-- PROJECT SNAPSHOT (the Overview table) -->
+  <div class="cs-meta cs-snapshot" style="margin-top: 56px;">
+    <div class="cs-meta-cell span-2">
+      <p class="label">Project</p>
+      <p class="value">Cove, a task initiation and focus app for students who doomscroll to avoid work</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Context</p>
+      <p class="value">INFO30008 Interactive Technology Project, University of Melbourne</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Timeline</p>
+      <p class="value">Semester 2, 2026</p>
+    </div>
+    <div class="cs-meta-cell span-3">
+      <p class="label">Team</p>
+      <p class="value">7 designers: Bowen Mai, Jessica Zou, Jiexi Xiao, Maryam Al Mahdi, Rumaysa Fatima, Shevy Gupta, Violani Julia</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">My role</p>
+      <p class="value">UX researcher and designer</p>
+    </div>
+    <div class="cs-meta-cell span-3">
+      <p class="label">Methods</p>
+      <p class="value">Rich picture, stakeholder interviews, early concept critique, prototype interviews, cognitive walkthroughs, user-based evaluation with the System Usability Scale</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Tools</p>
+      <p class="value">Figma, FigJam</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Evaluation</p>
+      <p class="value">11 participants aged 18 to 24, 5 task scenarios</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="cs-content">
+
+  <!-- OVERVIEW -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Overview</span></h2>
+    <div class="cs-prose">
+      <p>Cove is a mobile app that helps students start their work and meets doomscrolling with reflection instead of restriction. It was designed by a team of seven for students who know what they should be doing and still end up scrolling.</p>
+    </div>
+    <figure class="cs-figure">
+      <!--
+        REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/hero.png" alt="The Cove logo beside a pet box, with the onboarding start screen of the Cove app.">
+      -->
+      <div class="ph" style="--ar: 16 / 10;" role="img" aria-label="Placeholder for the hero image">
+        <span class="ph-label">Cove logo and pet box with the onboarding start screen</span>
+        <span class="ph-file">images/cove/hero.png</span>
+      </div>
+      <figcaption>Cove logo and pet box with the onboarding start screen</figcaption>
+    </figure>
+  </section>
+
+  <!-- THE CHALLENGE -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">The <span class="script">challenge</span></h2>
+    <div class="cs-prose">
+      <p>Students rarely scroll because they lack discipline. They scroll because starting a hard task feels uncomfortable, and a feed offers instant relief from that feeling.</p>
+    </div>
+    <figure class="cs-figure">
+      <!--
+        REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/rich-picture.png" alt="Rich picture showing the students, parents, educators and apps around the problem of doomscrolling, with the pressures and relationships between them.">
+      -->
+      <div class="ph" style="--ar: 16 / 10;" role="img" aria-label="Placeholder for the rich picture">
+        <span class="ph-label">Our rich picture of stakeholders and the problem space</span>
+        <span class="ph-file">images/cove/rich-picture.png</span>
+      </div>
+      <figcaption>Our rich picture of stakeholders and the problem space</figcaption>
+    </figure>
+    <div class="cs-prose">
+      <p>Our research pointed to the same pattern across sources:</p>
+    </div>
+    <ul class="findings">
+      <li>Estimates suggest 80 to 95% of college students procrastinate on academic work.</li>
+      <li>94% of students in one study felt less happy after delaying work (Fadeyi et al., 2026).</li>
+      <li>A systematic review of 27 studies found fear of failure, perfectionism and difficulty regulating emotion are the core causes (Ramadhani et al., 2026).</li>
+      <li>Heavier short-form video use is linked to reduced analytic thinking in young adults (Jiang &amp; Ma, 2024).</li>
+    </ul>
+    <div class="cs-prose">
+      <p>This reframed the problem. Procrastination is an emotional avoidance strategy, so better to-do lists and reminders are not enough on their own. Taking the phone away does not remove the urge to avoid. It sends the urge somewhere else.</p>
+      <p>The design question became: <strong>how might we help students notice the moment they start avoiding, and make the first step back to their work small enough to take?</strong></p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Research</span></h2>
+    <div class="cs-prose">
+      <p>Interviews with students, plus parents and educators, showed that existing tools fail in predictable ways. I built the team's rich picture of the problem space and ran two student interviews, then tested eight early concepts from across the group in prototype interviews.</p>
+    </div>
+    <figure class="cs-figure">
+      <!--
+        OPTIONAL. REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/interview-quotes.png" alt="Interview notes and highlighted participant quotes grouped by theme.">
+        Or delete this whole <figure> if you do not have a graphic or photo.
+      -->
+      <div class="ph" style="--ar: 16 / 9;" role="img" aria-label="Placeholder for interview notes">
+        <span class="ph-label">Optional graphic or photo of interview notes</span>
+        <span class="ph-file">images/cove/interview-quotes.png</span>
+      </div>
+      <figcaption>Interview notes</figcaption>
+    </figure>
+
+    <h3 class="cs-h3">1. Limits that the user can undo get undone</h3>
+    <div class="cs-prose">
+      <p>Self-set limits collapse because the person who sets the boundary can remove it.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"When TikTok reaches its limit, pressing '15 more minutes' just becomes part of the habit."</p>
+      <cite>Student 2</cite>
+    </div>
+
+    <h3 class="cs-h3">2. Rewards need weight to compete with a feed</h3>
+    <div class="cs-prose">
+      <p>A gamified consequence stopped working once it stopped mattering to her.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"Something like growing a tree, and if you use the phone, the tree just stops growing... why would I care for that tree?"</p>
+      <cite>Student 1</cite>
+    </div>
+
+    <h3 class="cs-h3">3. Blocking everything blocks useful use too</h3>
+    <div class="cs-prose">
+      <p>Social apps also carry real value, such as cooking and health information, so a hard block punishes helpful use along with avoidance.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"Social media isn't always used purely for wasting time."</p>
+      <cite>Student 2</cite>
+    </div>
+
+    <h3 class="cs-h3">4. Control lands differently for different people</h3>
+    <div class="cs-prose">
+      <p>Some participants responded well to being told what to do. Others pushed back. Reactions to forced restriction split in the same way.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"I felt like it was cute in the beginning, not cute at the end... the forcing technique may have more downsides than positive stuff... but for some people it can be really useful."</p>
+      <cite>Student 1, on a lockout concept</cite>
+    </div>
+
+    <h3 class="cs-h3">5. Prompts that feel invasive get resisted</h3>
+    <div class="cs-prose">
+      <p>Unskippable ads and persistent activity tracking raised immediate objections, and one participant raised a privacy concern about tracking continuing after a shared session ended. Participants were most open to concepts that helped "without making me go crazy about my phone" being blocked.</p>
+      <p>These findings set the direction: interrupt without locking people out, adapt to the situation, and keep the user in control.</p>
+    </div>
+  </section>
+
+  <!-- DESIGN PROCESS -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">Design <span class="script">process</span></h2>
+    <div class="cs-prose">
+      <p>The design moved from a pile of ideas to one connected prototype in six steps, with research deciding what stayed and what was cut.</p>
+    </div>
+    <div class="process">
+      <div class="process-step">
+        <span class="process-num">01</span>
+        <div>
+          <h4>FigJam ideation.</h4>
+          <p>We mapped every idea against our interview notes: app limits, task lists, subtasks, focus sessions with friends, reflection questions, a pet companion, coins, a shop and room decoration.</p>
+          <figure class="cs-figure">
+            <!--
+              REPLACE the <div class="ph">...</div> below with:
+              <img src="../images/cove/figjam-ideation.png" alt="FigJam board covered in sticky notes with the team's brainstormed ideas, grouped and mapped against interview findings.">
+            -->
+            <div class="ph" style="--ar: 16 / 10;" role="img" aria-label="Placeholder for the FigJam board">
+              <span class="ph-label">FigJam brainstorm board</span>
+              <span class="ph-file">images/cove/figjam-ideation.png</span>
+            </div>
+            <figcaption>FigJam brainstorm board</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">02</span>
+        <div>
+          <h4>Interview findings.</h4>
+          <p>We kept ideas that answered the research and dropped those that did not.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">03</span>
+        <div>
+          <h4>Feature priorities.</h4>
+          <p>Tasks, Pair Up, reflection and the lockout became the core. The shop, furniture and detailed pet features moved down, because the app was starting to feel like a game. The pet and coins stayed as small encouragements.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">04</span>
+        <div>
+          <h4>Early wireframes.</h4>
+          <p>Each member designed flows and wireframes for one section in a shared Figma file.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">05</span>
+        <div>
+          <h4>Peer feedback.</h4>
+          <p>Comparing sections exposed mismatched colours, navigation, button styles and instruction wording. Comments across the group brought the screens together under one description: cute but disciplined.</p>
+          <figure class="cs-figure">
+            <!--
+              REPLACE the <div class="ph">...</div> below with:
+              <img src="../images/cove/screen-consistency.png" alt="Before and after comparison of app screens, showing mismatched colours and buttons on the left and one consistent style on the right.">
+            -->
+            <div class="ph" style="--ar: 16 / 9;" role="img" aria-label="Placeholder for the before and after screens">
+              <span class="ph-label">Before and after of screens being aligned to one style</span>
+              <span class="ph-file">images/cove/screen-consistency.png</span>
+            </div>
+            <figcaption>Screens before and after being aligned to one style</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">06</span>
+        <div>
+          <h4>Final prototype.</h4>
+          <p>The sections were joined and tested with users.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cs-h3">Concept critique: TICKET</h3>
+    <div class="cs-prose">
+      <p>My own early concept, TICKET, asked users to set an intention before opening a distracting app. Measured against our research, it had three weak points. It treated procrastination as a logistics problem when the research showed it was emotional avoidance. The goal field could be gamed with a vague goal like "check notifications". And nothing stopped a user from dismissing the exit prompt and carrying on. These points shaped the direction Cove took: respond to the user's situation instead of applying one fixed rule.</p>
+    </div>
+    <figure class="cs-figure">
+      <!--
+        REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/ticket-concept.png" alt="Early TICKET concept screens: an intention prompt shown before opening a distracting app, with a goal field and an exit prompt.">
+      -->
+      <div class="ph" style="--ar: 16 / 9;" role="img" aria-label="Placeholder for the TICKET concept screens">
+        <span class="ph-label">My early TICKET concept screens</span>
+        <span class="ph-file">images/cove/ticket-concept.png</span>
+      </div>
+      <figcaption>My early TICKET concept screens</figcaption>
+    </figure>
+
+    <h3 class="cs-h3">How the Tasks flow changed</h3>
+    <div class="cs-prose">
+      <p>The first version was a plain list. Later versions added categories, due dates, estimated focus time and optional subtasks, plus options to continue or reschedule when a task became overdue. Some users believed subtasks were required, so we rewrote the wording and removed steps.</p>
+    </div>
+
+    <h3 class="cs-h3">What testing changed</h3>
+    <div class="cs-prose">
+      <p>Users understood the general idea, but the reflection and focus session rules felt restrictive. The final design keeps some friction to interrupt impulsive scrolling and gives users clearer choices about what happens next.</p>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">The <span class="script">solution</span></h2>
+    <div class="cs-prose">
+      <p>Cove replaces restriction with honest reflection. It interrupts avoidance at the moment it happens, responds to the situation, and asks for real evidence of engagement before giving any reward. It rests on two ideas.</p>
+      <p><strong>1. A reflective scroll interruption.</strong> During onboarding, users pick which apps to restrict and set a daily limit. When they open a restricted app, Cove asks why they are there instead of applying one fixed rule.</p>
+      <p><strong>2. Supported task initiation.</strong> Starting is harder than continuing, so Cove makes the first step small: optional subtasks, focus sessions alone or with others, tips for getting unstuck, and a short reflection before coins are earned.</p>
+    </div>
+
+    <h3 class="cs-h3">Features</h3>
+
+    <div class="feature-row">
+      <p><strong>Onboarding.</strong> Choose and name a pet companion, pick apps to block, set a daily limit, add friends and add a first task.</p>
+      <figure class="cs-figure wide">
+        <!--
+          Wide flow. Keep the .flow-scroll wrapper and REPLACE only the <div class="ph">...</div> inside it with:
+          <img src="../images/cove/onboarding-flow.png" alt="The Cove onboarding flow, from choosing a pet to adding a first task.">
+        -->
+        <div class="flow-scroll">
+          <div class="ph" style="--ar: 16 / 6;" role="img" aria-label="Placeholder for the onboarding flow">
+            <span class="ph-label">Onboarding flow</span>
+            <span class="ph-file">images/cove/onboarding-flow.png</span>
+          </div>
+        </div>
+        <figcaption>Onboarding flow</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <p><strong>Tasks.</strong> The empty state says "Start with one thing." Subtasks are optional, and each task shows its breakdown and progress.</p>
+      <figure class="cs-figure wide">
+        <!--
+          Wide flow. Keep the .flow-scroll wrapper and REPLACE only the <div class="ph">...</div> inside it with:
+          <img src="../images/cove/tasks-flow.png" alt="The Cove Tasks flow, from the empty state to a task with optional subtasks and progress.">
+        -->
+        <div class="flow-scroll">
+          <div class="ph" style="--ar: 16 / 6;" role="img" aria-label="Placeholder for the Tasks flow">
+            <span class="ph-label">Tasks flow</span>
+            <span class="ph-file">images/cove/tasks-flow.png</span>
+          </div>
+        </div>
+        <figcaption>Tasks flow</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <p><strong>Focus Room.</strong> Study in a private room with friends or a public room with strangers. Shared presence gives gentle accountability without comparison. Ending a session asks for a short reflection, and coins follow.</p>
+      <figure class="cs-figure wide">
+        <!--
+          Wide flow. Keep the .flow-scroll wrapper and REPLACE only the <div class="ph">...</div> inside it with:
+          <img src="../images/cove/focus-room-flow.png" alt="The Cove Focus Room flow, from choosing a private or public room to the end of session reflection and coins.">
+        -->
+        <div class="flow-scroll">
+          <div class="ph" style="--ar: 16 / 6;" role="img" aria-label="Placeholder for the Focus Room flow">
+            <span class="ph-label">Focus Room flow</span>
+            <span class="ph-file">images/cove/focus-room-flow.png</span>
+          </div>
+        </div>
+        <figcaption>Focus Room flow</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <p><strong>Pet Playground.</strong> Coins buy accessories and room items for the pet. It stays a small reward, not the main point.</p>
+      <figure class="cs-figure wide">
+        <!--
+          Wide flow. Keep the .flow-scroll wrapper and REPLACE only the <div class="ph">...</div> inside it with:
+          <img src="../images/cove/pet-playground-flow.png" alt="The Cove Pet Playground flow, showing coins being spent on pet accessories and room items.">
+        -->
+        <div class="flow-scroll">
+          <div class="ph" style="--ar: 16 / 6;" role="img" aria-label="Placeholder for the Pet Playground flow">
+            <span class="ph-label">Pet Playground flow</span>
+            <span class="ph-file">images/cove/pet-playground-flow.png</span>
+          </div>
+        </div>
+        <figcaption>Pet Playground flow</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <p><strong>Account.</strong> Weekly and monthly recaps show reflections, common feelings, common triggers and a focus breakdown, so users can see their own patterns.</p>
+      <figure class="cs-figure wide">
+        <!--
+          Wide flow. Keep the .flow-scroll wrapper and REPLACE only the <div class="ph">...</div> inside it with:
+          <img src="../images/cove/account-recaps.png" alt="The Cove Account screens, showing weekly and monthly recaps with reflections, common feelings, common triggers and a focus breakdown.">
+        -->
+        <div class="flow-scroll">
+          <div class="ph" style="--ar: 16 / 6;" role="img" aria-label="Placeholder for the Account recap screens">
+            <span class="ph-label">Account recaps</span>
+            <span class="ph-file">images/cove/account-recaps.png</span>
+          </div>
+        </div>
+        <figcaption>Account recaps</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="cs-h3">Blocked-app interventions</h3>
+    <div class="cs-prose">
+      <p>A daily limit shows up as the pet's energy bar. The response depends on what is happening, so the prompt does not turn into something users learn to ignore.</p>
+    </div>
+
+    <figure class="cs-figure">
+      <!--
+        Four-up grid. REPLACE each <div class="ph">...</div> with its own <img>, keeping the grid wrapper:
+        <img src="../images/cove/lockout-1.png" alt="Blocked-app prompt asking what is going on when opening a blocked app with time left.">
+        <img src="../images/cove/lockout-2.png" alt="Blocked-app prompt naming a task due within 24 hours and asking if now is the time to get started.">
+        <img src="../images/cove/lockout-3.png" alt="Blocked-app prompt warning that time is running out, with the pet's energy bar.">
+        <img src="../images/cove/lockout-4.png" alt="Blocked-app screen explaining that the daily limit is reached and the app is closed until the energy bar refreshes.">
+        Suggested alt text above is a guess: match each one to the actual screen.
+      -->
+      <div class="ph-grid">
+        <div class="ph" role="img" aria-label="Placeholder for blocked-app screen 1">
+          <span class="ph-label">Blocked-app screen 1</span>
+          <span class="ph-file">images/cove/lockout-1.png</span>
+        </div>
+        <div class="ph" role="img" aria-label="Placeholder for blocked-app screen 2">
+          <span class="ph-label">Blocked-app screen 2</span>
+          <span class="ph-file">images/cove/lockout-2.png</span>
+        </div>
+        <div class="ph" role="img" aria-label="Placeholder for blocked-app screen 3">
+          <span class="ph-label">Blocked-app screen 3</span>
+          <span class="ph-file">images/cove/lockout-3.png</span>
+        </div>
+        <div class="ph" role="img" aria-label="Placeholder for blocked-app screen 4">
+          <span class="ph-label">Blocked-app screen 4</span>
+          <span class="ph-file">images/cove/lockout-4.png</span>
+        </div>
+      </div>
+      <figcaption>Blocked-app intervention screens</figcaption>
+    </figure>
+
+    <table class="cs-table">
+      <thead>
+        <tr><th scope="col">Situation</th><th scope="col">What Cove does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Opening a blocked app with time left</td><td data-label="What Cove does">Asks what is going on. Taking a break leads to a short goal-writing step before entry. Feeling stuck leads to tips for starting smaller.</td></tr>
+        <tr><td>A task is due within 24 hours</td><td data-label="What Cove does">Names the task and asks if now is the time to get started, with a path to the Tips page.</td></tr>
+        <tr><td>The last 3 sessions were marked regretted</td><td data-label="What Cove does">Asks whether the user wants to sit this one out.</td></tr>
+        <tr><td>Time allowance is running out</td><td data-label="What Cove does">Warns at the midpoint and with 5 minutes left, then asks the user to rate the session: Needed, Regretted or Mixed.</td></tr>
+        <tr><td>Daily allowance is used up</td><td data-label="What Cove does">Explains that the limit is reached and closes the app until the energy bar refreshes the next day.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TESTING AND OUTCOME -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">Testing and <span class="script">outcome</span></h2>
+    <div class="cs-prose">
+      <p>We tested the Figma prototype with 11 participants aged 18 to 24, all of whom said they use their phones to avoid tasks. Each group member ran sessions alone or in pairs. Participants worked through five scenarios in the app's natural order, rated each one from 1 (very easy) to 5 (very difficult), then completed the System Usability Scale, compared against the benchmark of 68.</p>
+    </div>
+    <figure class="cs-figure">
+      <!--
+        OPTIONAL. REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/testing-session.png" alt="A participant working through the Cove prototype on a phone during a testing session while a team member takes notes.">
+        Or delete this whole <figure> if you do not have a photo.
+      -->
+      <div class="ph" style="--ar: 16 / 9;" role="img" aria-label="Placeholder for a testing session photo">
+        <span class="ph-label">Optional photo of a testing session</span>
+        <span class="ph-file">images/cove/testing-session.png</span>
+      </div>
+      <figcaption>A testing session</figcaption>
+    </figure>
+
+    <table class="cs-table">
+      <thead>
+        <tr><th scope="col">Feature</th><th scope="col">Scenario</th><th scope="col">What it tested</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Onboarding</td><td data-label="Scenario">Sign up for a new productivity app</td><td data-label="What it tested">Setup and understanding of app restrictions and time allowance</td></tr>
+        <tr><td>Tasks</td><td data-label="Scenario">Break an upcoming assignment into manageable steps</td><td data-label="What it tested">Task creation and how subtasks work</td></tr>
+        <tr><td>Focus session</td><td data-label="Scenario">Start a session with the setup that suits you</td><td data-label="What it tested">Private and shared room options</td></tr>
+        <tr><td>Pet Playground</td><td data-label="Scenario">Spend earned coins on the pet</td><td data-label="What it tested">Finding the Playground and understanding rewards</td></tr>
+        <tr><td>Blocked-app intervention</td><td data-label="Scenario">Open a distracting app mid-session</td><td data-label="What it tested">Understanding the prompts and what happens next</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="cs-figure">
+      <!--
+        REPLACE the <div class="ph">...</div> below with:
+        <img src="../images/cove/user-journey.png" alt="User journey storyboard following a student from avoiding a task, through a Cove prompt and focus session, to starting their work.">
+      -->
+      <div class="ph" style="--ar: 16 / 9;" role="img" aria-label="Placeholder for the user journey storyboard">
+        <span class="ph-label">The user journey storyboard</span>
+        <span class="ph-file">images/cove/user-journey.png</span>
+      </div>
+      <figcaption>User journey storyboard</figcaption>
+    </figure>
+
+    <h3 class="cs-h3">What the sessions showed</h3>
+    <ul class="findings">
+      <li><strong>Wording needs one voice.</strong> One participant read "time limit" and "allowance time" as daily usage quotas, not a period of app blocking. Onboarding should use clearer, consistent language.</li>
+      <li><strong>Task setup asked for too much.</strong> Participants wanted to add a task without planning first, so categories, subtasks and time limits become optional.</li>
+      <li><strong>Focus sessions need a direct entry point.</strong> A participant preferred to start studying straight away. Public rooms need a clearer purpose and meaningful accountability cues, plus optional, well-timed check-ins.</li>
+    </ul>
+    <div class="cs-prose">
+      <p>In our report, one recorded session gave Cove a SUS score of 70, above the benchmark of 68, with onboarding, task setup and starting a focus room all rated 1 (very easy).</p>
+    </div>
+
+    <h3 class="cs-h3">Limits of the evidence</h3>
+    <div class="cs-prose">
+      <p>Participants were friends of the team, and research suggests people are about 2.5 times more likely to favour a design they believe belongs to the researcher (Dell et al., 2012). Scenarios ran in a fixed order, so later tasks may have benefited from earlier learning. The effect of Cove on actual scrolling behaviour is not yet measured.</p>
+    </div>
+
+    <h3 class="cs-h3">Outcome</h3>
+    <div class="cs-prose">
+      <p>The project delivered a connected, tested prototype of five features and four intervention scenarios, a user journey, and a final poster and video. It met its design goals: make starting a task small, interrupt scrolling at the moment it happens, and keep the user in control of what happens next.</p>
+    </div>
+
+    <!-- Open to-do from the write-up: a visible note, deliberately not a working checkbox -->
+    <p class="todo-note"><span class="todo-box" aria-hidden="true"></span><span>Add the SUS average and task difficulty ratings across all 11 participants once finalised</span></p>
+  </section>
+
+</div>
+
+<!-- REFLECTION (dark) -->
+<div class="cs-content">
+  <section class="cs-section reveal" style="border-bottom: none; padding-bottom: 0;">
+    <div class="reflection">
+      <div class="reflection-inner">
+        <h2 class="cs-h2"><span class="script">Reflection</span></h2>
+        <ul class="findings">
+          <li><strong>Research changed the brief.</strong> Almost every concept built on pure restriction was challenged by participants within minutes. Interviews moved the project from blocking apps to supporting the person using them.</li>
+          <li><strong>One interface from seven designers takes active work.</strong> Splitting features across the team surfaced mismatched colours, navigation and wording. A shared Figma file, regular comments and one named style kept the screens consistent.</li>
+          <li><strong>Interventions can become noise.</strong> A prompt that never changes gets ignored. Varying the response by situation, and keeping reflection short and optional where possible, protects against that.</li>
+          <li><strong>Friends are a limited test group.</strong> Future rounds would recruit strangers, vary the order of scenarios, and track real scrolling over weeks to measure whether behaviour changes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- NEXT PROJECT -->
+<section class="next-project reveal">
+<pre class="meadow sprig" aria-hidden="true">  <span class="p">.-.</span>           <span class="p">___</span>    <span class="p">.-.</span>           <span class="p">.-.</span>     <span class="p">___</span>          <span class="p">.-.</span>     <span class="p">.-.</span>
+ <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>  <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>   <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>   <span class="g">,</span>    <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>   <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>
+  <span class="p">'-'</span>    <span class="p">(_)</span>    <span class="p">\</span><span class="c">@</span><span class="p">/</span>    <span class="p">'-'</span><span class="g">\</span>   <span class="p">(_)</span>    <span class="p">'-'</span>     <span class="p">\</span><span class="c">@</span><span class="p">/</span>   <span class="p">(_)</span>    <span class="p">'-'</span><span class="g">\</span>    <span class="p">'-'</span>
+   <span class="g">|</span>      <span class="g">|</span>      <span class="g">|</span>         <span class="g">|</span>   <span class="g">|</span>      <span class="g">|</span>       <span class="g">|</span>     <span class="g">|</span>         <span class="g">|</span>    <span class="g">|</span>
+ <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>   <span class="g">\|/</span>    <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\|/</span>   <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>    <span class="g">\|/</span>   <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>
+<span class="g">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></pre>
+  <a href="piefed.html" class="next-link">
+    Next up: PieFed Usability Evaluation <span class="arrow">↗</span>
+  </a>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="../js/main.js"></script>
+<script src="../js/include.js"></script>
+</body>
+</html>
