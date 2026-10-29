@@ -320,7 +320,7 @@
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Case card titles; smaller variants for theme cards, features, values."
+        "purpose": "Case card titles; smaller variants for theme cards, features, process steps."
       },
       "body": {
         "displayName": "Body",
@@ -473,7 +473,7 @@
       "name": "Inverse Panel",
       "kind": "card",
       "refersTo": "panel-inverse",
-      "description": "Ink panel for reflections and values; the accent turns peach inside.",
+      "description": "Ink panel for case-study reflections.",
       "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-h\">What I would <em>do differently</em></h2></section>",
       "css": ".ds-panel{background:var(--ink);color:var(--paper);border-radius:24px;padding:64px 48px;font-family:var(--serif)}.ds-panel-h{font-weight:400;font-size:44px;line-height:1.02;margin:0}.ds-panel-h em{color:var(--accent-inverse)}"
     }

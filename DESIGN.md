@@ -189,7 +189,7 @@ The pastel garden. These are light sources and fills, never text colours.
 - **Display** (400, clamp(64px, 15vw, 230px), 0.82): the name in the homepage hero only. Second line indented and italic.
 - **Headline** (400, clamp(44px, 7vw, 96px), 0.95, -0.02em): case-study titles, About title, homepage section heads (slightly smaller at clamp(40px, 6vw, 76px)), footer call to action.
 - **Section** (400, clamp(34px, 4.4vw, 54px), 1.02): headings inside case studies and the About story, capped near 20ch.
-- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles; featured cards grow to clamp(40px, 4.6vw, 64px). Smaller titles (24–30px) for theme cards, features, values, process steps.
+- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles; featured cards grow to clamp(40px, 4.6vw, 64px). Smaller titles (24–30px) for theme cards, features, process steps.
 - **Body** (sans, 400, 16px, 1.6): default text, card descriptions, lists, fact values.
 - **Prose** (sans, 400, 17px, 1.75, max 66ch): long-form reading in case studies and the About story.
 - **Label** (400, 11px, 0.12em, uppercase, mono): metadata: tags, meta-table labels, card rows, citations, nav and pill text. Never as a heading or a label above one.
@@ -257,7 +257,7 @@ Soft and tactile: round, translucent, and they rise a little when touched.
 - **Thumbnails:** soft-focus by default (screenshots blurred 3px, abstract "bloom" art blurred 18px), sharpening to full focus on hover/focus over .9s. Touch devices show them sharp.
 - **Coming-soon card:** same glass card, unlinked, with a hand-made ASCII critter in a 72% white box on the thumbnail that tilts on hover, and a muted "Coming soon ✿".
 - **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, an even hairline border on all sides, 16px radius, no shadow. Each block opens with its own serif heading (e.g. italic 26px "Where it helped"), never a mono label.
-- **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections and About values.
+- **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections.
 
 ### Navigation
 - **Top bar:** three-column grid: name at left, centred nav (Work, About, Contact), theme toggle at right. Plain ink text links in the body serif.
