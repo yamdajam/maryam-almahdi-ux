@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PieFed Usability Evaluation · Case Study · Maryam Al-Mahdi</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../images/icons/favicon.png">
+<link rel="apple-touch-icon" href="../images/icons/apple-touch-icon.png">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="page cs lit" data-page="work">
+
+<!-- Colour field: drifting light behind the header, the page edges and the end of the page -->
+<div class="page-glows" aria-hidden="true">
+  <div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+  <div class="glow m1"></div><div class="glow m2"></div><div class="glow m3"></div><div class="glow m4"></div>
+  <div class="glow z1"></div><div class="glow z2"></div><div class="glow z3"></div>
+</div>
+
+<div data-include="nav"></div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="../index.html#work" class="back-link meta">← Back to work</a>
+</div>
+
+<!-- HERO + PROJECT SNAPSHOT -->
+<section class="cs-hero">
+  <pre class="ascii-lily" aria-hidden="true"></pre>
+  <h1 class="cs-title">
+    PieFed Usability Evaluation: <span class="script">UX Case Study</span>
+  </h1>
+
+  <div class="cs-meta cs-snapshot">
+    <div class="cs-meta-cell">
+      <p class="label">My role</p>
+      <p class="value">UI Specialist</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Team</p>
+      <p class="value">4 designers: Maryam Al-Mahdi, Rumaysa Fatima, Huiting (Fiona) Li, Mai Nguyen</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Timeline</p>
+      <p class="value">10 weeks, August to October 2025</p>
+    </div>
+    <div class="cs-meta-cell">
+      <p class="label">Participants</p>
+      <p class="value">14 total: 4 in the lab, 10 remote</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Project</p>
+      <p class="value">Usability evaluation of PieFed.social, a federated, privacy-focused alternative to Reddit and X</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Context</p>
+      <p class="value">INFO20004 Usability Evaluation Methods, University of Melbourne</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Methods</p>
+      <p class="value">Heuristic evaluation, cognitive walkthrough, moderated lab testing, hybrid card sort, tree test, System Usability Scale</p>
+    </div>
+    <div class="cs-meta-cell span-2">
+      <p class="label">Tools</p>
+      <p class="value">Melbourne Connect UX Lab, Lyssna, UXTweak, Miro, Google Forms</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="cs-content">
+
+  <!-- OVERVIEW -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Overview</span></h2>
+    <div class="cs-prose">
+      <p>PieFed promises social media without the corporations. New users could sign up, but they could not find where to post, what the labels meant, or a reason to stay. This project measured that gap and turned it into a set of evidence-based redesign recommendations.</p>
+    </div>
+  </section>
+
+  <!-- THE CHALLENGE -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">The <span class="script">challenge</span></h2>
+    <div class="cs-prose">
+      <p>PieFed is a community platform built on the fediverse, where content lives across independently run servers instead of one company's database. That structure is its selling point, but it also brings unfamiliar concepts like instances, feeds, topics and federated communities.</p>
+      <p>The question we set out to answer: <strong>can a first-time user understand and use PieFed without any prior knowledge, and does it match how people already expect social media to work?</strong></p>
+      <p>We focused on young adults aged 18 to 35 who use social media weekly, the group most likely to try a new platform, and specifically on people who had never used PieFed before.</p>
+    </div>
+  </section>
+
+  <!-- MY ROLE -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">My <span class="script">role</span></h2>
+    <div class="cs-prose">
+      <p>As UI Specialist, I owned the heuristic evaluation synthesis and contributed across research, analysis and reporting.</p>
+    </div>
+    <ul class="findings">
+      <li><strong>Heuristic evaluation:</strong> reviewed the platform against Nielsen's 10 heuristics, then consolidated three evaluators' findings into one prioritised issue table with annotated screenshots</li>
+      <li><strong>Cognitive walkthrough:</strong> completed an independent walkthrough of the complex posting task</li>
+      <li><strong>Task design:</strong> helped shape the task table used in lab testing</li>
+      <li><strong>Analysis:</strong> transcribed lab session recordings, analysed a participant session, and organised online test data into themes on the team's Miro affinity board</li>
+      <li><strong>Reporting:</strong> wrote the introduction and executive summary, compiled the appendices, and polished the final presentation</li>
+    </ul>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Process</span></h2>
+    <div class="cs-prose">
+      <p>The study ran in four phases, each one narrowing the questions for the next. Expert reviews surfaced likely problems, testing with real users confirmed which ones mattered, and triangulation tied the two together.</p>
+    </div>
+    <div class="process">
+      <div class="process-step">
+        <span class="process-num">01</span>
+        <div>
+          <h4>Expert review.</h4>
+          <p>Three of us independently applied Nielsen's heuristics, then merged the results into 10 issues rated by severity. Three cognitive walkthroughs followed, tracing account creation and posting step by step from a new user's point of view.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">02</span>
+        <div>
+          <h4>Study design.</h4>
+          <p>We wrote a screener to recruit eligible participants and split them by familiarity with community platforms like Reddit. We then turned the walkthrough findings into a task table of realistic scenarios, such as posting a pumpkin pie recipe and then editing it to your grandma's apple pie.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">03</span>
+        <div>
+          <h4>Testing.</h4>
+          <p>Four participants completed moderated think-aloud sessions in the Melbourne Connect UX Lab, followed by the System Usability Scale. Ten remote participants completed a hybrid card sort on UXTweak and a tree test on Lyssna to test the information architecture without visual design getting in the way.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">04</span>
+        <div>
+          <h4>Synthesis.</h4>
+          <p>We coded lab observations and online results onto a Miro affinity board, then cross-checked qualitative quotes against quantitative success rates. Only patterns that appeared in both sources became key findings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FINDINGS -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2">Key <span class="script">findings</span></h2>
+    <div class="cs-prose">
+      <p>PieFed scored <strong>53.75 on the System Usability Scale</strong>, well below the industry benchmark of 68. Participants could complete familiar tasks like changing the theme in under a minute, but anything that required exploring the site took three to five minutes.</p>
+    </div>
+
+    <!-- Tree test: share of participants who found the right path. Dashed line marks 50%. -->
+    <figure class="cs-figure">
+      <div class="bar-chart">
+        <ul class="bar-chart-list">
+        <li class="bar-row">
+          <div class="bar-head"><span>Update profile</span><span class="bar-value">73%</span></div>
+          <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width: 73%"></span></div>
+        </li>
+        <li class="bar-row fail">
+          <div class="bar-head"><span>Stop email notifications</span><span class="bar-value">36%</span></div>
+          <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width: 36%"></span></div>
+        </li>
+        <li class="bar-row fail">
+          <div class="bar-head"><span>View comments on own post</span><span class="bar-value">18%</span></div>
+          <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width: 18%"></span></div>
+        </li>
+        <li class="bar-row fail">
+          <div class="bar-head"><span>Upload a recipe</span><span class="bar-value">9%</span></div>
+          <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width: 9%"></span></div>
+        </li>
+        <li class="bar-row fail">
+          <div class="bar-head"><span>Change font size and theme</span><span class="bar-value">0%</span></div>
+          <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width: 0%"></span></div>
+        </li>
+        </ul>
+        <div class="bar-line" aria-hidden="true"><span>50%</span></div>
+      </div>
+      <figcaption class="chart-caption">Lyssna tree test, 11 responses, October 2025</figcaption>
+    </figure>
+
+    <h3 class="cs-h3">1. The navigation doesn't match how people think</h3>
+    <div class="cs-prose">
+      <p>Feed, Topics, Explore and Communities overlapped in users' minds. When asked where to post a recipe, most went to Feed or Topics instead of a community. In the card sort, 6 of 10 participants filed Topics under Explore, not as its own section.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"Once I found the right section, it was fine, but finding it took forever."</p>
+      <cite>P3</cite>
+    </div>
+
+    <h3 class="cs-h3">2. Labels said one thing and meant another</h3>
+    <div class="cs-prose">
+      <p>To change font size and theme, 73% of users chose Visibility, which actually controls privacy. Not one chose the correct label, User Interface.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"I thought 'visibility' meant font size."</p>
+      <cite>P4</cite>
+    </div>
+
+    <h3 class="cs-h3">3. Settings were split across three places</h3>
+    <div class="cs-prose">
+      <p>Account details, preferences and notifications lived under Settings, Account and Notifications with no clear logic. Participants cycled between them to finish a single task.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"Some things are under Account, some under Settings. It doesn't feel consistent."</p>
+      <cite>P1</cite>
+    </div>
+
+    <h3 class="cs-h3">4. Posting broke expected patterns</h3>
+    <div class="cs-prose">
+      <p>Users tried to paste images into Discussion posts, missing the separate Image post type. Pressing Enter could publish an unfinished post, and deleted posts stayed visible on profiles, so some users deleted and reposted instead of editing.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"I deleted it, but it's still showing up. Was it actually deleted?"</p>
+      <cite>P4</cite>
+    </div>
+
+    <h3 class="cs-h3">5. Usability wasn't the only barrier</h3>
+    <div class="cs-prose">
+      <p>All four lab participants said they would not use PieFed again. Beyond friction, they saw no one they knew and no content they couldn't already get elsewhere. An unexplained onboarding question about public figures also left some assuming the platform had a political focus.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"I use social media to connect with people I know, there's no one here."</p>
+      <cite>P2</cite>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Recommendations</span></h2>
+    <div class="cs-prose">
+      <p>Each recommendation answers a finding directly and is grounded in Nielsen's heuristics, Norman's design principles and Krug's usability principles.</p>
+    </div>
+    <table class="rec-table">
+      <thead>
+        <tr><th scope="col">Finding</th><th scope="col">Recommendation</th><th scope="col">Principle</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Overlapping navigation</td><td data-label="Recommendation">Nest Topics and Communities under Explore, rename Topics to Tags, and add short tooltips explaining Feed versus Communities</td><td data-label="Principle">Consistency and standards</td></tr>
+        <tr><td>Misleading labels</td><td data-label="Recommendation">Rename User Interface to Appearance and separate it clearly from privacy controls</td><td data-label="Principle">Match between system and the real world</td></tr>
+        <tr><td>Scattered settings</td><td data-label="Recommendation">Merge everything into one Settings dashboard with Profile, Privacy, Notifications, Appearance and Accessibility sections</td><td data-label="Principle">Recognition rather than recall</td></tr>
+        <tr><td>Confusing posting flow</td><td data-label="Recommendation">Add a Create Post button on every page, unify text and images in one composer, and stop Enter from publishing</td><td data-label="Principle">User control and freedom, error prevention</td></tr>
+        <tr><td>Weak feedback</td><td data-label="Recommendation">Remove deleted posts everywhere they appear and confirm the action in plain language</td><td data-label="Principle">Visibility of system status</td></tr>
+        <tr><td>Unclear onboarding</td><td data-label="Recommendation">Replace the setup questions with a guided walkthrough that explains why each choice shapes your feed</td><td data-label="Principle">Help and documentation</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- OUTCOME -->
+  <section class="cs-section reveal">
+    <h2 class="cs-h2"><span class="script">Outcome</span></h2>
+    <div class="cs-prose">
+      <p>The study delivered a full evaluation plan, a findings report backed by four methods and 14 participants, and a five-minute video presentation of results. It met its three goals: measuring how learnable PieFed is for new users, testing it against existing social media mental models, and pinpointing where navigation, terminology and feedback break down.</p>
+      <p>The strongest result was agreement between methods. Problems flagged in the expert review in week 4 reappeared in lab sessions and in the tree test numbers, which gave the recommendations a solid evidence base.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- REFLECTION (dark) -->
+<div class="cs-content">
+  <section class="cs-section reveal" style="border-bottom: none; padding-bottom: 0;">
+    <div class="reflection">
+      <div class="reflection-inner">
+        <h2 class="cs-h2"><span class="script">Reflection</span></h2>
+        <ul class="findings">
+      <li><strong>Triangulation matters.</strong> A quote alone can be dismissed, and a percentage alone lacks a reason. Pairing "I thought visibility meant font size" with a 73% misrouting rate made the case for a label change hard to argue with.</li>
+      <li><strong>Structure can be tested without visuals.</strong> The tree test removed layout and styling, which isolated naming and hierarchy as the core problem rather than visual design.</li>
+      <li><strong>Usability is not the same as value.</strong> Fixing every issue found here would make PieFed easier to use, but participants also needed a reason to return. Evaluation work should flag that boundary instead of treating every problem as a design fix.</li>
+      <li><strong>What would change next time:</strong> a larger lab sample, and running the tree test on the redesigned structure to measure whether the recommendations improve success rates.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- NEXT PROJECT -->
+<section class="next-project reveal">
+<pre class="meadow sprig" aria-hidden="true">  <span class="p">.-.</span>           <span class="p">___</span>    <span class="p">.-.</span>           <span class="p">.-.</span>     <span class="p">___</span>          <span class="p">.-.</span>     <span class="p">.-.</span>
+ <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>  <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>   <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>   <span class="g">,</span>    <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>   <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>
+  <span class="p">'-'</span>    <span class="p">(_)</span>    <span class="p">\</span><span class="c">@</span><span class="p">/</span>    <span class="p">'-'</span><span class="g">\</span>   <span class="p">(_)</span>    <span class="p">'-'</span>     <span class="p">\</span><span class="c">@</span><span class="p">/</span>   <span class="p">(_)</span>    <span class="p">'-'</span><span class="g">\</span>    <span class="p">'-'</span>
+   <span class="g">|</span>      <span class="g">|</span>      <span class="g">|</span>         <span class="g">|</span>   <span class="g">|</span>      <span class="g">|</span>       <span class="g">|</span>     <span class="g">|</span>         <span class="g">|</span>    <span class="g">|</span>
+ <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>   <span class="g">\|/</span>    <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\|/</span>   <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>    <span class="g">\|/</span>   <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>
+<span class="g">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></pre>
+  <a href="walk-of-life.html" class="next-link">
+    Next up: Walk of Life AI <span class="arrow">↗</span>
+  </a>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="../js/main.js"></script>
+<script src="../js/include.js"></script>
+</body>
+</html>

@@ -30,7 +30,7 @@ Rigorous research paired with a strong eye for visual craft. The research is rea
 
 ## Capabilities and Constraints
 
-- Seven work slots, in this order: Cove (capstone project, "Coming soon"; no details on the site yet), PieFed evaluation ("Coming soon"), Walk of Life AI (INFO10003, page live), Futures Thinking (INFO30005, page live), then Local Bakery redesign, first CSS/HTML site, and a university society website, all "Coming soon".
+- Seven work slots, in this order: Cove (capstone project, "Coming soon"; no details on the site yet), PieFed usability evaluation (page live), Walk of Life AI (INFO10003, page live), Futures Thinking (INFO30005, page live), then Local Bakery redesign, first CSS/HTML site, and a university society website, all "Coming soon".
 - A PieFed case study write-up exists in `content/piefed_usability_evaluation_case.md` but is not yet confirmed final for publishing.
 - Team projects must state team size and Maryam's specific role; don't credit her with teammates' work.
 - Contact details are undecided: the email (`you@example.com`) and LinkedIn (`/in/your-profile`) are placeholders. Keep them hidden or unlinked until real values are provided; never ship the placeholders as live links.
