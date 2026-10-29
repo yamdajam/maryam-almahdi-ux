@@ -17,16 +17,23 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="page" data-page="about">
+<body class="page lit" data-page="about">
+
+<!-- Colour field: drifting light behind the header, the page edges and the end of the page -->
+<div class="page-glows" aria-hidden="true">
+  <div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+  <div class="glow m1"></div><div class="glow m2"></div><div class="glow m3"></div><div class="glow m4"></div>
+  <div class="glow z1"></div><div class="glow z2"></div><div class="glow z3"></div>
+</div>
 
 <div data-include="nav"></div>
 
 <!-- HERO -->
 <section class="about-hero">
-  <div>
+  <div class="about-text">
     <h1 class="about-title">Designer, baker,<br><em class="script">always curious</em>.</h1>
     <div class="about-body">
       <p>I'm a UX designer and researcher completing a Bachelor of Design (UX/UI) at the University of Melbourne. My work spans user research, Figma prototyping, and front-end development, with a particular interest in how AI can make digital experiences feel more human.</p>
@@ -35,6 +42,7 @@
   </div>
 
   <div class="about-photo">
+    <pre class="ascii-lily" aria-hidden="true"></pre>
     <div class="frame">
       <img src="images/about/headshot-2.jpg" alt="Portrait of Maryam Al-Mahdi smiling, wearing a plum hijab and a beige coat against a pale grey background.">
     </div>
@@ -246,6 +254,15 @@
     </div>
   </div>
 </section>
+
+<div class="meadow-end" aria-hidden="true">
+<pre class="meadow sprig">  <span class="p">.-.</span>           <span class="p">___</span>    <span class="p">.-.</span>           <span class="p">.-.</span>     <span class="p">___</span>          <span class="p">.-.</span>     <span class="p">.-.</span>
+ <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>  <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>    <span class="g">,</span>    <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>   <span class="p">(</span><span class="c">@@@</span><span class="p">)</span>   <span class="g">,</span>    <span class="p">(</span> <span class="c">*</span> <span class="p">)</span>   <span class="p">(</span> <span class="c">o</span> <span class="p">)</span>
+  <span class="p">'-'</span>    <span class="p">(_)</span>    <span class="p">\</span><span class="c">@</span><span class="p">/</span>    <span class="p">'-'</span><span class="g">\</span>   <span class="p">(_)</span>    <span class="p">'-'</span>     <span class="p">\</span><span class="c">@</span><span class="p">/</span>   <span class="p">(_)</span>    <span class="p">'-'</span><span class="g">\</span>    <span class="p">'-'</span>
+   <span class="g">|</span>      <span class="g">|</span>      <span class="g">|</span>         <span class="g">|</span>   <span class="g">|</span>      <span class="g">|</span>       <span class="g">|</span>     <span class="g">|</span>         <span class="g">|</span>    <span class="g">|</span>
+ <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>   <span class="g">\|/</span>    <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\|/</span>   <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>    <span class="g">\|/</span>   <span class="g">\|/</span>      <span class="g">\</span> <span class="g">|</span>  <span class="g">\</span> <span class="g">|</span> <span class="g">/</span>
+<span class="g">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></pre>
+</div>
 
 <div data-include="footer"></div>
 

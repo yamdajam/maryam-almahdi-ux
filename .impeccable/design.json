@@ -480,19 +480,19 @@
   ],
   "narrative": {
     "northStar": "The Sunlit Studio Notebook",
-    "overview": "A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.\n\nThe system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before \"Next up\", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** stays fully calm, with no glows. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.\n\nCraft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.",
+    "overview": "A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.\n\nThe system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before \"Next up\", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** is lit the same way: colour behind the header and the end of the page, the lily peeking out from behind the portrait, and the meadow above the footer. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.\n\nCraft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.",
     "keyCharacteristics": [
       "Warm paper and green-black ink, with a global film grain layer.",
-      "One serif at one weight (400); hierarchy from size, italics and mono labels.",
+      "A serif for headings and a modern sans for reading text, all at weight 400; hierarchy from size, italics and mono labels.",
       "Pastel light fields (homepage only) under frosted glass.",
       "Pills everywhere for actions and tags; generous rounded cards.",
-      "A single deep terracotta accent for emphasis and small markers.",
+      "One text colour: all words are ink (or ink-soft for secondary text); emphasis is italic, never coloured.",
       "Slow, soft motion on a shared easing curve; everything respects reduced motion."
     ],
     "rules": [
       {
-        "name": "The One Accent Rule",
-        "body": "Deep Terracotta is the only colour used for text emphasis. Pastels light the page; they never carry words.",
+        "name": "The One Ink Rule",
+        "body": "Text is never coloured for emphasis: headings, emphasised words, numbers and arrows all use the ink colour, with italics doing the emphasising. Pastels light the page; they never carry words.",
         "section": "colors"
       },
       {
@@ -512,12 +512,12 @@
       },
       {
         "name": "The Single Weight Rule",
-        "body": "Everything is weight 400. Hierarchy comes from size, italics, colour (ink vs ink-soft vs accent) and the switch to mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.",
+        "body": "Everything is weight 400. Hierarchy comes from size, italics, ink vs ink-soft, and the switch between serif, sans and mono. Even `<strong>` stays 400 and gets a butter highlighter instead of bold.",
         "section": "typography"
       },
       {
         "name": "The Italic Voice Rule",
-        "body": "Italic is the emphasis voice: the second half of a heading, the tagline, \"Read case study\", sub-titles, pull quotes. Use it for the human, spoken part of a line.",
+        "body": "Italic is the emphasis voice: the second half of a heading, \"Read case study\", emphasised words in prose. It is the only emphasis; the colour never changes.",
         "section": "typography"
       },
       {
@@ -542,7 +542,7 @@
       }
     ],
     "dos": [
-      "**Do** keep every heading and body text at weight 400; create emphasis with italics, size, the terracotta accent or the butter highlighter.",
+      "**Do** keep every heading and body text at weight 400; create emphasis with italics, size or the butter highlighter, never with a text colour.",
       "**Do** put all facts, dates, tags and codes in the 11px mono label style with 0.12em tracking.",
       "**Do** define every colour as a `:root` custom property with values for both light and dark themes.",
       "**Do** use pills (999px) for actions and tags, and glass only over coloured light.",
@@ -555,8 +555,8 @@
       "**Don't** use bold (600+) weights anywhere, including `<strong>`.",
       "**Don't** put glow fields or drifting light on the About page, or strong light directly under case-study prose: on case studies keep the middle glows in the margins.",
       "**Don't** drift toward a corporate SaaS look: no sharp-cornered saturated blue buttons, stock icon sets, or generic dashboard styling.",
-      "**Don't** set text in the pastel colours or in Bright Coral on paper; only Deep Terracotta carries coloured text.",
-      "**Don't** introduce a second display or body typeface; the system is one serif plus one mono.",
+      "**Don't** colour any text: no terracotta, pastel or coral words; ASCII art is the only coloured lettering.",
+      "**Don't** add typefaces beyond the three: Instrument Serif (headings), Instrument Sans (reading text), JetBrains Mono (labels).",
       "**Don't** put tiny subheadings (eyebrows, kickers, numbered section marks like \"01 The problem\", counters like \"(01 / 06)\") above or beside headings.",
       "**Don't** use em dashes anywhere: copy, titles, citations or labels.",
       "**Don't** give cards or callouts a single coloured strip (a thick left border or top bar); keep borders even."
