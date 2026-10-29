@@ -25,25 +25,25 @@ colors:
 typography:
   display:
     fontFamily: "Instrument Serif, Times New Roman, serif"
-    fontSize: "clamp(64px, 15vw, 230px)"
+    fontSize: "clamp(54.4px, 12.8vw, 195.5px)"
     fontWeight: 400
     lineHeight: 0.82
     letterSpacing: "-0.02em"
   headline:
     fontFamily: "Instrument Serif, Times New Roman, serif"
-    fontSize: "clamp(44px, 7vw, 96px)"
+    fontSize: "clamp(37.4px, 6vw, 81.6px)"
     fontWeight: 400
     lineHeight: 0.95
     letterSpacing: "-0.02em"
   section:
     fontFamily: "Instrument Serif, Times New Roman, serif"
-    fontSize: "clamp(34px, 4.4vw, 54px)"
+    fontSize: "clamp(28.9px, 3.7vw, 45.9px)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.01em"
   title:
     fontFamily: "Instrument Serif, Times New Roman, serif"
-    fontSize: "clamp(32px, 3.2vw, 44px)"
+    fontSize: "clamp(27.2px, 2.7vw, 37.4px)"
     fontWeight: 400
     lineHeight: 0.95
   body:
@@ -186,10 +186,10 @@ The pastel garden. These are light sources and fills, never text colours.
 **Character:** A condensed, slightly literary serif for the name, headings and a few display links, a clean modern sans from the same family for everything you read, and a small, technical mono in spaced capitals. The serif feels hand-set and warm, the sans keeps paragraphs easy, the mono feels like careful notes in the margin.
 
 ### Hierarchy
-- **Display** (400, clamp(64px, 15vw, 230px), 0.82): the name in the homepage hero only. Second line indented and italic.
-- **Headline** (400, clamp(44px, 7vw, 96px), 0.95, -0.02em): case-study titles, About title, homepage section heads (slightly smaller at clamp(40px, 6vw, 76px)), footer call to action.
-- **Section** (400, clamp(34px, 4.4vw, 54px), 1.02): headings inside case studies and the About story, capped near 20ch.
-- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles (every card the same size, no featured card). Smaller titles (24–30px) for theme cards, features, process steps.
+- **Display** (400, clamp(54.4px, 12.8vw, 195.5px), 0.82): the name in the homepage hero only. Second line indented and italic.
+- **Headline** (400, clamp(37.4px, 6vw, 81.6px), 0.95, -0.02em): case-study titles, About title, homepage section heads (slightly smaller at clamp(34px, 5.1vw, 64.6px)), footer call to action.
+- **Section** (400, clamp(28.9px, 3.7vw, 45.9px), 1.02): headings inside case studies and the About story, capped near 20ch.
+- **Title** (400, clamp(27.2px, 2.7vw, 37.4px), 0.95): case card titles (every card the same size, no featured card). Smaller titles (19–24px) for theme cards, features, process steps.
 - **Body** (sans, 400, 16px, 1.6): default text, card descriptions, lists, fact values.
 - **Prose** (sans, 400, 17px, 1.75, max 66ch): long-form reading in case studies and the About story.
 - **Label** (400, 11px, 0.12em, uppercase, mono): metadata: tags, meta-table labels, card rows, citations, nav and pill text. Never as a heading or a label above one.
@@ -206,9 +206,9 @@ The pastel garden. These are light sources and fills, never text colours.
 ## Layout
 
 - **Gutters:** 32px page gutters on desktop, 16px under 760px.
-- **Containers:** homepage content up to 1240px (left-aligned, not centred); case-study header 1100px; case-study reading column 820px with prose at 62ch; covers and About sections up to 1240px, centred.
+- **Containers:** homepage content up to 1240px (left-aligned, not centred), with the case card grid capped at 1054px; case-study header 1100px; case-study reading column 820px with prose at 62ch; covers and About sections up to 1240px, centred.
 - **Hero:** full viewport height (`100svh`) grid of top bar, name, and bottom row; the tagline and CTAs sit right-aligned under the name at 34ch, breaking the left edge for an editorial feel.
-- **Work grid:** two equal columns with 28px gaps and equal-height rows (`grid-auto-rows: 1fr`), so every case card is the same size; no card spans both columns. One column under 760px.
+- **Work grid:** two equal columns with 24px gaps and equal-height rows (`grid-auto-rows: 1fr`), so every case card is the same size; no card spans both columns. One column under 760px.
 - **Meta tables:** four-column grids (case-study facts, About facts) bounded by hairlines top and bottom, collapsing to two columns under 900px and one under 500px.
 - **Rhythm:** sections breathe at 100–120px on the homepage, 64px between case-study sections, each separated by a hairline. Small gaps step through 6, 10, 14, 22, 28px.
 - **Breakpoints:** 900px (grids halve, About hero stacks, bubbles become a wrapped list), 760px (single column, mobile gutters, nav drops to its own row), 500px (meta tables single column).
