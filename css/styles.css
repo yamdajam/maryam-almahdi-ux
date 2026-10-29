@@ -371,7 +371,7 @@ a.glass:hover::before { transform: translateX(12%); }
   max-width: 1240px;
 }
 
-/* Thumbnail: images are shown sharp; placeholders are a soft bloom */
+/* Thumbnail: images are shown sharp; projects without one get a clean gradient */
 .thumb {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -386,22 +386,10 @@ a.glass:hover::before { transform: translateX(12%); }
   color: #262b26; z-index: 2;
 }
 .thumb .tag > span { padding: 2px 8px; border-radius: 999px; background: rgba(255, 255, 255, .7); }
-.bloom, .thumb .shot {
+.thumb .shot {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
-}
-.thumb .shot { object-position: top left; }
-.bloom {
-  filter: blur(18px) saturate(1.1);
-  transform: scale(1.12);
-  background:
-    radial-gradient(circle at 50% 46%, var(--c0, #fff9e6) 0 7%, transparent 8%),
-    radial-gradient(ellipse 12% 30% at 50% 24%, var(--c1, #fbf6ea) 0 60%, transparent 62%),
-    radial-gradient(ellipse 20% 17% at 64% 44%, var(--c2, #f6efdc) 0 60%, transparent 62%),
-    radial-gradient(ellipse 20% 17% at 36% 44%, var(--c2, #f6efdc) 0 60%, transparent 62%),
-    radial-gradient(ellipse 12% 26% at 58% 66%, var(--c3, #efe7cf) 0 60%, transparent 62%),
-    radial-gradient(ellipse 12% 26% at 42% 66%, var(--c3, #efe7cf) 0 60%, transparent 62%),
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.35), transparent 60%);
+  object-position: top left;
 }
 
 .body { display: flex; flex-direction: column; gap: 14px; padding: 0 10px; flex: 1; }

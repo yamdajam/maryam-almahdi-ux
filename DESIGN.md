@@ -254,7 +254,7 @@ Soft and tactile: round, translucent, and they rise a little when touched.
 
 ### Cards / Containers
 - **Glass case card:** 22px radius, 16px 16px 24px padding, column layout with 22px gap: thumbnail (with only the year as a small tag), title, description, chips, then a hairline footer with an italic "Read case study →". No item numbers, subject codes, team sizes or colour swatches on the card. A diagonal sheen overlays the card and slides 12% on hover while the card rises 6px. All cards are the same size.
-- **Thumbnails:** real images are sharp from the start, with no hover focus effect. Projects without an image use a static soft "bloom" gradient.
+- **Thumbnails:** real images are sharp from the start, with no hover focus effect. Projects without an image get a clean, sharp colour gradient (no blurred shapes).
 - **Coming-soon card:** same glass card and size, unlinked, with a plain italic serif "Coming soon" on a white pill in the centre of the thumbnail and no footer.
 - **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, an even hairline border on all sides, 16px radius, no shadow. Each block opens with its own serif heading (e.g. italic 26px "Where it helped"), never a mono label.
 - **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections.
