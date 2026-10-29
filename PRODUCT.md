@@ -39,7 +39,7 @@ Rigorous research paired with a strong eye for visual craft. The research is rea
 ## Brand Commitments
 
 - Name: Maryam Al-Mahdi. Location written as "Naarm / Melbourne".
-- Existing voice: warm, plain, first person, a little playful (ASCII-art "coming soon" placeholders, "fresh out the oven soon"), but specific and evidence-led in case studies.
+- Existing voice: warm, plain, first person, a little playful (ASCII-art ornaments; unfinished projects are labelled plainly "Coming soon"), but specific and evidence-led in case studies.
 - The About page no longer shows a values section or an "Open to opportunities" badge (removed at Maryam's request); availability appears only in the About facts strip and the homepage hero.
 - Yam's Oven (home cake studio) appears on the site as a passion project. Its prominence is an open decision, not a binding commitment.
 

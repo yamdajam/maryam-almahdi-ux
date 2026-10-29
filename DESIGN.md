@@ -130,9 +130,9 @@ components:
 
 A designer's notebook left open in soft afternoon light. The page is warm paper with a fine film grain over everything; behind the homepage, large blurred fields of sage, dusty blue, butter and peach drift slowly like light moving across a desk. On top of that light sit frosted glass panes: cards, pills and chips that are soft to the eye and lift gently when touched. Type does the talking. Instrument Serif is set huge and always at weight 400, with italics carrying the emphasis, and every fact is filed under a small JetBrains Mono caption in spaced capitals, like a label on a specimen jar.
 
-The system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, thumbnails that start soft-focus and sharpen when you look at them. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before "Next up", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** is lit the same way: colour behind the header and the end of the page, the lily peeking out from behind the portrait, and the meadow above the footer. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.
+The system has two registers. The **homepage** is the sunlit desk: glows, glass, ASCII flowers, bubbles that drift with scroll and shy away from the cursor, case cards that are all the same size with sharp thumbnails. The **case studies** are the notebook's written pages lit by the same window: drifting colour behind the header and the end of the page, softer light along the margins, an ASCII lily beside the title and an ASCII flower meadow before "Next up", while the reading column itself stays on calm paper with quiet translucent surfaces, generous measure and an inverted ink panel for reflections. The **About page** is lit the same way: colour behind the header and the end of the page, the lily peeking out from behind the portrait, and the meadow above the footer. Both registers work in light and dark; dark mode is a deep green-black night with cream ink, not a grey inversion.
 
-Craft lives in small, rewarded details: a sheen that slides across a card on hover, colour swatches in a card's footer, a drop cap, butter-highlighter emphasis in prose, hand-made ASCII critters in place of missing thumbnails.
+Craft lives in small, rewarded details: a sheen that slides across a card on hover, a drop cap, butter-highlighter emphasis in prose, a plain "Coming soon" label in place of missing thumbnails.
 
 **Key Characteristics:**
 - Warm paper and green-black ink, with a global film grain layer.
@@ -173,7 +173,7 @@ The pastel garden. These are light sources and fills, never text colours.
 ### Named Rules
 **The One Ink Rule.** Text is never coloured for emphasis: headings, emphasised words, numbers and arrows all use the ink colour, with italics doing the emphasising. Pastels light the page; they never carry words. (The Deep Terracotta tokens remain defined but are not used for text.)
 
-**The Pastels-Are-Light Rule.** Sage, blue, butter, peach and coral appear as blurred light, gradients, highlighter and swatches. Never as flat solid UI fills behind body text.
+**The Pastels-Are-Light Rule.** Sage, blue, butter, peach and coral appear as blurred light, gradients and highlighter. Never as flat solid UI fills behind body text.
 
 **The Two-Theme Rule.** Every colour decision is made through the custom properties on `:root`, with a dark value defined for both the system-preference block and `[data-theme="dark"]`. No hard-coded colour may break dark mode (the white label backgrounds on thumbnails are the deliberate exception: they sit on fixed light artwork).
 
@@ -189,7 +189,7 @@ The pastel garden. These are light sources and fills, never text colours.
 - **Display** (400, clamp(64px, 15vw, 230px), 0.82): the name in the homepage hero only. Second line indented and italic.
 - **Headline** (400, clamp(44px, 7vw, 96px), 0.95, -0.02em): case-study titles, About title, homepage section heads (slightly smaller at clamp(40px, 6vw, 76px)), footer call to action.
 - **Section** (400, clamp(34px, 4.4vw, 54px), 1.02): headings inside case studies and the About story, capped near 20ch.
-- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles; featured cards grow to clamp(40px, 4.6vw, 64px). Smaller titles (24–30px) for theme cards, features, process steps.
+- **Title** (400, clamp(32px, 3.2vw, 44px), 0.95): case card titles (every card the same size, no featured card). Smaller titles (24–30px) for theme cards, features, process steps.
 - **Body** (sans, 400, 16px, 1.6): default text, card descriptions, lists, fact values.
 - **Prose** (sans, 400, 17px, 1.75, max 66ch): long-form reading in case studies and the About story.
 - **Label** (400, 11px, 0.12em, uppercase, mono): metadata: tags, meta-table labels, card rows, citations, nav and pill text. Never as a heading or a label above one.
@@ -208,7 +208,7 @@ The pastel garden. These are light sources and fills, never text colours.
 - **Gutters:** 32px page gutters on desktop, 16px under 760px.
 - **Containers:** homepage content up to 1240px (left-aligned, not centred); case-study header 1100px; case-study reading column 820px with prose at 62ch; covers and About sections up to 1240px, centred.
 - **Hero:** full viewport height (`100svh`) grid of top bar, name, and bottom row; the tagline and CTAs sit right-aligned under the name at 34ch, breaking the left edge for an editorial feel.
-- **Work grid:** two equal columns with 28px gaps; the featured card (and a lone last card) spans both columns with image and text side by side. One column under 760px.
+- **Work grid:** two equal columns with 28px gaps and equal-height rows (`grid-auto-rows: 1fr`), so every case card is the same size; no card spans both columns. One column under 760px.
 - **Meta tables:** four-column grids (case-study facts, About facts) bounded by hairlines top and bottom, collapsing to two columns under 900px and one under 500px.
 - **Rhythm:** sections breathe at 100–120px on the homepage, 64px between case-study sections, each separated by a hairline. Small gaps step through 6, 10, 14, 22, 28px.
 - **Breakpoints:** 900px (grids halve, About hero stacks, bubbles become a wrapped list), 760px (single column, mobile gutters, nav drops to its own row), 500px (meta tables single column).
@@ -237,7 +237,7 @@ Soft and rounded throughout, with no hard corners on interactive elements.
 - **Cards** are generously rounded (22px; 18px for small graphic-design tiles), with thumbnails inset at 12px.
 - **Calm surfaces** on reading pages at 16px; the inverse panel at 24px (18px on mobile).
 - **The Arch:** portraits use an arched-window frame, a fully round top with gently rounded bottom corners (160px 160px 14px 14px on the homepage; 210px 210px 16px 16px on About). This is the signature silhouette.
-- Circles for dots: status dot, slideshow dots, swatches, theme-toggle half-moon.
+- Circles for dots: status dot, slideshow dots, theme-toggle half-moon.
 
 ## Components
 
@@ -253,9 +253,9 @@ Soft and tactile: round, translucent, and they rise a little when touched.
 - **Thumbnail tags:** mono labels on a 70% white pill pinned to the top of a thumbnail, always dark ink (they sit on fixed light artwork).
 
 ### Cards / Containers
-- **Glass case card:** 22px radius, 16px 16px 24px padding, column layout with 22px gap: thumbnail, mono row (number + year), title, description, chips, then a hairline footer with colour swatches and an italic "Read case study →". A diagonal sheen overlays the card and slides 12% on hover while the card rises 6px. Featured cards go horizontal.
-- **Thumbnails:** soft-focus by default (screenshots blurred 3px, abstract "bloom" art blurred 18px), sharpening to full focus on hover/focus over .9s. Touch devices show them sharp.
-- **Coming-soon card:** same glass card, unlinked, with a hand-made ASCII critter in a 72% white box on the thumbnail that tilts on hover, and a muted "Coming soon ✿".
+- **Glass case card:** 22px radius, 16px 16px 24px padding, column layout with 22px gap: thumbnail (with only the year as a small tag), title, description, chips, then a hairline footer with an italic "Read case study →". No item numbers, subject codes, team sizes or colour swatches on the card. A diagonal sheen overlays the card and slides 12% on hover while the card rises 6px. All cards are the same size.
+- **Thumbnails:** real images are sharp from the start, with no hover focus effect. Projects without an image use a static soft "bloom" gradient.
+- **Coming-soon card:** same glass card and size, unlinked, with a plain italic serif "Coming soon" on a white pill in the centre of the thumbnail and no footer.
 - **Quiet surface blocks** (reading pages): pull quotes, theme cards, features, metrics, AI columns, slideshow. Quiet Surface fill, an even hairline border on all sides, 16px radius, no shadow. Each block opens with its own serif heading (e.g. italic 26px "Where it helped"), never a mono label.
 - **Inverse panel:** ink background, paper text, 24px radius, generous padding (64px 48px). Used for case-study reflections.
 
@@ -272,7 +272,7 @@ Four-column facts strips (Project, Role, Timeline, Team / Based in, Studying…)
 Italic serif words in glass pills, scattered absolutely across a 360px field, each floating on its own 7–10s loop, drifting with scroll and moving away from the cursor. Peach and cream tones mix in. Below 900px they become a static wrapped list.
 
 ### ASCII Ornaments (signature)
-Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the hero name, small sprigs beside section heads (coral petals, ochre centres, leaf stems), and critters on coming-soon thumbnails. Always `aria-hidden` and decorative.
+Hand-drawn ASCII in JetBrains Mono: a large generated lily glowing behind the hero name, small sprigs beside section heads (coral petals, ochre centres, leaf stems). Always `aria-hidden` and decorative.
 
 Case studies carry two: the generated lily beside the title (its stem fades out above the facts strip) and a hand-drawn flower meadow in the sprig colours above "Next up".
 
@@ -285,7 +285,7 @@ Case studies carry two: the generated lily beside the title (its stem fades out 
 - **Do** use pills (999px) for actions and tags, and glass only over coloured light.
 - **Do** use the shared soft easing (`cubic-bezier(.2,.7,.2,1)`) for lifts, sheens and focus effects, and disable animation and transitions under `prefers-reduced-motion`.
 - **Do** keep reading columns calm: 820px column, 17px sans prose at 66ch, Quiet Surface blocks, hairline section dividers.
-- **Do** give any image that starts soft-focus a sharp state on hover, focus and touch devices.
+- **Do** show project images sharp from the start; no blur-to-focus effects.
 - **Do** punctuate with commas, colons, semicolons, parentheses or full stops; use "·" as the separator in page titles.
 
 ### Don't:

@@ -366,23 +366,12 @@ a.glass:hover::before { transform: translateX(12%); }
 .cases {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr; /* every card the same size */
   gap: 28px;
   max-width: 1240px;
 }
 
-/* Featured (and a lone last card) span the full width, image beside text */
-.glass.featured, .glass.wide {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  gap: 36px;
-  padding: 16px 36px 16px 16px;
-}
-.glass.featured .thumb, .glass.wide .thumb { flex: 1.15; aspect-ratio: 4 / 3; }
-.glass.wide .thumb { flex: 1; aspect-ratio: 16 / 9; }
-.glass.featured .body, .glass.wide .body { flex: 1; padding: 18px 0; }
-.glass.featured h3 { font-size: clamp(40px, 4.6vw, 64px); }
-
-/* Thumbnail: soft-focus, sharpens on hover */
+/* Thumbnail: images are shown sharp; placeholders are a soft bloom */
 .thumb {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -393,18 +382,15 @@ a.glass:hover::before { transform: translateX(12%); }
 }
 .thumb .tag {
   position: absolute; left: 12px; top: 10px; right: 12px;
-  display: flex; justify-content: space-between;
+  display: flex; justify-content: flex-end;
   color: #262b26; z-index: 2;
 }
 .thumb .tag > span { padding: 2px 8px; border-radius: 999px; background: rgba(255, 255, 255, .7); }
-.thumb .tag > span:empty { visibility: hidden; }
 .bloom, .thumb .shot {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
-  transition: filter .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
 }
-/* Real screenshots only get a light soft-focus so they stay legible */
-.thumb .shot { filter: blur(3px) saturate(1.05); transform: scale(1.04); object-position: top left; }
+.thumb .shot { object-position: top left; }
 .bloom {
   filter: blur(18px) saturate(1.1);
   transform: scale(1.12);
@@ -417,18 +403,8 @@ a.glass:hover::before { transform: translateX(12%); }
     radial-gradient(ellipse 12% 26% at 42% 66%, var(--c3, #efe7cf) 0 60%, transparent 62%),
     radial-gradient(circle at 50% 50%, rgba(255,255,255,.35), transparent 60%);
 }
-.glass:hover .bloom, .glass:focus-visible .bloom,
-.glass:hover .shot,  .glass:focus-visible .shot {
-  filter: blur(0) saturate(1);
-  transform: scale(1);
-}
-/* Touch screens can't hover, so show images sharp */
-@media (hover: none) {
-  .thumb .shot { filter: none; transform: none; }
-}
 
 .body { display: flex; flex-direction: column; gap: 14px; padding: 0 10px; flex: 1; }
-.body .row { display: flex; justify-content: space-between; gap: 12px; }
 .body h3 { font-weight: 400; font-size: clamp(32px, 3.2vw, 44px); line-height: .95; }
 .body h3 em { font-style: italic; }
 .body p { font-size: 16px; line-height: 1.55; max-width: 44ch; }
@@ -441,28 +417,21 @@ a.glass:hover::before { transform: translateX(12%); }
   color: var(--ink);
 }
 .foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--foot-line); }
-.swatches { display: flex; gap: 5px; align-items: center; }
-.swatches b { width: 13px; height: 13px; border-radius: 50%; display: inline-block; border: 1px solid rgba(255,255,255,.8); }
 .view { display: inline-flex; gap: 10px; align-items: center; font-size: 20px; font-style: italic; }
 .view .arrow { transition: transform .4s ease; }
 .glass:hover .view .arrow { transform: translateX(6px); }
 
-/* Case studies without a page yet: ASCII critter on the thumb, no link */
-.soon-art {
-  position: absolute; left: 50%; top: 54%; z-index: 1;
+/* Case studies without a page yet: a plain "Coming soon" label, no link */
+.soon-label {
+  position: absolute; left: 50%; top: 50%; z-index: 1;
   transform: translate(-50%, -50%);
-  margin: 0; padding: 12px 16px;
-  font-family: var(--mono); font-size: 14px; line-height: 1.15;
-  white-space: pre; color: #262b26;
-  background: rgba(255, 255, 255, .72);
-  border-radius: 12px;
-  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  margin: 0; padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .78);
+  color: #262b26;
+  font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.1;
+  white-space: nowrap;
 }
-.soon-art .p { color: #d9503f; }
-.soon-art .c { color: #a8871c; }
-.soon-art .g { color: #4f6d4b; }
-.glass.soon:hover .soon-art { transform: translate(-50%, -50%) rotate(-2deg) scale(1.04); }
-.glass.soon .view { color: var(--ink-soft); }
 
 /* Lower half of the homepage: intro, skills, graphic design */
 .more { position: relative; overflow-x: clip; isolation: isolate; padding: 0 32px 120px; }
@@ -853,9 +822,6 @@ a.glass:hover::before { transform: translateX(12%); }
   .more { padding: 0 16px 80px; }
   .more > section { padding-top: 72px; }
   .cases { grid-template-columns: 1fr; gap: 20px; }
-  .glass.featured, .glass.wide { flex-direction: column; gap: 22px; padding: 16px 16px 24px; }
-  .glass.featured .thumb, .glass.wide .thumb { flex: none; aspect-ratio: 16 / 10; }
-  .glass.featured .body, .glass.wide .body { padding: 0 10px; }
   .intro { grid-template-columns: 1fr; gap: 24px; }
   .intro-photo { width: min(70%, 260px); }
   .site-footer { margin: 0 16px; padding-top: 48px; }
@@ -886,7 +852,7 @@ a.glass:hover::before { transform: translateX(12%); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .glow, .scroll-cue span, .bubble { animation: none; }
-  .glass, .glass::before, .bloom, .thumb .shot, .view .arrow, .yams-photo { transition: none; }
+  .glass, .glass::before, .view .arrow, .yams-photo { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
