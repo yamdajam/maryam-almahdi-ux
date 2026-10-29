@@ -56,10 +56,11 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
   }
 })();
 
-/* ASCII lily: draw a soft lily off-screen, then re-render it as characters */
+/* ASCII lily: draw a soft lily off-screen, then re-render it as characters.
+   Fills the homepage hero (#ascii) and any .ascii-lily on case studies. */
 (function () {
-  const out = document.getElementById("ascii");
-  if (!out) return;
+  const outs = document.querySelectorAll("#ascii, .ascii-lily");
+  if (!outs.length) return;
   const W = 520, H = 620;
   const src = document.createElement("canvas");
   src.width = W; src.height = H;
@@ -118,7 +119,10 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
     grid.push(row);
   }
   const base = grid.map((r) => r.slice());
-  const paint = () => { out.textContent = grid.map((r) => r.map((i) => ramp[i]).join("")).join("\n"); };
+  const paint = () => {
+    const text = grid.map((r) => r.map((i) => ramp[i]).join("")).join("\n");
+    outs.forEach((out) => { out.textContent = text; });
+  };
   paint();
 
   // gentle shimmer: nudge a few characters up/down the ramp
