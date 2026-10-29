@@ -219,3 +219,27 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
   document.querySelector(".contrib-btn.prev")?.addEventListener("click", () => goTo(current - 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
 })();
+
+/* Click to enlarge: any button[data-lightbox] containing an <img> opens it full size */
+(function () {
+  const triggers = document.querySelectorAll("[data-lightbox]");
+  if (!triggers.length || typeof HTMLDialogElement === "undefined") return;
+  const dlg = document.createElement("dialog");
+  dlg.className = "lightbox";
+  dlg.setAttribute("aria-label", "Enlarged image");
+  const big = document.createElement("img");
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "pill solid meta lightbox-close";
+  close.textContent = "Close";
+  dlg.append(big, close);
+  document.body.appendChild(dlg);
+  dlg.addEventListener("click", () => dlg.close());
+  triggers.forEach((t) => t.addEventListener("click", () => {
+    const img = t.querySelector("img");
+    if (!img) return;
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    dlg.showModal();
+  }));
+})();
