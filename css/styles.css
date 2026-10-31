@@ -27,6 +27,10 @@
   --grain-blend: multiply;
   --ascii-color: #fffdf2;
   --ascii-glow: rgba(255, 253, 242, .55);
+  --hero-img: url("../images/hero/hero-light.jpg");
+  --hero-veil: linear-gradient(90deg, rgba(243, 240, 232, .55), rgba(243, 240, 232, .15) 60%, rgba(243, 240, 232, 0));
+  --hero-ascii: #d98f7d;
+  --hero-ascii-glow: rgba(249, 104, 88, .25);
   --glass-bg: rgba(255, 255, 255, .26);
   --glass-bg-hover: rgba(255, 255, 255, .34);
   --glass-border: rgba(255, 255, 255, .6);
@@ -57,7 +61,11 @@
     --grain-blend: overlay;
     --ascii-color: #f6f0d8;
     --ascii-glow: rgba(246, 240, 216, .35);
-    --glass-bg: rgba(28, 33, 29, .38);
+    --hero-img: url("../images/hero/hero-dark.jpg");
+    --hero-veil: linear-gradient(0deg, rgba(14, 18, 40, .7), rgba(14, 18, 40, 0) 38%), linear-gradient(90deg, rgba(14, 18, 40, .4), rgba(14, 18, 40, 0) 60%);
+    --hero-ascii: #f6f0d8;
+    --hero-ascii-glow: rgba(246, 240, 216, .35);
+      --glass-bg: rgba(28, 33, 29, .38);
     --glass-bg-hover: rgba(34, 40, 35, .5);
     --glass-border: rgba(255, 255, 255, .12);
     --glass-hi: rgba(255, 255, 255, .14);
@@ -82,6 +90,10 @@
   --grain-blend: overlay;
   --ascii-color: #f6f0d8;
   --ascii-glow: rgba(246, 240, 216, .35);
+  --hero-img: url("../images/hero/hero-dark.jpg");
+  --hero-veil: linear-gradient(0deg, rgba(14, 18, 40, .7), rgba(14, 18, 40, 0) 38%), linear-gradient(90deg, rgba(14, 18, 40, .4), rgba(14, 18, 40, 0) 60%);
+  --hero-ascii: #f6f0d8;
+  --hero-ascii-glow: rgba(246, 240, 216, .35);
   --glass-bg: rgba(28, 33, 29, .38);
   --glass-bg-hover: rgba(34, 40, 35, .5);
   --glass-border: rgba(255, 255, 255, .12);
@@ -200,7 +212,7 @@ body::after {
 }
 :root[data-theme="dark"] .theme-toggle .dot { transform: rotate(180deg); }
 
-/* ───────── 4. Glows (homepage only) ───────── */
+/* ───────── 4. Glows (homepage work + about sections) ───────── */
 /* Diffuse light: big blurred colour fields drifting slowly */
 .glow {
   position: absolute; border-radius: 50%;
@@ -210,10 +222,6 @@ body::after {
   will-change: transform;
   pointer-events: none;
 }
-.hero .glow.a { width: 52vmax; height: 52vmax; background: var(--sage);       top: -18vmax; left: -12vmax; animation: drift 26s ease-in-out infinite alternate; }
-.hero .glow.b { width: 44vmax; height: 44vmax; background: var(--dusty-blue); top: 10vmax;  right: -16vmax; animation: drift 32s ease-in-out infinite alternate-reverse; }
-.hero .glow.c { width: 34vmax; height: 34vmax; background: var(--butter);     bottom: -14vmax; left: 22vw; animation: drift 22s ease-in-out infinite alternate; }
-.hero .glow.d { width: 20vmax; height: 20vmax; background: var(--peach);      bottom: 4vmax; right: 18vw; opacity: calc(var(--glow-opacity) * .7); animation: drift 28s ease-in-out infinite alternate-reverse; }
 
 .work .glow { filter: blur(90px); opacity: calc(var(--glow-opacity) * .82); }
 .work .glow.e { width: 40vmax; height: 40vmax; background: var(--coral);      top: 18%; left: -14vmax; opacity: calc(var(--glow-opacity) * .53); animation: drift 30s ease-in-out infinite alternate; }
@@ -286,6 +294,13 @@ a.glass:hover::before { transform: translateX(12%); }
   overflow-x: clip;
 }
 
+/* Photo background: swaps with the theme, veil keeps the ink legible */
+.hero-bg {
+  position: absolute; inset: 0; z-index: -2;
+  background: var(--hero-img) center / cover no-repeat;
+}
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: var(--hero-veil); }
+
 /* Name */
 .title-wrap { align-self: center; position: relative; padding: 48px 0; }
 .name {
@@ -315,15 +330,15 @@ a.glass:hover::before { transform: translateX(12%); }
 /* ASCII lily: generated from a soft drawing, sits behind the name */
 #ascii {
   position: absolute;
-  right: 3vw; top: 50%;
+  right: 3vw; top: 42%;
   transform: translateY(-52%);
   z-index: -1;
   font-family: var(--mono);
   font-size: clamp(5px, .62vw, 9px);
   line-height: 1;
   letter-spacing: 0;
-  color: var(--ascii-color);
-  text-shadow: 0 0 6px var(--ascii-glow);
+  color: var(--hero-ascii);
+  text-shadow: 0 0 6px var(--hero-ascii-glow);
   white-space: pre;
   user-select: none;
 }
