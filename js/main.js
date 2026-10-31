@@ -56,10 +56,11 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
   }
 })();
 
-/* ASCII lily: draw a soft lily off-screen, then re-render it as characters */
+/* ASCII lily: draw a soft lily off-screen, then re-render it as characters.
+   Fills the homepage hero (#ascii) and any .ascii-lily on case studies. */
 (function () {
-  const out = document.getElementById("ascii");
-  if (!out) return;
+  const outs = document.querySelectorAll("#ascii, .ascii-lily");
+  if (!outs.length) return;
   const W = 520, H = 620;
   const src = document.createElement("canvas");
   src.width = W; src.height = H;
@@ -118,7 +119,10 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
     grid.push(row);
   }
   const base = grid.map((r) => r.slice());
-  const paint = () => { out.textContent = grid.map((r) => r.map((i) => ramp[i]).join("")).join("\n"); };
+  const paint = () => {
+    const text = grid.map((r) => r.map((i) => ramp[i]).join("")).join("\n");
+    outs.forEach((out) => { out.textContent = text; });
+  };
   paint();
 
   // gentle shimmer: nudge a few characters up/down the ramp
@@ -214,4 +218,28 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
   document.querySelector(".contrib-btn.next")?.addEventListener("click", () => goTo(current + 1));
   document.querySelector(".contrib-btn.prev")?.addEventListener("click", () => goTo(current - 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+})();
+
+/* Click to enlarge: any button[data-lightbox] containing an <img> opens it full size */
+(function () {
+  const triggers = document.querySelectorAll("[data-lightbox]");
+  if (!triggers.length || typeof HTMLDialogElement === "undefined") return;
+  const dlg = document.createElement("dialog");
+  dlg.className = "lightbox";
+  dlg.setAttribute("aria-label", "Enlarged image");
+  const big = document.createElement("img");
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "pill solid meta lightbox-close";
+  close.textContent = "Close";
+  dlg.append(big, close);
+  document.body.appendChild(dlg);
+  dlg.addEventListener("click", () => dlg.close());
+  triggers.forEach((t) => t.addEventListener("click", () => {
+    const img = t.querySelector("img");
+    if (!img) return;
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    dlg.showModal();
+  }));
 })();
